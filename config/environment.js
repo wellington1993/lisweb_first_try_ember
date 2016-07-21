@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'lisweb-cli',
     environment: environment,
     baseURL: '/',
+    contentSecurityPolicy: {
+      'connect-src': "*"
+    },
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -41,6 +44,11 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'dashboard',
+    routeIfAlreadyAuthenticated: 'dashboard'
   }
 
   return ENV;
