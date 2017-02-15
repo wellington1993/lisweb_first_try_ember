@@ -1,0 +1,7 @@
+<h2>labs</h2>
+
+<ul>
+  {{#each model as |lab|}}
+    <li {{action 'setLab' lab.id}}> {{lab.nome}}</li>
+  {{/each}}
+</ul>

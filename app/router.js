@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('marcas');
+  this.route('laboratorios');
   this.route('login');
   this.route('dashboard');
 });
