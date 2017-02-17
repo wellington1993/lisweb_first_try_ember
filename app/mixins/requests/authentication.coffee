@@ -1,22 +1,30 @@
 import Ember from 'ember'
-import RequestsNonEmberDataRequestsMixin from './non-ember-data-requests'
 
-RequestsAuthenticationMixin = Ember.Mixin.create(RequestsNonEmberDataRequestsMixin,
+RequestsAuthenticationMixin = Ember.Mixin.create(
 
-  userTokenStillValid: (params, callback) ->
+  store: Ember.inject.service()
 
-    url = "/users/me"
+  #Método para destruir o token existente no servidor.
+  logout: (context, params, callback) ->
 
-    data =
-      token: params["token"]
-      email: params["email"]
+    ajaxParams =
+      url: "/users/sign_out"
+      type: "DELETE"
 
-    @doAjax(
-      url: url
-      type: "POST"
-      data: data
-      applicationCallback: callback
-    )
+    context.get("store").doAjax(context, callback, ajaxParams)
+
+  #Método para verificar se o token existente ainda é válido.
+  userTokenStillValid: (context, params, callback) ->
+
+    #Os headers são setados manualmente neste ponto pois o ember-simple-auth
+    #considera que o usuário ainda não está autenticado (pois está no método restore).
+    ajaxParams =
+      headers: "Authorization" : "Token token=#{params["token"]}, email=#{params["email"]}"
+      url: "/users/me"
+      type: "GET"
+
+    context.get("store").doAjax(context, callback, ajaxParams)
+
 
 )
 
