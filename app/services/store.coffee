@@ -21,10 +21,13 @@ StoreService = DS.Store.extend(
 
     #Se o caller não definiu nenhum header, os headers são obtidos do adapter.
     if !ajaxParams.hasOwnProperty("headers")
-      adapterHeaders = adapter.headersForRequest()
 
-      if adapterHeaders
-        ajaxParams["headers"] = adapterHeaders
+      try
+        adapterHeaders = adapter.headersForRequest()
+
+        if adapterHeaders
+          ajaxParams["headers"] = adapterHeaders
+      catch e 
 
     Ember.$.ajax(ajaxParams)
 
