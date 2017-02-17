@@ -1,3 +1,7 @@
-Bem vindo ao LisWeb, aqui vai a Landing Page para usuários ainda não logados.
-
-{{#link-to 'login'}}Login{{/link-to}}
+Esta é a rota index!
+<br>
+{{#unless session.isAuthenticated}}
+  Você ainda não está logado. Para fazer o login {{#link-to "login"}}clique aqui.{{/link-to}}
+{{else}}
+  Você está logado!
+{{/unless}}

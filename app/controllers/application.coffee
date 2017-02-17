@@ -3,6 +3,7 @@ import Ember from 'ember'
 ApplicationController = Ember.Controller.extend(
 
   applicationSession: Ember.inject.service()
+  session: Ember.inject.service()
 
   actions:
 

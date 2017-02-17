@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'lisweb-cli',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     contentSecurityPolicy: {
       'connect-src': "*"
     },
@@ -50,6 +50,7 @@ module.exports = function(environment) {
   }
 
   ENV['ember-simple-auth'] = {
+    authenticationRoute: 'login',
     routeAfterAuthentication: 'dashboard',
     routeIfAlreadyAuthenticated: 'dashboard'
   }
