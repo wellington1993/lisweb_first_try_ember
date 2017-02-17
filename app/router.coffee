@@ -12,6 +12,7 @@ Router.map( ->
   @route('laboratorios')
   @route('login')
   @route('dashboard')
+  @route('nao-autorizado')
 
 )
 

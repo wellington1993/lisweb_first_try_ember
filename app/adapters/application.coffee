@@ -11,6 +11,13 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
   #do Ember-Data estejam autorizadas.
   authorizer: 'authorizer:application'
 
+  handleResponse: (status, headers, payload, requestData) ->
+
+    if status == 403
+      window.location.href = "/nao-autorizado"
+    else
+      return @_super(status, headers, payload, requestData)
+
 )
 
 export default ApplicationAdapter
