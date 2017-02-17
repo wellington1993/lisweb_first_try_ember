@@ -2,7 +2,7 @@ import Ember from 'ember'
 
 BoxLoginComponent = Ember.Component.extend(
 
-  session: Ember.inject.service()
+  applicationSession: Ember.inject.service()
 
   actions:
 
@@ -12,11 +12,13 @@ BoxLoginComponent = Ember.Component.extend(
 
       data = @getProperties('identification', 'password')
 
-      @get('session').authenticate('authenticator:application', data["identification"], data["password"]).catch(
-        (reason) =>
-          @set('errorMessage', reason.error)
-      )
+      @get("applicationSession").login(email: data["identification"], password: data["password"],
+        (success, data) ->
 
+          if !success
+            self.set("errorMessage", data.error)
+
+      )
 )
 
 export default BoxLoginComponent

@@ -1,6 +1,6 @@
 Esta é a rota index!
 <br>
-{{#unless session.isAuthenticated}}
+{{#unless applicationSession.isAuthenticated}}
   Você ainda não está logado. Para fazer o login {{#link-to "login"}}clique aqui.{{/link-to}}
 {{else}}
   Você está logado!

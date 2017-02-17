@@ -17,33 +17,7 @@ ApplicationAuthenticator = Devise.extend(RequestsAuthenticationMixin,
 
   #Override
   restore: (data) ->
-
-    self = @
-
-    #Faz a verificação no servidor se as credenciais existentes ainda são válidas.
-    return new Ember.RSVP.Promise(
-
-      (resolve, reject) ->
-
-        if !data.token
-          return reject()
-
-        params =
-          email: data.email
-          token: data.token
-
-        self.get("request").makeRequest(self, self.userTokenStillValid, params,
-
-          (success, data, httpCode) ->
-
-            if success
-              return resolve(data)
-
-            return reject()
-
-        )
-
-    )
+    return @sessionStillValid(data)
 
   #Override
   invalidate: (data) ->
@@ -61,6 +35,39 @@ ApplicationAuthenticator = Devise.extend(RequestsAuthenticationMixin,
 
             if success
               return resolve()
+
+            return reject()
+
+        )
+
+    )
+
+  sessionStillValid: (data = null) ->
+
+    self = @
+
+    if data != null
+      authenticatedData = data
+    else
+      authenticatedData = @get("data")["authenticated"]
+
+    return new Ember.RSVP.Promise(
+
+      (resolve, reject) ->
+
+        if !(authenticatedData.hasOwnProperty("email") && authenticatedData.hasOwnProperty("token"))
+          return reject()
+
+        params =
+          email: authenticatedData.email
+          token: authenticatedData.token
+
+        self.get("request").makeRequest(self, self.userTokenStillValid, params,
+
+          (success, data, httpCode) ->
+
+            if success
+              return resolve(data)
 
             return reject()
 

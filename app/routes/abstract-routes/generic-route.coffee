@@ -2,7 +2,7 @@ import Ember from 'ember'
 
 AbstractRoutesGenericRouteRoute = Ember.Route.extend(
 
-  session: Ember.inject.service()
+  applicationSession: Ember.inject.service()
 
 )
 
