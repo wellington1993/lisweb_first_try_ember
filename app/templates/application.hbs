@@ -10,7 +10,10 @@
       </button>
       {{#link-to "dashboard" class="navbar-brand"}}LisWeb{{/link-to}}
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
+
+      {{#if applicationSession.isAuthenticated}}
       <ul class="nav navbar-nav">
         <li>{{#link-to "index"}}Home{{/link-to}}</li>
         <li class="dropdown">
@@ -26,8 +29,10 @@
           </ul>
         </li>
       </ul>
+          {{/if}}
+
       <ul class="nav navbar-nav navbar-right">
-        <li><a href='#'>Suporte</a></li>
+        <li><a href=''>Suporte</a></li>
 
         {{#if applicationSession.isAuthenticated}}
         <li><a href="#" {{action 'logout'}}>Logout</a></li>
@@ -36,6 +41,7 @@
         <li></li>
       </ul>
     </div><!--/.nav-collapse -->
+
   </div>
 </nav>
 
