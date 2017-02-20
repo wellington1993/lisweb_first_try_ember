@@ -1,10 +1,10 @@
 <!-- app/templates/components/login-form.hbs -->
 <form {{action "authenticate" on="submit"}}>
   <label for="identification">Login</label>
-  {{input value=identification placeholder="Enter Login"}}
+  {{inputs/email-input placeholder="Insira seu e-mail:"}}
 
   <label for="password">Password</label>
-  {{input value=password type="password" placeholder="Enter Password"}}
+  {{inputs/password-input placeholder="Insira sua senha:"}}
 
   <button type="submit">Login</button>
 </form>
