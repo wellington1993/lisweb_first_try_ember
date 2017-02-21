@@ -53,9 +53,11 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
 
     actValidarCampoEmail: (params, callbackAposRetornoValidacao = ->) ->
       @set("emailValido", params["valido"])
+      callbackAposRetornoValidacao()
 
     actValidarCampoSenha: (params, callbackAposRetornoValidacao = ->) ->
       @set("senhaValida", params["valido"])
+      callbackAposRetornoValidacao()
 
 )
 

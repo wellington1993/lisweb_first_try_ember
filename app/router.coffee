@@ -9,6 +9,7 @@ Router = Ember.Router.extend(
 Router.map( ->
 
   @route('marcas')
+  @route('cadastrar-marca')
   @route('laboratorios')
   @route('login')
   @route('dashboard')

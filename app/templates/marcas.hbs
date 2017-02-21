@@ -1,7 +1,19 @@
-<h2>Marcas</h2>
-
-<ul>
-  {{#each model as |marca|}}
-    <li>{{marca.nome}}</li>
-  {{/each}}
-</ul>
+<div class="container">
+  <h1>Listagem de marcas</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |marca index|}}
+      <tr>
+        <td>{{marca.nome}}</td>
+        <td>{{marca.descricao}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
