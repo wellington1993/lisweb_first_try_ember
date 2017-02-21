@@ -48,6 +48,13 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
     @sendAction("actionOnSubmit", {})
     return true
 
+  mostrarMensagem: (options, callbackOnAnimationComplete) ->
+    @showMessage(@get("messageBox"), options, callbackOnAnimationComplete)
+
+  esconderMensagem: (options, callbackOnAnimationComplete) ->
+    @hideMessage(@get("messageBox"), {}, callbackOnAnimationComplete)
+
+
 
 )
 

@@ -16,12 +16,24 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
   #Método de validação do formulário.
   validate: (callbackAfterValidate) ->
 
-    valido = false
+    arrayErros = []
+    valido = true
 
-    if @get("emailValido") && @get("senhaValida")
-      valido = true
-    console.log(valido)
-    return callbackAfterValidate(valido)
+    if !@get("emailValido")
+      arrayErros.push("O e-mail deve ser preeenchido corretamente.")
+      valido = false
+
+    if !@get("senhaValida")
+      arrayErros.push("A senha deve ser preenchida corretamente.")
+      valido = false
+
+    if valido
+      return callbackAfterValidate(valido)
+
+    @mostrarMensagem(message: arrayErros, type: "danger",
+      ->
+        return callbackAfterValidate(valido)
+    )
 
   #Método de submit do form após a validação bem sucedida.
   submitForm: ->
@@ -34,9 +46,7 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
     dadosAcesso = @getProperties("email", "senha")
 
     @get("applicationSession").login(email: dadosAcesso["email"], password: dadosAcesso["senha"],
-
       (success, data) ->
-        console.log(success)
     )
 
   actions:

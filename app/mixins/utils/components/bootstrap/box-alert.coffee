@@ -8,6 +8,9 @@ UtilsComponentsBootstrapBoxAlertMixin = Ember.Mixin.create(
     tipoMensagem = params["type"]
     classeCor = "alert-" + tipoMensagem
 
+    if mensagem instanceof Array
+      mensagem = @messageArrayToUlLiTags(mensagem)
+
     messageBoxSelector.fadeOut("fast"
       ->
         messageBoxSelector.removeClass("alert-danger alert-warning alert-success")
