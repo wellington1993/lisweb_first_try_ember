@@ -9,6 +9,7 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
 
   #(params, callbackOnAjaxComplete[success, data])
   actionOnSubmit: null
+
   actionOnSubmitted: null
 
   didInsertElement: ->
@@ -38,7 +39,19 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
 
         #Se o formulário é válido o método final de submissão é chamado.
         if valido
-          self.submitForm()
+
+          self.preSubmit(
+            ->
+
+              self.submitForm(
+
+                (sucesso) ->
+
+                  self.posSubmit()
+
+              )
+          )
+
 
     )
 
@@ -54,7 +67,13 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
   esconderMensagem: (options, callbackOnAnimationComplete) ->
     @hideMessage(@get("messageBox"), {}, callbackOnAnimationComplete)
 
+  preSubmit: (callbackOnAnimationComplete = ->) ->
+    @$(":submit").attr("disabled", true)
+    callbackOnAnimationComplete()
 
+  posSubmit: (callbackOnAnimationComplete = ->) ->
+    @$(":submit").attr("disabled", false)
+    callbackOnAnimationComplete()
 
 )
 

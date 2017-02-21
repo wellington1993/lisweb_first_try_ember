@@ -37,17 +37,37 @@ FormsNewMarcaComponent = FormsGenericFormComponent.extend(RequestsMarcaMixin,
         return callbackAfterValidate(valido)
     )
 
-  submitForm: ->
+  submitForm: (callbackOnSubmitComplete) ->
+
+    self = @
 
     store = @get("store")
 
     marca = store.createRecord("marca", nome: @get("nome"), descricao: @get("descricao"))
 
     @cadastrarMarca(@, marca: marca).then(
+
       (marca) ->
-        alert("AUIII")
+
+        self.mostrarMensagem(message: "Marca cadastrada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+
+          ->
+            setTimeout(
+              ->
+                self.sendAction("actionOnSubmitted")
+                callbackOnSubmitComplete()
+              3000
+            )
+
+        )
+
       (errors) ->
-        alert("erro")
+        self.mostrarMensagem(message: "Ocorreu um erro ao tentar criar nova marca.", type: "danger",
+          ->
+            callbackOnSubmitComplete()
+        )
+
+
     )
 
 

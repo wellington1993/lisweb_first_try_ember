@@ -36,8 +36,8 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
     )
 
   #Método de submit do form após a validação bem sucedida.
-  submitForm: ->
-    @fazerLogin()
+  submitForm: (callbackOnSubmitComplete) ->
+    @fazerLogin(callbackOnSubmitComplete)
 
   fazerLogin: ->
 
@@ -47,6 +47,7 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
 
     @get("applicationSession").login(email: dadosAcesso["email"], password: dadosAcesso["senha"],
       (success, data) ->
+        callbackOnSubmitComplete()
     )
 
   actions:

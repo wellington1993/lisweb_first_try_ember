@@ -10,6 +10,7 @@ Router.map( ->
 
   @route('marcas')
   @route('cadastrar-marca')
+  @route('cadastrar-tipo-de-pessoa')
   @route('laboratorios')
   @route('login')
   @route('dashboard')
