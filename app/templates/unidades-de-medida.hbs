@@ -1,0 +1,23 @@
+{{#link-to "cadastrar-unidade-de-medida"}} Cadastrar Unidade de Medida {{/link-to}}
+
+<div class="container">
+  <h1>Listagem de Unidades de Medida</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Sigla</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |unidadeMedida index|}}
+      <tr>
+        <td>{{unidadeMedida.nome}}</td>
+        <td>{{unidadeMedida.descricao}}</td>
+        <td>{{unidadeMedida.siglazwz}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -15,6 +15,8 @@ Router.map( ->
   @route('cadastrar-tipo-de-pessoa')
   @route('categorias-de-produto')
   @route('cadastrar-categoria-de-produto')
+  @route('unidades-de-medida')
+  @route('cadastrar-unidade-de-medida')
 
   @route('laboratorios')
   @route('login')

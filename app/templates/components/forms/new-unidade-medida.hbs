@@ -1,0 +1,25 @@
+{{inputs/generic-input
+  value=nome
+  lengthMinimo=1
+  maxlength=255
+  placeholder="Nome da unidade de medida:"
+  actionOnFimValidacao="actValidarNome"}}
+
+{{inputs/generic-input
+  value=descricao
+  lengthMinimo=1
+  maxlength=255
+  placeholder="Descrição da unidade de medida:"
+  actionOnFimValidacao="actValidarDescricao"}}
+
+{{inputs/generic-input
+  value=sigla
+  lengthMinimo=1
+  maxlength=10
+  placeholder="Sigla:"
+  actionOnFimValidacao="actValidarSigla"}}
+
+
+  {{bootstrap/box-alert}}
+
+<button type="submit">Cadastrar</button>
