@@ -1,0 +1,25 @@
+{{#if mostrarProximoAnterior}}
+<li class="li-pg-ant">
+
+  <a href="#" {{action "actCliqueBotaoAnterior"}}>
+    {{labelBtnAnterior}}
+  </a>
+
+</li>
+{{/if}}
+
+{{#each totalPaginasArray as |item|}}
+  <li class="li-pg-{{item}}">
+    <a href="#" {{action "actCliqueBotaoNumerico" item}}>
+      {{item}}
+    </a>
+  </li>
+{{/each}}
+
+{{#if mostrarProximoAnterior}}
+<li class="li-pg-prox">
+  <a href="#" {{action "actCliqueBotaoProximo"}}>
+    {{labelBtnProximo}}
+  </a>
+</li>
+{{/if}}

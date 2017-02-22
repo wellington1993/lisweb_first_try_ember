@@ -21,6 +21,22 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
   pathForType: (modelName) ->
     return modelName.pluralize().underscore()
 
+  urlForQuery: (query, modelName) ->
+
+    try
+      if query.action == "findAll"
+        return @urlForFindAll(modelName, null)
+    catch e
+
+    return @_super(query, modelName)
+
+  query: (store, type, query) ->
+
+    if query.hasOwnProperty("action") && query["action"] == "findAll"
+      delete query["action"]
+
+    return @_super(store, type, query)
+
 )
 
 export default ApplicationAdapter

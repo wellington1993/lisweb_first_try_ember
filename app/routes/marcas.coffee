@@ -3,8 +3,15 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 
 MarcasRoute = AbstractRoutesPrivateRouteRoute.extend(
 
-  model: ->
-    return @get("store").findAll("marca")
+  model: (params, transition) ->
+
+    params = @paramsToUseQueryAsFindAll(transition.queryParams)
+
+    return @get("store").query("marca", params)
+
+  setupController: (controller, model) ->
+    @_super(controller, model)
+    @setupControllerWithPagination(controller, model)
 
 )
 

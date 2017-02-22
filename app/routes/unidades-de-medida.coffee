@@ -3,8 +3,16 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 
 UnidadesDeMedidaRoute = AbstractRoutesPrivateRouteRoute.extend(
 
-  model: ->
-    return @get("store").findAll("unidade-medida")
+  model: (params, transition) ->
+
+    params = @paramsToUseQueryAsFindAll(transition.queryParams)
+
+    return @get("store").query("unidade-medida", params)
+
+  setupController: (controller, model) ->
+    @_super(controller, model)
+    @setupControllerWithPagination(controller, model)
+
 
 )
 
