@@ -47,7 +47,18 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
 
     @get("applicationSession").login(email: dadosAcesso["email"], password: dadosAcesso["senha"],
       (success, data) ->
+
         callbackOnSubmitComplete()
+
+        if !success
+
+          if data.hasOwnProperty("error")
+            mensagem = "Credenciais inválidas."
+          else
+            mensagem = "Ocorreu um erro ao tentar se autenticar."
+
+          self.mostrarMensagem(message: mensagem, type: "danger", ->)
+
     )
 
   actions:

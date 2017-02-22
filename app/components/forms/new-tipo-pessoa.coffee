@@ -48,7 +48,7 @@ FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPesso
 
       (marca) ->
 
-        self.mostrarMensagem(message: "Tipo cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+        self.mostrarMensagem(message: "Tipo de pessoa cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
 
           ->
             setTimeout(
@@ -61,7 +61,7 @@ FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPesso
         )
 
       (errors) ->
-        self.mostrarMensagem(message: "Ocorreu um erro ao tentar criar novo tipo.", type: "danger",
+        self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
             callbackOnSubmitComplete()
         )

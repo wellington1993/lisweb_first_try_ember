@@ -4,7 +4,7 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 MarcasRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: ->
-    @get("store").findAll("marca")
+    return @get("store").findAll("marca")
 
 )
 

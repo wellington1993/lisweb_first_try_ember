@@ -4,7 +4,7 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 UnidadesDeMedidaRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: ->
-    @get("store").findAll("unidade-medida")
+    return @get("store").findAll("unidade-medida")
 
 )
 

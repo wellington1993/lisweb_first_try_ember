@@ -3,10 +3,10 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 
 CadastrarUnidadeDeMedidaRoute = AbstractRoutesPrivateRouteRoute.extend(
 
-    actions:
+  actions:
 
-      actRedirecionarAposCadastro: ->
-        @transitionTo("unidades-de-medida")
+    actRedirecionarAposCadastro: ->
+      @transitionTo("unidades-de-medida")
 
 )
 

@@ -7,7 +7,6 @@ RequestsTipoPessoaMixin = Ember.Mixin.create(
   cadastrarTipoPessoa: (context, options, callback = ->) ->
     return @get("store").createRecord("tipo-pessoa", options["attrs"]).save()
 
-
 )
 
 export default RequestsTipoPessoaMixin

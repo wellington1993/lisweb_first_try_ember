@@ -61,7 +61,7 @@ FormsNewMarcaComponent = FormsGenericFormComponent.extend(RequestsMarcaMixin,
         )
 
       (errors) ->
-        self.mostrarMensagem(message: "Ocorreu um erro ao tentar criar nova marca.", type: "danger",
+        self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
             callbackOnSubmitComplete()
         )
