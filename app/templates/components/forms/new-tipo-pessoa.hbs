@@ -2,15 +2,11 @@
   value=nome
   lengthMinimo=1
   maxlength=255
-  placeholder="Nome da marca:"
+  placeholder="Nome:"
   actionOnFimValidacao="actValidarNome"}}
 
-{{inputs/generic-input
-  value=descricao
-  lengthMinimo=1
-  maxlength=255
-  placeholder="Descrição da marca:"
-  actionOnFimValidacao="actValidarDescricao"}}
+{{select-options-tipo-pessoa
+  actionOnChange="actAtribuirTipoPessoa"}}
 
 {{bootstrap/box-alert}}
 

@@ -18,6 +18,9 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
     else
       return @_super(status, headers, payload, requestData)
 
+  pathForType: (modelName) ->
+    return modelName.pluralize().underscore()
+
 )
 
 export default ApplicationAdapter

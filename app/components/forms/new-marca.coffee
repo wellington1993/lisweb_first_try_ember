@@ -41,11 +41,10 @@ FormsNewMarcaComponent = FormsGenericFormComponent.extend(RequestsMarcaMixin,
 
     self = @
 
-    store = @get("store")
+    options           = {}
+    options["attrs"]  = nome: @get("nome"), descricao: @get("descricao")
 
-    marca = store.createRecord("marca", nome: @get("nome"), descricao: @get("descricao"))
-
-    @cadastrarMarca(@, marca: marca).then(
+    @cadastrarMarca(@, options).then(
 
       (marca) ->
 

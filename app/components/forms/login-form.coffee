@@ -39,7 +39,7 @@ FormsLoginFormComponent = FormsGenericFormComponent.extend(
   submitForm: (callbackOnSubmitComplete) ->
     @fazerLogin(callbackOnSubmitComplete)
 
-  fazerLogin: ->
+  fazerLogin: (callbackOnSubmitComplete) ->
 
     self = @
 
