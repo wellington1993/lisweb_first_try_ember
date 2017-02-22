@@ -1,7 +1,31 @@
-<h2>labs</h2>
+<div class="container">
+  <h1>Listagem de laboratórios</h1>
 
-<ul>
-  {{#each model as |lab|}}
-    <li {{action 'setLab' lab.id}}> {{lab.nome}}</li>
-  {{/each}}
-</ul>
+  {{#if laboratorioAtual}}
+  Laboratório atual: {{laboratorioAtual.nome}}
+  {{/if}}
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Laboratórios</th>
+        <th>Escolher</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |laboratorio index|}}
+      <tr>
+        <td>{{laboratorio.nome}}</td>
+        <td><button {{action "actEscolherLaboratorio" laboratorio.id}}>Escolher</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+{{bootstrap/dynamic-pagination
+  class="pagination"
+  actionOnClick="actPaginar"
+  totalPaginas=pagination.total_pages
+  paginaAtual=pagination.current_page
+  mostrarProximoAnterior=true}}
