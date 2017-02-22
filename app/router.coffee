@@ -13,6 +13,8 @@ Router.map( ->
 
   @route('tipos-de-pessoa')
   @route('cadastrar-tipo-de-pessoa')
+  @route('categorias-de-produto')
+  @route('cadastrar-categoria-de-produto')
 
   @route('laboratorios')
   @route('login')

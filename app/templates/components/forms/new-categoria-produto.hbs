@@ -1,0 +1,17 @@
+{{inputs/generic-input
+  value=nome
+  lengthMinimo=1
+  maxlength=255
+  placeholder="Nome da categoria de produto:"
+  actionOnFimValidacao="actValidarNome"}}
+
+{{inputs/generic-input
+  value=descricao
+  lengthMinimo=1
+  maxlength=255
+  placeholder="Descrição da marca:"
+  actionOnFimValidacao="actValidarDescricao"}}
+
+  {{bootstrap/box-alert}}
+
+<button type="submit">Cadastrar</button>

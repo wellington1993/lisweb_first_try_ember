@@ -1,14 +1,13 @@
-# Takes two parameters: container and application
-initialize = () ->
-  # application.register 'route', 'foo', 'service:foo'
+initialize = ->
+  inflector = Ember.Inflector.inflector
+  inflector.irregular("tipo-pessoa", "tipos-pessoa")
+  inflector.irregular("categoria", "categorias")
+  inflector.irregular("categoria-produto", "categorias-produto")
 
 InflectionsInitializer =
   name: 'inflections'
-  initialize: ->
-
-    inflector = Ember.Inflector.inflector
-    inflector.irregular("tipo-pessoa", "tipos-pessoa")
+  initialize: initialize
 
 
-export {initialize}
-export default InflectionsInitializer
+`export {initialize}`
+`export default InflectionsInitializer`

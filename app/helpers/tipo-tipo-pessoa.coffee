@@ -15,6 +15,5 @@ tipoTipoPessoa = (params) ->
 
 TipoTipoPessoaHelper = Ember.Helper.helper tipoTipoPessoa
 
-export { tipoTipoPessoa }
-
-export default TipoTipoPessoaHelper
+`export { tipoTipoPessoa }`
+`export default TipoTipoPessoaHelper`

@@ -1,0 +1,21 @@
+{{#link-to "cadastrar-categoria-de-produto"}} Cadastrar Categoria de Produto {{/link-to}}
+
+<div class="container">
+  <h1>Listagem de Categorias de Produto</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |categoriaProduto index|}}
+      <tr>
+        <td>{{categoriaProduto.nome}}</td>
+        <td>{{categoriaProduto.descricao}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
