@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Listagem de laboratórios</h1>
 
-  {{#if laboratorioAtual}}
-  Laboratório atual: {{laboratorioAtual.nome}}
+  {{#if applicationSession.laboratorioAtual}}
+  Laboratório atual: {{applicationSession.laboratorioAtual.nome}}
   {{/if}}
 
   <table class="table table-hover">
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each model as |laboratorio index|}}
+      {{#each model.laboratorios as |laboratorio index|}}
       <tr>
         <td>{{laboratorio.nome}}</td>
         <td><button {{action "actEscolherLaboratorio" laboratorio.id}}>Escolher</button></td>
@@ -29,3 +29,7 @@
   totalPaginas=pagination.total_pages
   paginaAtual=pagination.current_page
   mostrarProximoAnterior=true}}
+
+{{bootstrap/modals/escolha-laboratorio
+  id="modal-escolher-laboratorio"
+  laboratorio=laboratorioEscolhaModal}}

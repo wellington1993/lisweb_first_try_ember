@@ -1,6 +1,9 @@
 import Ember from 'ember'
+import UtilsComponentsBootstrapModalMixin from '../mixins/utils/components/bootstrap/modal'
 
-LaboratoriosController = Ember.Controller.extend(
+LaboratoriosController = Ember.Controller.extend(UtilsComponentsBootstrapModalMixin,
+
+  applicationSession: Ember.inject.service()
 
   laboratorioEscolhaModal: null
 
@@ -8,7 +11,8 @@ LaboratoriosController = Ember.Controller.extend(
 
     actEscolherLaboratorio: (idEscolhaLaboratorio) ->
       @set("laboratorioEscolhaModal", @get("store").peekRecord("laboratorio", idEscolhaLaboratorio))
-      console.log(@get("laboratorioEscolhaModal").get("nome"))
+      @abrirModal($("#modal-escolher-laboratorio").find(".modal"))
+
 
 )
 

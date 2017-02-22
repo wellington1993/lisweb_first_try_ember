@@ -7,8 +7,15 @@ RequestsLaboratorioMixin = Ember.Mixin.create(
   obterLaboratorioAtual: ->
     return @get("store").queryRecord("laboratorio", internal_action: "laboratorio_atual")
 
-  escolherLaboratorio: (params) ->
-    
+  escolherLaboratorio: (context, params, callback) ->
+
+    laboratorioId = params["laboratorioId"]
+
+    ajaxParams =
+      url: "/users/me/escolher_laboratorio/#{laboratorioId}"
+      type: "POST"
+
+    context.get("store").doAjax(context, callback, ajaxParams)
 
 )
 

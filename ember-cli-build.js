@@ -22,5 +22,28 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/dist/css/bootstrap.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap-theme.css');
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
+  app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.eot', {
+    destDir: 'fonts'
+  })
+
+  app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf', {
+    destDir: 'fonts'
+  })
+
+  app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.svg', {
+    destDir: 'fonts'
+  })
+
+  app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.woff', {
+    destDir: 'fonts'
+  })
+
+  app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.woff2', {
+    destDir: 'fonts'
+  })
+
+  app.import("bower_components/components-font-awesome/css/font-awesome.min.css")
+
   return app.toTree();
 };

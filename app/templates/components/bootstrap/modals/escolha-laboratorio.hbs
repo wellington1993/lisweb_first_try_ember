@@ -1,1 +1,41 @@
-{{yield}}
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+
+    <div id="jan-escolha-lab-spinner" class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" >Escolha de laboratório</h4>
+      </div>
+      <div class="modal-body">
+        <i class="fa fa-spinner fa-spin"></i>&nbsp;Escolhendo laboratório <b>{{laboratorio.nome}}</b>...
+      </div>
+    </div>
+
+    <div id="jan-escolha-lab-erro" class="modal-content" style="display:none;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" >Ocorreu um erro</h4>
+      </div>
+      <div class="modal-body">
+        Ocorreu um erro ao escolher o laboratório.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+    <div id="jan-escolha-lab-sucesso" class="modal-content" style="display:none;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" >Laboratório escolhido com sucesso</h4>
+      </div>
+      <div class="modal-body">
+        O laboratório <b>{{laboratorio.nome}}</b> foi escolhido com sucesso.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continuar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
