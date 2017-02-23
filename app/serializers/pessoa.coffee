@@ -8,11 +8,23 @@ PessoaSerializer = ApplicationSerializer.extend(
 
   avoidDirtyBelongsToOverride: (normalizedPayload) ->
 
+    self = @
+
     currentRecord = @get("store").peekRecord("pessoa", normalizedPayload.data.id)
 
     if currentRecord == null
       return normalizedPayload
-    console.log(normalizedPayload)
+
+    Object.keys(normalizedPayload.data.relationships).forEach(
+      (relationshipName) ->
+
+        currentId = currentRecord.get(relationshipName + ".id")
+        refreshedId = normalizedPayload.data.relationships[relationshipName].data.id
+
+        if parseInt(currentId) != parseInt(refreshedId)
+          delete normalizedPayload.data.relationships[relationshipName]
+    )
+
     return normalizedPayload
 
 )
