@@ -8,7 +8,7 @@ PessoaContatoRoute = AbstractRoutesPrivateRouteRoute.extend(RequestsPessoaMixin,
 
     self = @
 
-    @obterIdentificacao(pessoaId: transition.params.pessoa.id).then(
+    @obterContato(pessoaId: transition.params.pessoa.id).then(
       (data) ->
         return data
       (err) ->

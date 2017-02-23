@@ -5,6 +5,7 @@
       <tr>
         <th>Nome</th>
         <th>Tipo</th>
+        <th>Visualizar</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,7 @@
       <tr>
         <td>{{pessoa.nome}}</td>
         <td>{{pessoa.tipoPessoa.nome}}</td>
+        <td>{{#link-to "pessoa" pessoa class="btn btn-default"}}Visualizar{{/link-to}}</td>
       </tr>
       {{/each}}
     </tbody>
