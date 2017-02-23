@@ -1,8 +1,18 @@
-CEP: {{inputs/mask-cep}}
-Bairro: {{inputs/generic-input disabled="disabled"}}
-Logradouro: {{inputs/generic-input disabled="disabled"}}
-Tipo Logradouro: {{inputs/generic-input}}
-Número: {{inputs/numeric-input}}
-Complemento: {{inputs/generic-input}}
-Código IBGE do Município: {{inputs/generic-input disabled="disabled"}}
-Cidade: {{inputs/generic-input disabled="disabled"}}
+CEP: {{inputs/mask-cep
+       vazioValido=true
+       value=cep
+       actionOnFimValidacao="actValidarCep"}}
+Bairro: {{inputs/generic-input disabled="disabled"
+          value=model.bairro}}
+Logradouro: {{inputs/generic-input disabled="disabled"
+              value=model.logradouro}}
+Tipo Logradouro: {{inputs/generic-input
+                    value=model.tipoLogradouro}}
+Número: {{inputs/numeric-input
+          value=model.numero}}
+Complemento: {{inputs/generic-input
+               value=model.complemento}}
+Código IBGE do Município: {{inputs/generic-input disabled="disabled"
+                            value=model.codIbgeMunicipio}}
+Cidade: {{inputs/generic-input disabled="disabled"
+          value=model.cidade}}
