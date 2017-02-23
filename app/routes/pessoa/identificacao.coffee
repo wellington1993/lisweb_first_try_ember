@@ -10,11 +10,21 @@ PessoaIdentificacaoRoute = AbstractRoutesPrivateRouteRoute.extend(RequestsPessoa
 
     self = @
 
-    @obterIdentificacao(pessoaId: transition.params.pessoa.id).then(
-      (data) ->
-        return data
-      (err) ->
-        self.transitionTo("pessoas")
+    pessoaIdentificacao =
+
+      @obterIdentificacao(pessoaId: transition.params.pessoa.id).then(
+        (data) ->
+          return data
+        (err) ->
+          self.transitionTo("pessoas")
+      )
+
+    tiposPessoa = @get("store").findAll("tipo-pessoa")
+
+    return Ember.RSVP.hash(
+      pessoa: pessoaIdentificacao
+      tiposPessoa: tiposPessoa
     )
+
 )
 export default PessoaIdentificacaoRoute

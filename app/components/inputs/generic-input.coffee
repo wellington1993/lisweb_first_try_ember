@@ -1,10 +1,11 @@
 import Ember from 'ember'
 import UtilsComponentsInputMixin from '../../mixins/utils/components/input'
+import UtilsMixin from '../../mixins/utils'
 
 #Este é o componente principal para todos os input-texts da aplicação.
 #Os novos componentes devem herdar deste ou de classes filhas deste componente.
 
-InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin,
+InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, UtilsMixin, 
 
   #############################################################################
   #Inicio - Atributos definidos pelo contexto externo.

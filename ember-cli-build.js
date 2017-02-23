@@ -45,5 +45,7 @@ module.exports = function(defaults) {
 
   app.import("bower_components/components-font-awesome/css/font-awesome.min.css")
 
+  app.import("bower_components/jquery-mask-plugin/dist/jquery.mask.min.js");
+
   return app.toTree();
 };

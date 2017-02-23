@@ -17,17 +17,18 @@ StoreService = DS.Store.extend(
       callback(false, null, response.status)
 
     #Concatena o host contido no adapter + endpoint de destino.
-    ajaxParams["url"] = adapter.get("host") + ajaxParams["url"]
+    if ajaxParams["url"].substring(0, 4) != "http"
+      ajaxParams["url"] = adapter.get("host") + ajaxParams["url"]
 
     #Se o caller não definiu nenhum header, os headers são obtidos do adapter.
-    if !ajaxParams.hasOwnProperty("headers")
+    if !ajaxParams.hasOwnProperty("headers") && !ajaxParams["overrideHeaders"]
 
       try
         adapterHeaders = adapter.headersForRequest()
 
         if adapterHeaders
           ajaxParams["headers"] = adapterHeaders
-      catch e 
+      catch e
 
     Ember.$.ajax(ajaxParams)
 

@@ -1,1 +1,16 @@
-{{model.nome}}
+{{select-options
+  arrayOpcoes=arraySelectOptionsTipoPessoa
+  actionOnChange="actEscolherComboTipoPessoa"}}
+
+<div id="dados-identificacao-pessoa-fisica" style="display:none;">
+  Nome: {{inputs/generic-input}}
+  RG: {{inputs/generic-input}}
+  CPF: {{inputs/mask-cpf}}
+</div>
+
+<div id="dados-identificacao-pessoa-juridica" style="display:none;">
+  Nome Fantasia: {{inputs/generic-input}}
+  Razao Social: {{inputs/generic-input}}
+  CNPJ: {{inputs/mask-cnpj}}
+  Inscrição Estadual: {{inputs/generic-input}}
+</div>
