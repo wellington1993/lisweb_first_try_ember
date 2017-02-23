@@ -2,7 +2,7 @@ import Ember from 'ember'
 import config from './config/environment'
 
 Router = Ember.Router.extend(
-  location: config.locationType,
+  location: "hash",
   rootURL: config.rootURL
 )
 
@@ -18,6 +18,14 @@ Router.map( ->
   @route('unidades-de-medida')
   @route('cadastrar-unidade-de-medida')
   @route('pessoas')
+
+  @route('pessoa', path: "pessoa/:id", ->
+    @route("contato")
+    @route("enderecamento")
+    @route("identificacao")
+  )
+
+
 
   @route('laboratorios')
   @route('login')
