@@ -9,8 +9,10 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
 
   #(params, callbackOnAjaxComplete[success, data])
   actionOnSubmit: null
-
   actionOnSubmitted: null
+
+  #(params[errors, callback])
+  actionOnInvalidate: null
 
   didInsertElement: ->
     @mapSelectors()
@@ -57,7 +59,7 @@ FormsGenericFormComponent = Ember.Component.extend(UtilsComponentsBootstrapBoxAl
 
   #Método final para submeter o formulário após todas as validações.
   #As classes que herdarem devem implementar este método.
-  submitForm: ->
+  submitForm: (callbackOnAjaxComplete) ->
     @sendAction("actionOnSubmit", {})
     return true
 

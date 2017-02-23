@@ -1,16 +1,44 @@
-{{select-options
+Tipo: {{select-options
+  id="cmb-tipo-pessoa"
   arrayOpcoes=arraySelectOptionsTipoPessoa
   actionOnChange="actEscolherComboTipoPessoa"}}
 
 <div id="dados-identificacao-pessoa-fisica" style="display:none;">
-  Nome: {{inputs/generic-input}}
-  RG: {{inputs/generic-input}}
-  CPF: {{inputs/mask-cpf}}
+  Nome: {{inputs/generic-input
+          id="txt-nome-pf"
+          value=model.nome
+          maxlength=255
+          actionOnFimValidacao="actValidarNome"}}
+  RG: {{inputs/generic-input
+        maxlength=30
+        value=model.rg}}
+  CPF: {{inputs/mask-cpf
+        id="txt-cpf"
+        value=cpf
+        vazioValido=true
+        actionOnFimValidacao="actValidarCpf"}}
 </div>
 
 <div id="dados-identificacao-pessoa-juridica" style="display:none;">
-  Nome Fantasia: {{inputs/generic-input}}
-  Razao Social: {{inputs/generic-input}}
-  CNPJ: {{inputs/mask-cnpj}}
-  Inscrição Estadual: {{inputs/generic-input}}
+  Nome Fantasia: {{inputs/generic-input
+                    id="txt-nome-pj"
+                    value=model.nome
+                    maxlength=255
+                    actionOnFimValidacao="actValidarNome"}}
+  Razao Social: {{inputs/generic-input
+                  value=model.razaoSocial
+                  maxlength=255}}
+
+  CNPJ: {{inputs/mask-cnpj
+          id="txt-cnpj"
+          value=cnpj
+          vazioValido=true
+          actionOnFimValidacao="actValidarCnpj"}}
+
+  Inscrição Estadual: {{inputs/generic-input
+                        value=model.inscricaoEstadual
+                        maxlength=255}}
+
 </div>
+
+<button {{action "actShowDirty"}}> SHOW DIRTY! </button>

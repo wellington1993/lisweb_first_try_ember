@@ -5,7 +5,7 @@ import UtilsMixin from '../../mixins/utils'
 #Este é o componente principal para todos os input-texts da aplicação.
 #Os novos componentes devem herdar deste ou de classes filhas deste componente.
 
-InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, UtilsMixin, 
+InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, UtilsMixin,
 
   #############################################################################
   #Inicio - Atributos definidos pelo contexto externo.
@@ -127,7 +127,10 @@ InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, 
 
       #Se não foi atribuída nenhuma action para validação assíncrona:
       if !context.get("validarAssincronamente")
-        return callbackOnValidacaoCompleta(valido: true)
+        params           = {}
+        params["valido"] = true
+        params           = context.paramsRetornoFimValidacao(params)
+        return callbackOnValidacaoCompleta(params)
 
       #Indica ao contexto externo de que uma validação assíncrona irá se iniciar.
       context.sendAction("actionOnIniciarValidacaoAssincrona")

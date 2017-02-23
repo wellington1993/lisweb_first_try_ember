@@ -38,9 +38,22 @@ InputsGenericMaskComponent = InputsGenericInputComponent.extend(
   #Override da classe mãe InputsInputGenericoComponent
   realizarValidacoesAdicionais: (callbackOnValidacaoCompleta) ->
 
+    #Se a mascara esta vazia e o valor vazio é valido:
+    if !@get("value") || new String(@get("value")).trim().length == 0 && @get("vazioValido")
+      return callbackOnValidacaoCompleta(valido: true)
+
     #Valida a consistência do valor quanto à máscara utilizada.
     if !@validarValorMascara()
-      return callbackOnValidacaoCompleta(valido: false)
+
+      params = valido: false
+
+      try
+        params["value"]           = @get("value")
+        params["valueSemMascara"] = @obterValorSemMascara()
+      catch e
+
+
+      return callbackOnValidacaoCompleta(params)
 
     #Se o valor está válido em relação à máscara a validação será continuada
     #pelo método da super classe.
