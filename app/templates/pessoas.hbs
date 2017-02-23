@@ -13,7 +13,7 @@
       <tr>
         <td>{{pessoa.nome}}</td>
         <td>{{pessoa.tipoPessoa.nome}}</td>
-        <td>{{#link-to "pessoa" pessoa class="btn btn-default"}}Visualizar{{/link-to}}</td>
+        <td>{{#link-to "pessoas.show" pessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
       </tr>
       {{/each}}
     </tbody>
