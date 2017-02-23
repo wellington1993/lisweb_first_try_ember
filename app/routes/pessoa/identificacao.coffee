@@ -19,7 +19,7 @@ PessoaIdentificacaoRoute = AbstractRoutesPrivateRouteRoute.extend(RequestsPessoa
           self.transitionTo("pessoas")
       )
 
-    tiposPessoa = @get("store").findAll("tipo-pessoa")
+    tiposPessoa = @get("store").findAll("tipo-pessoa", reload: true)
 
     return Ember.RSVP.hash(
       pessoa: pessoaIdentificacao

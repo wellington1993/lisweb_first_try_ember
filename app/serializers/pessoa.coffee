@@ -12,7 +12,7 @@ PessoaSerializer = ApplicationSerializer.extend(
 
     currentRecord = @get("store").peekRecord("pessoa", normalizedPayload.data.id)
 
-    if currentRecord == null
+    if currentRecord == null || !currentRecord.get("hasDirtyAttributes")
       return normalizedPayload
 
     Object.keys(normalizedPayload.data.relationships).forEach(

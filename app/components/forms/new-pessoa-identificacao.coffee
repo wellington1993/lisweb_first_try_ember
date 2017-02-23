@@ -69,8 +69,6 @@ FormsNewPessoaIdentificacaoComponent = FormsGenericFormComponent.extend(
 
   submitForm: (callbackOnSubmitComplete) ->
 
-    console.log("AUI")
-
   actions:
 
     actEscolherComboTipoPessoa: (idTipoPessoa) ->

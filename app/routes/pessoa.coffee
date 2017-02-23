@@ -7,6 +7,15 @@ PessoaRoute = Ember.Route.extend(
 
   actions:
 
+    willTransition: (transition) ->
+
+      if transition.targetName.substring(0,7) != "pessoa."
+
+        model = @controllerFor("pessoa").get("model")
+
+        if model
+          model.rollbackAttributes()
+
     actRedirecionar: (rota) ->
       @transitionTo(rota)
 )
