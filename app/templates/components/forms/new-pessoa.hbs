@@ -1,4 +1,3 @@
-<!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#tab-pessoa-identificacao" aria-controls="home" role="tab" data-toggle="tab">identificação</a></li>
   <li role="presentation"><a href="#tab-pessoa-contato" aria-controls="messages" role="tab" data-toggle="tab">Contato</a></li>
@@ -8,48 +7,90 @@
 <div class="tab-content">
 
   <div role="tabpanel" class="tab-pane active" id="tab-pessoa-identificacao">
-    Tipo: <span class="required-input">(*)</span><br>
-    {{select-options
-      id="cmb-tipo-pessoa"
-      arrayOpcoes=arraySelectOptionsTipoPessoa
-      actionOnChange="actEscolherComboTipoPessoa"}}
+
+    <div class="row">
+      <div class="col-lg-6">
+        Tipo: <span class="required-input">(*)</span>
+        {{select-options
+          id="cmb-tipo-pessoa"
+          class="form-control"
+          arrayOpcoes=arraySelectOptionsTipoPessoa
+          actionOnChange="actEscolherComboTipoPessoa"}}
+      </div>
+    </div>
 
     <div id="dados-identificacao-pessoa-fisica" style="display:none;">
-      Nome: <span class="required-input">(*)</span> {{inputs/generic-input
-              id="txt-nome-pf"
-              value=model.nome
-              maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
-      RG: {{inputs/generic-input
-            maxlength=30
-            value=model.rg}}
-      CPF: {{inputs/mask-cpf
-            id="txt-cpf"
-            value=cpf
-            vazioValido=true
-            actionOnFimValidacao="actValidarCpf"}}
+
+      <div class="row">
+        <div class="col-lg-6">
+          Nome: <span class="required-input">(*)</span>
+          {{inputs/generic-input
+            id="txt-nome-pf"
+            value=model.nome
+            maxlength=255
+            actionOnFimValidacao="actValidarNome"}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          RG: {{inputs/generic-input
+                maxlength=30
+                value=model.rg}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          CPF: {{inputs/mask-cpf
+                id="txt-cpf"
+                value=cpf
+                vazioValido=true
+                actionOnFimValidacao="actValidarCpf"}}
+        </div>
+      </div>
+
     </div>
 
     <div id="dados-identificacao-pessoa-juridica" style="display:none;">
-      Nome Fantasia: <span class="required-input">(*)</span>
-      {{inputs/generic-input
-        id="txt-nome-pj"
-        value=model.nome
-        maxlength=255
-        actionOnFimValidacao="actValidarNome"}}
-      Razao Social: {{inputs/generic-input
-                      value=model.razaoSocial
-                      maxlength=255}}
 
-      CNPJ: {{inputs/mask-cnpj
-              id="txt-cnpj"
-              value=cnpj
-              vazioValido=true
-              actionOnFimValidacao="actValidarCnpj"}}
+      <div class="row">
+        <div class="col-lg-6">
+          Nome Fantasia: <span class="required-input">(*)</span>
+          {{inputs/generic-input
+            id="txt-nome-pj"
+            value=model.nome
+            maxlength=255
+            actionOnFimValidacao="actValidarNome"}}
+        </div>
+      </div>
 
-      Inscrição Estadual: {{inputs/generic-input
-                            value=model.inscricaoEstadual
-                            maxlength=255}}
+      <div class="row">
+        <div class="col-lg-6">
+          Razao Social: {{inputs/generic-input
+                          value=model.razaoSocial
+                          maxlength=255}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          CNPJ: {{inputs/mask-cnpj
+                  id="txt-cnpj"
+                  value=cnpj
+                  vazioValido=true
+                  actionOnFimValidacao="actValidarCnpj"}}
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-6">
+          Inscrição Estadual: {{inputs/generic-input
+                                value=model.inscricaoEstadual
+                                maxlength=255}}
+        </div>
+      </div>
 
     </div>
 
@@ -57,58 +98,139 @@
 
   <div role="tabpanel" class="tab-pane" id="tab-pessoa-enderecamento">
 
-    CEP: {{inputs/mask-cep
-           vazioValido=true
-           value=cep
-           actionOnFimValidacao="actValidarCep"}}
-    Bairro: {{inputs/generic-input disabled="disabled"
-              value=model.bairro}}
-    Logradouro: {{inputs/generic-input disabled="disabled"
-                  value=model.logradouro}}
-    Tipo Logradouro: {{inputs/generic-input
-                        value=model.tipoLogradouro}}
-    Número: {{inputs/numeric-input
-              value=model.numero}}
-    Complemento: {{inputs/generic-input
-                   value=model.complemento}}
-    Código IBGE do Município: {{inputs/generic-input disabled="disabled"
-                                value=model.codIbgeMunicipio}}
-    Cidade: {{inputs/generic-input disabled="disabled"
-              value=model.cidade}}
+    <div class="row">
+      <div class="col-lg-6">
+        CEP: {{inputs/mask-cep
+               vazioValido=true
+               value=cep
+               actionOnFimValidacao="actValidarCep"}}
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-lg-6">
+        Bairro: {{inputs/generic-input disabled="disabled"
+                  value=model.bairro}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Logradouro: {{inputs/generic-input disabled="disabled"
+                      value=model.logradouro}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+      Tipo Logradouro: {{inputs/generic-input
+                          value=model.tipoLogradouro}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Número: {{inputs/numeric-input
+                  value=model.numero}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Complemento: {{inputs/generic-input
+                       value=model.complemento}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Código IBGE do Município: {{inputs/generic-input disabled="disabled"
+                                    value=model.codIbgeMunicipio}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Cidade: {{inputs/generic-input disabled="disabled"
+                  value=model.cidade}}
+      </div>
+    </div>
 
   </div>
 
   <div role="tabpanel" class="tab-pane" id="tab-pessoa-contato">
 
-    Contato: {{inputs/generic-input
-                value=model.contato}}
-    E-mail: {{inputs/email-input
-              id="txt-email"
-              value=model.email
-              vazioValido=true
-              actionOnFimValidacao="actValidarEmail"}}
-    Fone: {{inputs/mask-telefone
-            id="txt-fone"
-            value=telefone
-            vazioValido=true
-            actionOnFimValidacao="actValidarTelefone"}}
-    Celular: {{inputs/mask-telefone
-               id="txt-celular"
-               value=celular
+    <div class="row">
+      <div class="col-lg-6">
+        Contato: {{inputs/generic-input
+                    value=model.contato}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        E-mail: {{inputs/email-input
+                  id="txt-email"
+                  value=model.email
+                  vazioValido=true
+                  actionOnFimValidacao="actValidarEmail"}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Fone: {{inputs/mask-telefone
+                id="txt-fone"
+                value=telefone
+                vazioValido=true
+                actionOnFimValidacao="actValidarTelefone"}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Celular: {{inputs/mask-telefone
+                   id="txt-celular"
+                   value=celular
+                   vazioValido=true
+                   actionOnFimValidacao="actValidarCelular"}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        Fax: {{inputs/mask-telefone
+               id="txt-fax"
+               value=fax
                vazioValido=true
-               actionOnFimValidacao="actValidarCelular"}}
-    Fax: {{inputs/mask-telefone
-           id="txt-fax"
-           value=fax
-           vazioValido=true
-           actionOnFimValidacao="actValidarFax"}}
+               actionOnFimValidacao="actValidarFax"}}  
+      </div>
+    </div>
+
+
+
+
+
+
 
 
   </div>
 
 </div>
 
-<button type="submit">Salvar</button>
+<br>
 
-  {{bootstrap/box-alert}}
+<div class="row">
+  <div class="col-lg-6">
+    {{#link-to "pessoas" class="btn btn-default"}}<i class="fa fa-long-arrow-left"></i>&nbsp;Voltar{{/link-to}}
+    <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Salvar</button>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-lg-6">
+    {{bootstrap/box-alert}}
+  </div>
+</div>
