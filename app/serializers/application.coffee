@@ -2,9 +2,12 @@ import DS from 'ember-data'
 
 ApplicationSerializer = DS.RESTSerializer.extend(
 
+  #Assegura que a chave do JSON principal seja underscore e não camelCase.
   payloadKeyFromModelName: (modelName) ->
     return modelName.underscore()
 
+
+  #Assegura que os atributos do JSON sejam sempre underscore e não camelCase.
   normalize: (typeClass, hash) ->
 
     Object.keys(hash).forEach(
@@ -24,12 +27,16 @@ ApplicationSerializer = DS.RESTSerializer.extend(
 
     return @_super(typeClass, hash)
 
+
+  #Assegura que todos os atributos do JSON a ser enviado sejam under_score
+  #e os atributos recebidos da API sejam camelCase.
   keyForAttribute: (key, method) ->
     if method == "serialize"
       return key.underscore()
     else
       return key.camelize()
 
+  #Concatena a extensão _ID ou id para os relacionamentos.
   keyForRelationship: (key, relationship, method) ->
 
     relationshipKey = null
@@ -41,6 +48,7 @@ ApplicationSerializer = DS.RESTSerializer.extend(
 
     return relationshipKey
 
+  #Se é um update deve serializar apenas os atributos alterados.
   serializeAttribute: (snapshot, json, key, attribute) ->
 
     model = snapshot.record

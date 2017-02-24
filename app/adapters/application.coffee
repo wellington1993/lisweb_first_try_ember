@@ -11,16 +11,23 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
   #do Ember-Data estejam autorizadas.
   authorizer: 'authorizer:application'
 
+  #Tratamento para códigos HTTP específicos recebidos pelo Ember Data.
   handleResponse: (status, headers, payload, requestData) ->
 
+    #Caso o código seja 403 (não autorizado: )
     if status == 403
       window.location.href = "/nao-autorizado"
     else
       return @_super(status, headers, payload, requestData)
 
+  #Faz com que o nome dos endpoints que se refiram a models seja convertidos
+  #de camelcase para underscore e no plural.
+  #Ex: model TipoPessoa deve utilizar o endpoint /tipos_pessoa e não /tipoPessoa
   pathForType: (modelName) ->
     return modelName.pluralize().underscore()
 
+  #Faz com que o endpoint default do método "query" seja o mesmo endpoint do
+  #método findAll. Pois o método findAll do Ember não suporta metadados.
   urlForQuery: (query, modelName) ->
 
     try
@@ -30,13 +37,15 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
 
     return @_super(query, modelName)
 
+  #Realiza tratamento para quando o método possui o parâmetro "action."
   query: (store, type, query) ->
 
+    #Se a action é findAll o atributo da query deve ser excluído.
     if query.hasOwnProperty("action") && query["action"] == "findAll"
       delete query["action"]
 
     return @_super(store, type, query)
-
+    
 )
 
 export default ApplicationAdapter

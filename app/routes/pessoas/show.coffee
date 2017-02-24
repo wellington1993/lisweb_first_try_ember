@@ -7,7 +7,7 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
 
     self = @
 
-    pessoa      = @get("store").findRecord("pessoa", params["pessoa_id"], reload: true).then(
+    pessoa  = @get("store").findRecord("pessoa", params["pessoa_id"], reload: true).then(
       (data) ->
         return data
       (err) ->
@@ -17,6 +17,8 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     )
     tiposPessoa = @get("store").findAll("tipo-pessoa", reload: true)
 
+    #O model deve receber a pessoa a ser editada + todos os tipos de pessoa
+    #possíveis para serem utilizados no combobox de tipo de pessoa.
     return Ember.RSVP.hash(
       pessoa: pessoa
       tiposPessoa: tiposPessoa
@@ -24,6 +26,8 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   actions:
 
+    #Se os atributos foram alterados e não salvos ao sair da rota as alterações
+    #devem ser desfeitas.
     willTransition: ->
       @controllerFor("pessoas.show").get("model")["pessoa"].rollbackAttributes()
 

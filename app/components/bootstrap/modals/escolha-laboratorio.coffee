@@ -5,8 +5,10 @@ BootstrapModalsEscolhaLaboratorioComponent = BootstrapModalsGenericModalComponen
 
   applicationSession: Ember.inject.service()
 
+  #Atributo proveniente do contexto externo.
   laboratorio: null
 
+  #Atributos para armazenar seletores jQuery.
   janelaSpinner: null
   janelaErro: null
   janelaSucesso: null
@@ -30,6 +32,7 @@ BootstrapModalsEscolhaLaboratorioComponent = BootstrapModalsGenericModalComponen
         self.escolherLaboratorioInterno()
     )
 
+  #Faz requisição para escolher o laboratório.
   escolherLaboratorioInterno: ->
 
     self = @
