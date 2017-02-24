@@ -1,15 +1,22 @@
-<h2 class="form-signin-heading">Por favor, informe seus dados de acesso</h2>
-
-{{inputs/email-input
-  value=email
-  placeholder="Insira seu e-mail:"
-  actionOnFimValidacao="actValidarCampoEmail"}}
-
-{{inputs/password-input
-  value=senha
-  placeholder="Insira sua senha:"
-  actionOnFimValidacao="actValidarCampoSenha"}}
-
-<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+<div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  {{inputs/email-input
+    id="txt-email"
+    value=email
+    placeholder="Insira seu e-mail:"
+    actionOnFimValidacao="actValidarCampoEmail"}}
+</div>
+<br>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    {{inputs/password-input
+      id="txt-senha"
+      value=senha
+      placeholder="Insira sua senha:"
+      actionOnFimValidacao="actValidarCampoSenha"}}
+</div>
+<br>
+<button type="submit" class="btn btn-primary btn-block btn-lg button-entrar">Entrar</button>
+<br>
 
 {{bootstrap/box-alert}}

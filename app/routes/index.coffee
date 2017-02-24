@@ -1,6 +1,6 @@
 import Ember from 'ember'
-import AbstractRoutesPublicRouteRoute from './abstract-routes/public-route'
+import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 
-IndexRoute = AbstractRoutesPublicRouteRoute.extend()
+IndexRoute = AbstractRoutesPrivateRouteRoute.extend()
 
 export default IndexRoute

@@ -1,0 +1,11 @@
+.box-login .campos-login{
+  border: 2px solid #e7e7e7;
+  padding: 3em;
+  border-radius: 10px;
+}
+.box-login .esqueci-senha{
+  margin-left: -1em;
+}
+.box-login .button-entrar{
+  border-radius: 0px;
+}

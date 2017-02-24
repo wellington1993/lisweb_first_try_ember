@@ -23,6 +23,14 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/dist/css/bootstrap-theme.css');
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 
+  app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff', {
+    destDir: 'fonts'
+  })
+
+  app.import('bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2', {
+    destDir: 'fonts'
+  })
+
   app.import('bower_components/components-font-awesome/fonts/fontawesome-webfont.eot', {
     destDir: 'fonts'
   })
@@ -46,6 +54,8 @@ module.exports = function(defaults) {
   app.import("bower_components/components-font-awesome/css/font-awesome.min.css")
 
   app.import("bower_components/jquery-mask-plugin/dist/jquery.mask.min.js");
+
+  app.import("bower_components/animate.css/animate.min.css");
 
   return app.toTree();
 };

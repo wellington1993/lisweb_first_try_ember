@@ -23,7 +23,6 @@ Router.map( ->
 
   @route('laboratorios')
   @route('login')
-  @route('dashboard')
   @route('nao-autorizado')
   @route('pagina-nao-encontrada', { path: '/*path' });
 
