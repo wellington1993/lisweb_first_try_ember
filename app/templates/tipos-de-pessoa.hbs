@@ -1,30 +1,56 @@
-{{#link-to "cadastrar-tipo-de-pessoa"}} Cadastrar Tipo de Pessoa {{/link-to}}
+<div class="container animated fadeInUp">
 
-<div class="container">
-  <h1>Listagem de Tipos de Pessoa</h1>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Tipo</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each model as |tipoPessoa index|}}
-      <tr>
-        <td>{{tipoPessoa.nome}}</td>
-        <td>{{tipo-tipo-pessoa tipoPessoa.tipo}}</td>
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</div>
+  {{#if model.length}}
 
-<div class="pagination-center text-center">
-{{bootstrap/dynamic-pagination
-  class="pagination"
-  actionOnClick="actPaginar"
-  totalPaginas=pagination.total_pages
-  paginaAtual=pagination.current_page
-  mostrarProximoAnterior=true}}
+  {{#link-to "cadastrar-tipo-de-pessoa"}} Cadastrar Tipo de Pessoa {{/link-to}}
+
+  <div class="container">
+    <h1>Listagem de Tipos de Pessoa</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |tipoPessoa index|}}
+        <tr>
+          <td>{{tipoPessoa.nome}}</td>
+          <td>{{tipo-tipo-pessoa tipoPessoa.tipo}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-center text-center">
+  {{bootstrap/dynamic-pagination
+    class="pagination"
+    actionOnClick="actPaginar"
+    totalPaginas=pagination.total_pages
+    paginaAtual=pagination.current_page
+    mostrarProximoAnterior=true}}
+  </div>
+
+  {{else}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <h1>
+                        Não há tipos de pessoa a serem listadas</h1>
+                    <div class="text-center">
+                        Nenhum registro foi encontrado.
+                    </div>
+                    <div class="error-actions">
+                      {{#link-to "cadastrar-tipo-de-pessoa" class="btn btn-primary btn-lg"}} Cadastrar novo tipo de pessoa {{/link-to}}
+                      {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {{/if}}
+
 </div>
