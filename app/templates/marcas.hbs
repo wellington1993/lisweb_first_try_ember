@@ -1,26 +1,37 @@
 <div class="container animated fadeInUp">
   {{#if model.length}}
 
-  {{#link-to "cadastrar-marca"}} Cadastrar nova marca {{/link-to}}
-
   <div class="container">
-    <h1>Listagem de marcas</h1>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Marca</th>
-          <th>Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each model as |marca index|}}
-        <tr>
-          <td>{{marca.nome}}</td>
-          <td>{{marca.descricao}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <div class="col-lg-12 table-responsive">
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h3>Marcas</h3>
+        </div>
+
+        <div class="col-lg-6">
+        {{#link-to "cadastrar-marca"class="btn btn-default btn-md pull-right"}}
+          <i class="fa fa-file"></i>&nbsp;Novo registro
+        {{/link-to}}
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |marca index|}}
+          <tr>
+            <td>{{marca.nome}}</td>
+            <td>{{marca.descricao}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="pagination-center text-center">

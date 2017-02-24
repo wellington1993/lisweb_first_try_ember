@@ -2,26 +2,40 @@
 
   {{#if model.length}}
 
-  {{#link-to "cadastrar-tipo-de-pessoa"}} Cadastrar Tipo de Pessoa {{/link-to}}
-
   <div class="container">
-    <h1>Listagem de Tipos de Pessoa</h1>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each model as |tipoPessoa index|}}
-        <tr>
-          <td>{{tipoPessoa.nome}}</td>
-          <td>{{tipo-tipo-pessoa tipoPessoa.tipo}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+
+    <div class="col-lg-12 table-responsive">
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h3>Tipos de pessoa</h3>
+        </div>
+
+        <div class="col-lg-6">
+        {{#link-to "cadastrar-tipo-de-pessoa"class="btn btn-default btn-md pull-right"}}
+          <i class="fa fa-file"></i>&nbsp;Novo registro
+        {{/link-to}}
+        </div>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |tipoPessoa index|}}
+          <tr>
+            <td>{{tipoPessoa.nome}}</td>
+            <td>{{tipo-tipo-pessoa tipoPessoa.tipo}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
   <div class="pagination-center text-center">

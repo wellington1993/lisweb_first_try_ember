@@ -1,26 +1,40 @@
-<div class="container animated fadeInUp">
+<div class="container geral-grid animated fadeInUp">
   {{#if model.length}}
 
-  {{#link-to "cadastrar-categoria-de-produto"}} Cadastrar Categoria de Produto {{/link-to}}
-
   <div class="container">
-    <h1>Listagem de Categorias de Produto</h1>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Descrição</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each model as |categoriaProduto index|}}
-        <tr>
-          <td>{{categoriaProduto.nome}}</td>
-          <td>{{categoriaProduto.descricao}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+
+    <div class="col-lg-12 table-responsive">
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h3>Categorias de produto</h3>
+        </div>
+
+        <div class="col-lg-6">
+        {{#link-to "cadastrar-categoria-de-produto"class="btn btn-default btn-md pull-right"}}
+          <i class="fa fa-file"></i>&nbsp;Novo registro
+        {{/link-to}}
+        </div>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |categoriaProduto index|}}
+          <tr>
+            <td>{{categoriaProduto.nome}}</td>
+            <td>{{categoriaProduto.descricao}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="pagination-center text-center">
