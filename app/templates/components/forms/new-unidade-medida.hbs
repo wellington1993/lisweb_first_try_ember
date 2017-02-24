@@ -1,25 +1,49 @@
-{{inputs/generic-input
-  value=nome
-  lengthMinimo=1
-  maxlength=255
-  placeholder="Nome da unidade de medida:"
-  actionOnFimValidacao="actValidarNome"}}
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=nome
+      lengthMinimo=1
+      maxlength=255
+      placeholder="Nome da unidade de medida:"
+      actionOnFimValidacao="actValidarNome"}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=descricao
+      lengthMinimo=1
+      maxlength=255
+      placeholder="Descrição da unidade de medida:"
+      actionOnFimValidacao="actValidarDescricao"}}
 
-{{inputs/generic-input
-  value=descricao
-  lengthMinimo=1
-  maxlength=255
-  placeholder="Descrição da unidade de medida:"
-  actionOnFimValidacao="actValidarDescricao"}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=sigla
+      lengthMinimo=1
+      maxlength=10
+      placeholder="Sigla:"
+      actionOnFimValidacao="actValidarSigla"}}
+  </div>
+</div>
+<br>
 
-{{inputs/generic-input
-  value=sigla
-  lengthMinimo=1
-  maxlength=10
-  placeholder="Sigla:"
-  actionOnFimValidacao="actValidarSigla"}}
 
+<div class="row">
 
-  {{bootstrap/box-alert}}
-
-<button type="submit">Cadastrar</button>
+  <div class="col-lg-12">
+    {{#link-to "unidades-de-medida" class="btn btn-default"}}<i class="fa fa-long-arrow-left"></i>&nbsp;Voltar{{/link-to}}
+    <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Salvar</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{bootstrap/box-alert}}
+  </div>
+</div>

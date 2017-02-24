@@ -1,13 +1,33 @@
-{{inputs/generic-input
-  value=nome
-  lengthMinimo=1
-  maxlength=255
-  placeholder="Nome:"
-  actionOnFimValidacao="actValidarNome"}}
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=nome
+      lengthMinimo=1
+      maxlength=255
+      placeholder="Nome:"
+      actionOnFimValidacao="actValidarNome"}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{select-options-tipo-pessoa
+      class="form-control"
+      actionOnChange="actAtribuirTipoPessoa"}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{#link-to "tipos-de-pessoa" class="btn btn-default"}}<i class="fa fa-long-arrow-left"></i>&nbsp;Voltar{{/link-to}}
+    <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Salvar</button>
+  </div>
+</div>
 
-{{select-options-tipo-pessoa
-  actionOnChange="actAtribuirTipoPessoa"}}
+<br>
 
-{{bootstrap/box-alert}}
-
-<button type="submit">Cadastrar</button>
+<div class="row">
+  <div class="col-lg-12">
+    {{bootstrap/box-alert}}
+  </div>
+</div>
