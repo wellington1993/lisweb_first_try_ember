@@ -8,7 +8,7 @@
 </li>
 {{/if}}
 
-{{#each totalPaginasArray as |item|}}
+{{#each paginasVisiveis as |item|}}
   <li class="li-pg-{{item}}">
     <a href="#" {{action "actCliqueBotaoNumerico" item}}>
       {{item}}
@@ -20,6 +20,14 @@
 <li class="li-pg-prox">
   <a href="#" {{action "actCliqueBotaoProximo"}}>
     {{labelBtnProximo}}
+  </a>
+</li>
+{{/if}}
+
+{{#if mostrarBotaoUltimo}}
+<li class="li-pg-prox">
+  <a href="#" {{action "actCliqueBotaoUltima"}}>
+    Última
   </a>
 </li>
 {{/if}}

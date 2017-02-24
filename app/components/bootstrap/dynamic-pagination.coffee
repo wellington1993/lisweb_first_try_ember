@@ -1,7 +1,7 @@
 import Ember from 'ember'
 import UtilsMixin from '../../mixins/utils'
 
-BootstrapDynamicPaginationComponent = Ember.Component.extend(UtilsMixin, 
+BootstrapDynamicPaginationComponent = Ember.Component.extend(UtilsMixin,
 
   tagName: "ul"
 
@@ -11,9 +11,21 @@ BootstrapDynamicPaginationComponent = Ember.Component.extend(UtilsMixin,
   paginaAtual: null
   labelBtnAnterior: "Anterior"
   labelBtnProximo: "Próximo"
+  mostrarBotaoUltimo: true
 
   totalPaginasArray: Ember.computed("totalPaginas", ->
     return @intForArray(@get("totalPaginas"))
+  )
+
+  paginasVisiveis: Ember.computed("totalPaginasArray.length", ->
+
+    totalPaginasArray = @get("totalPaginasArray")
+
+    if totalPaginasArray.get("length") > 10
+      return @intForArray(10)
+
+    return totalPaginasArray
+
   )
 
   didReceiveAttrs: (args) ->
@@ -98,6 +110,9 @@ BootstrapDynamicPaginationComponent = Ember.Component.extend(UtilsMixin,
 
     actCliqueBotaoProximo: ->
       @cliquePaginador(parseInt(@get("paginaAtual")) + 1)
+
+    actCliqueBotaoUltima: ->
+      @cliquePaginador(@get("totalPaginasArray").get("length"))
 
 )
 
