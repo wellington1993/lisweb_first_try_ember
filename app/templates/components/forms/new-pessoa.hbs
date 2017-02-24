@@ -8,13 +8,14 @@
 <div class="tab-content">
 
   <div role="tabpanel" class="tab-pane active" id="tab-pessoa-identificacao">
-    Tipo: {{select-options
+    Tipo: <span class="required-input">(*)</span><br>
+    {{select-options
       id="cmb-tipo-pessoa"
       arrayOpcoes=arraySelectOptionsTipoPessoa
       actionOnChange="actEscolherComboTipoPessoa"}}
 
     <div id="dados-identificacao-pessoa-fisica" style="display:none;">
-      Nome: {{inputs/generic-input
+      Nome: <span class="required-input">(*)</span> {{inputs/generic-input
               id="txt-nome-pf"
               value=model.nome
               maxlength=255
@@ -30,11 +31,12 @@
     </div>
 
     <div id="dados-identificacao-pessoa-juridica" style="display:none;">
-      Nome Fantasia: {{inputs/generic-input
-                        id="txt-nome-pj"
-                        value=model.nome
-                        maxlength=255
-                        actionOnFimValidacao="actValidarNome"}}
+      Nome Fantasia: <span class="required-input">(*)</span>
+      {{inputs/generic-input
+        id="txt-nome-pj"
+        value=model.nome
+        maxlength=255
+        actionOnFimValidacao="actValidarNome"}}
       Razao Social: {{inputs/generic-input
                       value=model.razaoSocial
                       maxlength=255}}
@@ -107,4 +109,6 @@
 
 </div>
 
-<button>Salvar</button>
+<button type="submit">Salvar</button>
+
+  {{bootstrap/box-alert}}

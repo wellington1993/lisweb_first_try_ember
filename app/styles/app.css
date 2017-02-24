@@ -1,3 +1,8 @@
 body {
     padding-top: 65px;
 }
+
+.required-input {
+  font-size: 10px;
+  color: #d23e2b
+}

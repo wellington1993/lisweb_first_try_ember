@@ -7,7 +7,7 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
 
     self = @
 
-    pessoa      = @get("store").findRecord("pessoa", params["pessoa_id"]).then(
+    pessoa      = @get("store").findRecord("pessoa", params["pessoa_id"], reload: true).then(
       (data) ->
         return data
       (err) ->
@@ -15,12 +15,20 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
         self.transitionTo("pessoas")
 
     )
-    tiposPessoa = @get("store").findAll("tipo-pessoa")
+    tiposPessoa = @get("store").findAll("tipo-pessoa", reload: true)
 
     return Ember.RSVP.hash(
       pessoa: pessoa
       tiposPessoa: tiposPessoa
     )
+
+  actions:
+
+    willTransition: ->
+      @controllerFor("pessoas.show").get("model")["pessoa"].rollbackAttributes()
+
+    actRedirecionar: ->
+      @transitionTo("pessoas")
 
 )
 

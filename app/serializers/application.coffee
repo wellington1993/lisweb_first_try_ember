@@ -24,6 +24,12 @@ ApplicationSerializer = DS.RESTSerializer.extend(
 
     return @_super(typeClass, hash)
 
+  keyForAttribute: (key, method) ->
+    if method == "serialize"
+      return key.underscore()
+    else
+      return key.camelize()
+
   keyForRelationship: (key, relationship, method) ->
 
     relationshipKey = null
@@ -34,6 +40,28 @@ ApplicationSerializer = DS.RESTSerializer.extend(
       relationshipKey = key.camelize() + "Id"
 
     return relationshipKey
+
+  serializeAttribute: (snapshot, json, key, attribute) ->
+
+    model = snapshot.record
+
+    if !model.get("isNew")
+
+      changedAttrs = model.changedAttributes()
+
+      changedAttrsKeys = Object.keys(model.changedAttributes())
+
+      if !(changedAttrsKeys.indexOf(key) > -1)
+        return
+
+      oldValue = changedAttrs[key][0]
+      newValue = changedAttrs[key][1]
+
+      if (!newValue || new String(newValue).trim().length == 0) && (!oldValue || new String(oldValue).trim().length == 0)
+        return
+
+    return @_super(snapshot, json, key, attribute)
+
 )
 
 export default ApplicationSerializer
