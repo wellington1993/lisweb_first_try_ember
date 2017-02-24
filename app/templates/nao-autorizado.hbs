@@ -1,1 +1,18 @@
-Infelizmente você não possui permissão para acessar esse recurso.
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Ops... Acesso restrito</h1>
+                <h2>
+                    401 Not Authorized</h2>
+                <div class="error-details">
+                    Parece que a página que você não tem permissão para acessar este recurso.
+                </div>
+                <div class="error-actions">
+                  {{#link-to "index" class="btn btn-primary btn-lg"}} Continuar {{/link-to}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
