@@ -67,6 +67,14 @@ FormsNewPessoaComponent = FormsGenericFormComponent.extend(RequestsPessoaMixin,
       @set("telefone", @get("model.telefone"))
       @set("celular", @get("model.celular"))
       @set("fax", @get("model.fax"))
+    else
+      @set("cnpjValido", true)
+      @set("cpfValido", true)
+      @set("emailValido", true)
+      @set("telefoneValido", true)
+      @set("celularValido", true)
+      @set("faxValido", true)
+      @set("cepValido", true)
 
   didInsertElement: ->
     @_super()
@@ -203,11 +211,17 @@ FormsNewPessoaComponent = FormsGenericFormComponent.extend(RequestsPessoaMixin,
 
     if @get("isEdit")
 
-      @atualizarPessoa(@, pessoa: @get("model")).then(
+      metodo = @atualizarPessoa
+
+    else
+
+      metodo = @cadastrarPessoa
+
+      metodo(@, pessoa: @get("model")).then(
 
         (data) ->
 
-          self.mostrarMensagem(message: "Pessoa atualizada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+          self.mostrarMensagem(message: "Pessoa criada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
 
             ->
               setTimeout(

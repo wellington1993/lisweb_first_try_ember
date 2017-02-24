@@ -1,1 +1,8 @@
-{{outlet}}
+<div class="container animated fadeInUp">
+  <h3>Nova pessoa</h3>
+  {{forms/new-pessoa
+    isEdit=false
+    model=model.pessoa
+    tiposPessoa=model.tiposPessoa
+    actionOnSubmitted="actRedirecionar"}}
+</div>

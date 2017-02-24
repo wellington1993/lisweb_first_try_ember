@@ -17,6 +17,7 @@ Router.map( ->
   @route('cadastrar-categoria-de-produto')
   @route('unidades-de-medida')
   @route('cadastrar-unidade-de-medida')
+  @route('cadastrar-pessoa')
 
   @route("pessoas")
   @route("pessoas.show", path: "/pessoas/:pessoa_id")

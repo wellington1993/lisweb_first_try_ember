@@ -11,6 +11,12 @@
           <h3>Pessoas</h3>
         </div>
 
+        <div class="col-lg-6">
+        {{#link-to "cadastrar-pessoa"class="btn btn-default btn-md pull-right"}}
+          <i class="fa fa-file"></i>&nbsp;Novo registro
+        {{/link-to}}
+        </div>
+
       </div>
 
       <table class="table table-hover">
@@ -55,6 +61,7 @@
                         Nenhum registro foi encontrado.
                     </div>
                     <div class="error-actions">
+                      {{#link-to "cadastrar-pessoa" class="btn btn-primary btn-lg"}} Cadastrar pessoa {{/link-to}}
                       {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                     </div>
                 </div>
