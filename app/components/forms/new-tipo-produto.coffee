@@ -77,6 +77,24 @@ FormsNewTipoProdutoComponent = Ember.Component.extend(
 
       @get("store").unloadRecord(produto)
 
+      abaAtiva = @$(".nav-tabs").find(".active")
+
+      if !abaAtiva
+        @$("#btn-aba-produto-0").trigger("click")
+      else
+
+        indexAbaAtual = parseInt(abaAtiva.find("a").attr("id").split("-").get("lastObject"))
+
+        if indexAbaAtual == index
+
+          if index == 0
+            indexAbaAtual = 1
+          else
+            indexAbaAtual = indexAbaAtual - 1
+
+          @$("#btn-aba-produto-#{indexAbaAtual}").trigger("click")
+
+
     actAdicionarFornecedor: (produto) ->
 
       fornecedores = produto.get("fornecedores")
