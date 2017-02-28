@@ -134,6 +134,8 @@ FormsNewTipoProdutoComponent = Ember.Component.extend(
     actValidarMnemonico: (params, callback) ->
       @set("mnemonicoValido", params["valido"])
       callback()
+
+    
 )
 
 export default FormsNewTipoProdutoComponent

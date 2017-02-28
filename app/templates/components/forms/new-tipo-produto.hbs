@@ -15,7 +15,7 @@
       <div class="col-lg-12">
         Nome: <span class="required-input">(*)</span>
         {{inputs/generic-input
-          value=model.nome
+          value=tipoProduto.nome
           maxlength=255
           actionOnFimValidacao="actValidarNome"}}
       </div>
@@ -24,7 +24,10 @@
     <div class="row">
       <div class="col-lg-12">
         Descrição: <span class="required-input">(*)</span>
-        {{textarea class="form-control"}}
+        {{inputs/generic-input
+          value=tipoProduto.nome
+          maxlength=255
+          actionOnFimValidacao="actValidarDescricao"}}
       </div>
     </div>
 
@@ -34,7 +37,8 @@
         {{inputs/generic-input
           value=model.nome
           maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+          actionOnFimValidacao="actValidarNome"
+          disabled=true}}
       </div>
     </div>
 
@@ -44,47 +48,44 @@
         {{inputs/generic-input
           value=model.nome
           maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+          actionOnFimValidacao="actValidarNome"
+          disabled=true}}
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-5">
         Estoque Mínimo: <span class="required-input">(*)</span>
-        {{inputs/generic-input
-          value=model.nome
-          maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+        {{inputs/numeric-input
+          value=model.estoqueMinimo
+          actionOnFimValidacao="actValidarEstoqueMinimo"}}
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-5">
         Ponto de Compra: <span class="required-input">(*)</span>
-        {{inputs/generic-input
-          value=model.nome
-          maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+        {{inputs/numeric-input
+          value=model.pontoCompra
+          actionOnFimValidacao="actValidarPontoCompra"}}
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-5">
         Estoque Ideal: <span class="required-input">(*)</span>
-        {{inputs/generic-input
-          value=model.nome
-          maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+        {{inputs/numeric-input
+          value=model.estoqueIdeal
+          actionOnFimValidacao="actValidarEstoqueIdeal"}}
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-2">
-        Status: <span class="required-input">(*) COMBOBOX</span>
-        {{inputs/generic-input
-          value=model.nome
-          maxlength=255
-          actionOnFimValidacao="actValidarNome"}}
+        Status: <span class="required-input">(*)</span>
+        {{select-options-ativo-inativo
+          class="form-control"
+          actionOnChange="actValidarStatusTipoProduto"}}
       </div>
     </div>
 
@@ -267,11 +268,10 @@
 
         <div class="row">
           <div class="col-lg-2">
-            Status: <span class="required-input">(*) COMBOBOX</span>
-            {{inputs/generic-input
-              value=model.nome
-              maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+            Status: <span class="required-input">(*)</span>
+            {{select-options-ativo-inativo
+              class="form-control"
+              actionOnChange="actValidarStatusProduto"}}
           </div>
         </div>
 
