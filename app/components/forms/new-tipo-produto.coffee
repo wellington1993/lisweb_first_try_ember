@@ -94,7 +94,6 @@ FormsNewTipoProdutoComponent = Ember.Component.extend(
 
           @$("#btn-aba-produto-#{indexAbaAtual}").trigger("click")
 
-
     actAdicionarFornecedor: (produto) ->
 
       fornecedores = produto.get("fornecedores")
@@ -132,6 +131,9 @@ FormsNewTipoProdutoComponent = Ember.Component.extend(
 
       unidades.insertAt((index + 1), unidadeEntrada)
 
+    actValidarMnemonico: (params, callback) ->
+      @set("mnemonicoValido", params["valido"])
+      callback()
 )
 
 export default FormsNewTipoProdutoComponent
