@@ -199,7 +199,7 @@
                 actionOnFimValidacao="actValidarNome"}}
             </div>
             <div class="col-lg-3">
-              <button class="btn btn-default btn-md"><i class="fa fa-close"></i></button>
+              <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
             </div>
           </div>
         {{/each}}
@@ -228,7 +228,7 @@
 
         </div>
 
-        {{#each produto.unidadesMedidaEntrada as |unidadesMedidaEntrada index|}}
+        {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada index|}}
         <div class="row">
           <div class="col-lg-3">
             Nome: <span class="required-input">(*)</span>
@@ -247,9 +247,9 @@
               actionOnFimValidacao="actValidarNome"}}
           </div>
           <div class="col-lg-7">
-            <button class="btn btn-default btn-md"><i class="fa fa-arrow-up"></i></button>
-            <button class="btn btn-default btn-md"><i class="fa fa-arrow-down"></i></button>
-            <button class="btn btn-default btn-md"><i class="fa fa-close"></i></button>
+            <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
+            <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
+            <button class="btn btn-default btn-md" {{action "actExcluirLinhaUnidadeEntrada" produto index unidadeMedidaEntrada}}><i class="fa fa-close"></i></button>
           </div>
         </div>
         {{/each}}

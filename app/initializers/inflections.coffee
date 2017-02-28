@@ -8,8 +8,10 @@ initialize = ->
   inflector.irregular("unidade-medida-entrada", "unidades-medida-entrada")
   inflector.irregular("fornecedor-produto", "fornecedores-produtos")
 
-InflectionsInitializer =: 'inflections'
+InflectionsInitializer =
+  name: 'inflections'
   initialize: initialize
+
 
 `export {initialize}`
 `export default InflectionsInitializer`

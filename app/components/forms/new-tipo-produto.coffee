@@ -86,6 +86,33 @@ FormsNewTipoProdutoComponent = Ember.Component.extend(
       unidadesEntrada = produto.get("unidadesMedidaEntrada")
       unidadesEntrada.pushObject(@get("store").createRecord("unidade-medida-entrada"))
 
+    actExcluirLinhaFornecedor: (produto, index, fornecedor) ->
+      produto.get("fornecedores").removeObject(fornecedor)
+
+    actExcluirLinhaUnidadeEntrada: (produto, index, unidadeEntrada) ->
+      produto.get("unidadesMedidaEntrada").removeObject(unidadeEntrada)
+
+    actMoverUnidadeCima: (produto, index, unidadeEntrada) ->
+
+      if index == 0
+        return
+
+      unidades = produto.get("unidadesMedidaEntrada")
+
+      unidades.removeObject(unidadeEntrada)
+
+      unidades.insertAt((index - 1), unidadeEntrada)
+
+    actMoverUnidadeBaixo: (produto, index, unidadeEntrada) ->
+
+      unidades = produto.get("unidadesMedidaEntrada")
+
+      if index == (unidades.get("length") - 1)
+        return
+
+      unidades.removeObject(unidadeEntrada)
+
+      unidades.insertAt((index + 1), unidadeEntrada)
 
 )
 
