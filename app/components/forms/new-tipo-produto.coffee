@@ -61,6 +61,62 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
+    @testMode()
+
+  testMode: ->
+
+    tipoProduto = @get("tipoProduto")
+    tipoProduto.set("mnemonico", "Mnemonico")
+    tipoProduto.set("nome", "Nome")
+    tipoProduto.set("descricao", "descricao")
+    tipoProduto.set("estoqueMinimo", "1")
+    tipoProduto.set("pontoCompra", "2")
+    tipoProduto.set("estoqueIdeal", "3")
+
+    tipoProduto.set("unidadeSaida", @get("store").peekRecord("unidade-medida", 29))
+    tipoProduto.set("caregoria", @get("store").peekRecord("categoria-produto", 42))
+    @set("categoriaValida", true)
+    @set("unidadeDeSaidaValida", true)
+
+
+    @$("select").val("ATIVO")
+
+    produto = @get("produtoAbaAtual")
+
+    fornecedor    = @get("store").createRecord("fornecedor-produto", codigo: "Codigo", observacao: "observacoes")
+    unidadeMedida = @get("store").createRecord("unidade-medida-entrada", quantidade: 12)
+
+    fornecedor.set("fornecedor", @get("store").peekRecord("pessoa", 69))
+    unidadeMedida.set("unidadeMedida", @get("store").peekRecord("unidade-medida", 39))
+
+    produto.get("fornecedores").pushObject(fornecedor)
+    produto.get("unidadesMedidaEntrada").pushObject(unidadeMedida)
+    produto.set("nome", "nome do produto")
+    produto.set("marca", @get("store").peekRecord("marca", 63))
+
+    validacoesProduto = @get("validacoesProdutos").objectAt(0)
+    validacoesProduto["marcaValida"] = true
+    @get("validacoesProdutos").removeAt(0)
+    @get("validacoesProdutos").pushObject(validacoesProduto)
+
+
+    validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
+    validacao = @criarObjetoInicialValidacaoFornecedorProduto()
+    validacao["nomeValido"] = true
+    validacoesFornecedores.pushObject(validacao)
+
+    validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
+    validacao = @criarObjetoInicialValidacaoUnidadeEntrada()
+    validacao["nomeValido"] = true
+    validacoesUnidadeEntrada.pushObject(validacao)
+
+    setTimeout(
+      ->
+        $("input").trigger("change")
+        $("select").trigger("change")
+      150
+    )
+
   inicializarArrayValidacao: ->
     @set("validacoesProdutos", [])
 
@@ -393,7 +449,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
       callback()
 
     actValidarUnidadeSaida: (params, callback) ->
-      @set("categoriaValida", params["valido"])
+      @set("unidadeDeSaidaValida", params["valido"])
       callback()
 
     actValidarEstoqueMinimo: (params, callback) ->

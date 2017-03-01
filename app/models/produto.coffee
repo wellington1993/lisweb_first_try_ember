@@ -4,6 +4,7 @@ Produto = DS.Model.extend(
 
   unidadesMedidaEntrada: DS.hasMany("unidade-medida-entrada")
   fornecedores: DS.hasMany("fornecedor-produto")
+  marca: DS.belongsTo("marca")
 
   nome: DS.attr("string")
   descricao: DS.attr("string")
