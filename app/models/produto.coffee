@@ -7,6 +7,8 @@ Produto = DS.Model.extend(
 
   nome: DS.attr("string")
   descricao: DS.attr("string")
+  modelo: DS.attr("string")
+  status: DS.attr("string")
 
 )
 

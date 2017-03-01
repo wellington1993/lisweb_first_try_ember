@@ -9,10 +9,25 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
   actions:
 
     willTransition: ->
+
+      store = @get("store")
+
       model = @controllerFor("cadastrar-tipo-de-produto").get("model")
 
       if model.get("isNew")
-        @get("store").unloadRecord(model)
+
+
+        model.get("produtos").forEach(
+
+          (produto) ->
+
+            try
+              if produto.get("isNew")
+                store.unloadRecord(produto)
+            catch e
+        )
+
+        store.unloadRecord(model)
 
 
 )

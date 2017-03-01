@@ -25,7 +25,7 @@
       <div class="col-lg-12">
         Descrição: <span class="required-input">(*)</span>
         {{inputs/generic-input
-          value=tipoProduto.nome
+          value=tipoProduto.descricao
           maxlength=255
           actionOnFimValidacao="actValidarDescricao"}}
       </div>
@@ -37,7 +37,7 @@
         {{inputs/generic-input
           value=model.nome
           maxlength=255
-          actionOnFimValidacao="actValidarNome"
+          actionOnFimValidacao="actValidarCategoria"
           disabled=true}}
       </div>
     </div>
@@ -48,7 +48,7 @@
         {{inputs/generic-input
           value=model.nome
           maxlength=255
-          actionOnFimValidacao="actValidarNome"
+          actionOnFimValidacao="actValidarUnidadeSaida"
           disabled=true}}
       </div>
     </div>
@@ -57,7 +57,7 @@
       <div class="col-lg-5">
         Estoque Mínimo: <span class="required-input">(*)</span>
         {{inputs/numeric-input
-          value=model.estoqueMinimo
+          value=tipoProduto.estoqueMinimo
           actionOnFimValidacao="actValidarEstoqueMinimo"}}
       </div>
     </div>
@@ -66,7 +66,7 @@
       <div class="col-lg-5">
         Ponto de Compra: <span class="required-input">(*)</span>
         {{inputs/numeric-input
-          value=model.pontoCompra
+          value=tipoProduto.pontoCompra
           actionOnFimValidacao="actValidarPontoCompra"}}
       </div>
     </div>
@@ -75,7 +75,7 @@
       <div class="col-lg-5">
         Estoque Ideal: <span class="required-input">(*)</span>
         {{inputs/numeric-input
-          value=model.estoqueIdeal
+          value=tipoProduto.estoqueIdeal
           actionOnFimValidacao="actValidarEstoqueIdeal"}}
       </div>
     </div>
@@ -130,7 +130,7 @@
             {{inputs/generic-input
               value=produto.nome
               maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+              actionOnFimValidacao="actValidarNomeProduto"}}
           </div>
         </div>
 
@@ -189,7 +189,7 @@
                 disabled=true}}
             </div>
             <div class="col-lg-3">
-              Código: 
+              Código:
               {{inputs/generic-input
                 value=fornecedor.codigo
                 maxlength=255}}
@@ -246,6 +246,7 @@
           <div class="col-lg-1">
             {{inputs/numeric-input
               value=unidadeMedidaEntrada.quantidade
+              valorRefIndex=index
               actionOnFimValidacao="actValidarQuantidadeUnidadeEntrada"}}
           </div>
           <div class="col-lg-7">

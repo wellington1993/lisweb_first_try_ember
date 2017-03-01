@@ -32,6 +32,10 @@ InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, 
   #############################################################################
   #Inicio - Atributos definidos pelo proprio componente.
 
+  #Valor opcional para ser enviado junto aos parametros de validacao para a action
+  #actionOnFimValidacao
+  valorRefIndex: null
+
   #Atribui a classe fixa do bootstrap.
   classNames: ["form-control"]
 
@@ -106,7 +110,7 @@ InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, 
 
     #Valida o tamanho do campo.
     if !@validarTamanhoCampo()
-      return callbackResultadoValidacao(valido: false)
+      return callbackResultadoValidacao(valido: false, refIndex: @get("valorRefIndex"))
 
     #Realiza as validações adicionais:
     @realizarValidacoesAdicionais(
@@ -195,7 +199,8 @@ InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, 
 
   #Determina quais valores serão enviados ao fim da validação.
   paramsRetornoFimValidacao: (params) ->
-    params["value"] = @get("value")
+    params["value"]    = @get("value")
+    params["refIndex"] = @get("valorRefIndex")
     return params
 
   #Metodo para validar o tamanho do campo.

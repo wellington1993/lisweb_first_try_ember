@@ -50,6 +50,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
   didReceiveAttrs: (args) ->
     @_super()
 
+    @inicializarArrayValidacao()
+
     #Vincula um novo produto ao tipo de produto.
     @criarProduto()
 
@@ -59,6 +61,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
+  inicializarArrayValidacao: ->
+    @set("validacoesProdutos", [])
 
   criarProduto: (nome = "Novo produto") ->
     tipoProduto = @get("tipoProduto")
@@ -178,7 +182,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
             fornecedor = fornecedor.get("pessoa")
 
             if !v["nomeValido"]
-              errosProduto.push("Fornecedor #{(indexFornecedor + 1)}: você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Fornecedor <b>#{(indexFornecedor + 1)}</b>: você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
               produtoValido = false
 
@@ -192,7 +196,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
             unidadeEntrada = unidadeEntrada.get("unidadeMedida")
 
             if !v["nomeValido"]
-              errosProduto.push("Unidade de Entrada #{(indexUnidadeEntrada + 1)}: você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Unidade de Entrada <b>#{(indexUnidadeEntrada + 1)}</b>: você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
               produtoValido = false
 
@@ -203,7 +207,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
               else
                 nome = indexUnidadeEntrada + 1
 
-              errosProduto.push("Unidade de entrada #{nome}: você deve preencher corretamente o campo <b>quantidade.</b>")
+              errosProduto.push("Unidade de entrada <b>#{nome}</b>: você deve preencher corretamente o campo <b>Quantidade.</b>")
               valido = false
               produtoValido = false
 
@@ -216,7 +220,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
           else
             nome = indexProduto + 1
 
-          stringFinalErros = stringFinalErros + "O produto #{nome} possui inconsistências: " + self.messageArrayToUlLiTags(errosProduto)
+          stringFinalErros = stringFinalErros + "O produto <b>#{nome}</b> possui inconsistências: " + self.messageArrayToUlLiTags(errosProduto)
 
     )
 
@@ -367,6 +371,128 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     actEscolherProdutoAbaAtual: (index, produto) ->
       @set("indexProdutoAbaAtual", index)
       @set("produtoAbaAtual", produto)
+
+    ######################
+    #Actions de validacao:
+    ######################
+
+    actValidarMnemonico: (params, callback) ->
+      @set("mnemonicoValido", params["valido"])
+      callback()
+
+    actValidarNome: (params, callback) ->
+      @set("nomeValido", params["valido"])
+      callback()
+
+    actValidarDescricao: (params, callback) ->
+      @set("descricaoValida", params["valido"])
+      callback()
+
+    actValidarCategoria: (params, callback) ->
+      @set("categoriaValida", params["valido"])
+      callback()
+
+    actValidarUnidadeSaida: (params, callback) ->
+      @set("categoriaValida", params["valido"])
+      callback()
+
+    actValidarEstoqueMinimo: (params, callback) ->
+
+      valido = params["valido"]
+
+      estoqueMinimo = @get("tipoProduto.estoqueMinimo")
+
+      if valido && (!estoqueMinimo || estoqueMinimo <= 0)
+        valido = false
+
+      @set("estoqueMinimoValido", valido)
+      callback()
+
+    actValidarPontoCompra: (params, callback) ->
+
+      valido = params["valido"]
+
+      pontoCompra = @get("tipoProduto.pontoCompra")
+
+      if valido && (!pontoCompra || pontoCompra <= 0)
+        valido = false
+
+      @set("pontoDeCompraValido", valido)
+      callback()
+
+    actValidarEstoqueIdeal: (params, callback) ->
+
+      valido = params["valido"]
+
+      estoqueIdeal = @get("tipoProduto.estoqueIdeal")
+
+      if valido && (!estoqueIdeal || estoqueIdeal <= 0)
+        valido = false
+
+      @set("estoqueIdealValido", valido)
+      callback()
+
+    actValidarStatusTipoProduto: (status) ->
+
+      valido = true
+
+      if !status
+        valido = false
+
+      @set("statusValido", valido)
+      @set("tipoProduto.status", status)
+
+    actValidarNomeProduto: (params, callback) ->
+      indexProdutoAbaAtual = @get("indexProdutoAbaAtual")
+
+      validacoes = @get("validacoesProdutos")
+      validacao  = validacoes.objectAt(indexProdutoAbaAtual)
+
+      validacao["nomeValido"] = params["valido"]
+      validacoes.insertAt(indexProdutoAbaAtual, validacao)
+      validacoes.removeAt((indexProdutoAbaAtual + 1))
+
+      callback()
+
+    actValidarStatusProduto: (status) ->
+
+      valido = true
+
+      if !status
+        valido = false
+
+      indexProdutoAbaAtual = @get("indexProdutoAbaAtual")
+
+      validacoes = @get("validacoesProdutos")
+      validacao  = validacoes.objectAt(indexProdutoAbaAtual)
+
+      validacao["statusValido"] = valido
+      validacoes.insertAt(indexProdutoAbaAtual, validacao)
+      validacoes.removeAt((indexProdutoAbaAtual + 1))
+
+      @set("produtoAbaAtual.status", status)
+
+    actValidarQuantidadeUnidadeEntrada: (params, callback) ->
+
+      index      = params["refIndex"]
+      unidade    = @get("produtoAbaAtual").get("unidadesMedidaEntrada").objectAt(index)
+      quantidade = unidade.get("quantidade")
+
+      validacoes = @get("validacoesUnidadeEntradaProdutoAtual")
+
+      validacao  = validacoes.objectAt(index)
+
+      valido = params["valido"]
+
+      if valido && (!quantidade || quantidade <= 0)
+        valido = false
+
+      validacao["quantidadeValida"] = valido
+
+      validacoes.insertAt(index, validacao)
+      validacoes.removeAt((index + 1))
+
+      callback()
 
 )
 
