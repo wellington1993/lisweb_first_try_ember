@@ -203,6 +203,7 @@
                 maxlength=255}}
             </div>
             <div class="col-lg-3">
+              <br>
               <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
             </div>
           </div>
@@ -243,16 +244,23 @@
               onSelect="actValidarNomeUnidadeMedidaProduto"
               onDeselect="actValidarNomeUnidadeMedidaProduto"}}
           </div>
-          <div class="col-lg-1">
-            <span>=</span>
-          </div>
-          <div class="col-lg-1">
-            {{inputs/numeric-input
-              value=unidadeMedidaEntrada.quantidade
-              valorRefIndex=index
-              actionOnFimValidacao="actValidarQuantidadeUnidadeEntrada"}}
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-lg-2">
+                <br>
+                <h4>=</h4>
+              </div>
+              <div class="col-lg-10">
+              <br>
+              {{inputs/numeric-input
+                value=unidadeMedidaEntrada.quantidade
+                valorRefIndex=index
+                actionOnFimValidacao="actValidarQuantidadeUnidadeEntrada"}}
+              </div>
+            </div>
           </div>
           <div class="col-lg-7">
+            <br>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
             <button class="btn btn-default btn-md" {{action "actExcluirLinhaUnidadeEntrada" produto index unidadeMedidaEntrada}}><i class="fa fa-close"></i></button>
