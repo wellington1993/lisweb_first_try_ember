@@ -24,7 +24,7 @@ Pessoa = DS.Model.extend(
   celular: DS.attr("string")
   tipoLogradouro: DS.attr("string")
   codIbgeMunicipio: DS.attr("string")
-
+  sincronizado: DS.attr("boolean")
 )
 
 export default Pessoa

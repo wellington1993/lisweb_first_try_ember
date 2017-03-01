@@ -205,41 +205,50 @@ FormsNewPessoaComponent = FormsGenericFormComponent.extend(RequestsPessoaMixin,
       boxPf.hide()
       boxPj.show()
 
+    if model.get("sincronizado")
+      @$("input").attr("disabled", true)
+      @$("select").attr("disabled", true)
+      @$(":submit").hide()
+      @mostrarMensagem(message: "Esta pessoa foi sincronizada do LIS. Edição desabilitada.", type: "warning", ->)
+
+
   submitForm: (callbackOnSubmitComplete) ->
 
     self = @
 
     if @get("isEdit")
 
-      metodo = @atualizarPessoa
+      metodo   = @atualizarPessoa
+      mensagem = "Pessoa atualizada com sucesso! <br> Você será redirecionado em instantes..." 
 
     else
 
-      metodo = @cadastrarPessoa
+      metodo   = @cadastrarPessoa
+      mensagem = "Pessoa criada com sucesso! <br> Você será redirecionado em instantes..."
 
-      metodo(@, pessoa: @get("model")).then(
+    metodo(@, pessoa: @get("model")).then(
 
-        (data) ->
+      (data) ->
 
-          self.mostrarMensagem(message: "Pessoa criada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+        self.mostrarMensagem(message: mensagem, type: "success",
 
-            ->
-              setTimeout(
-                ->
-                  self.sendAction("actionOnSubmitted")
-                  callbackOnSubmitComplete(true)
-                3000
-              )
+          ->
+            setTimeout(
+              ->
+                self.sendAction("actionOnSubmitted")
+                callbackOnSubmitComplete(true)
+              3000
+            )
 
-          )
+        )
 
-        (errs) ->
+      (errs) ->
 
-          self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
-            ->
-              callbackOnSubmitComplete(false)
-          )
-      )
+        self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
+          ->
+            callbackOnSubmitComplete(false)
+        )
+    )
 
   #Carrega os dados de endereco a partir de um CEP.
   carregarDadosEndereco: (endereco = null) ->

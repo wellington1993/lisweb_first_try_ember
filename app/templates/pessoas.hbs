@@ -24,6 +24,7 @@
           <tr>
             <th>Nome</th>
             <th>Tipo</th>
+            <th>Sincronizado LIS</th>
             <th></th>
           </tr>
         </thead>
@@ -32,6 +33,7 @@
           <tr>
             <td>{{pessoa.nome}}</td>
             <td>{{pessoa.tipoPessoa.nome}}</td>
+            <td>{{boolean-to-sim-nao pessoa.sincronizado}}</td>
             <td>{{#link-to "pessoas.show" pessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
