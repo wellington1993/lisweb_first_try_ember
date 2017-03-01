@@ -99,10 +99,10 @@
 
       {{#each tipoProduto.produtos as |produto index|}}
         <li role="presentation">
-          <a id="btn-aba-produto-{{index}}" href="#tab-produto-{{index}}" aria-controls="home" role="tab" data-toggle="tab">
+          <a id="btn-aba-produto-{{index}}" href="#tab-produto-{{index}}" aria-controls="home" role="tab" data-toggle="tab" {{action "actEscolherProdutoAbaAtual" index produto}}>
             {{produto.nome}}
             {{#unless possuiUnicoProduto}}
-            <a id="btn-fechar-produto-{{index}}" {{action "actFecharAbaProduto" index}}><i class="fa fa-close"></i> </a>
+            <a id="btn-fechar-produto-{{index}}" {{action "actFecharAbaProduto" index}} style="cursor:pointer;"><i class="fa fa-close"></i> </a>
             {{/unless}}
         </a>
         </li>
@@ -137,7 +137,9 @@
         <div class="row">
           <div class="col-lg-5">
             Descrição:
-            {{textarea class="form-control"}}
+            {{inputs/generic-input
+              value=produto.descricao
+              maxlength=255}}
           </div>
         </div>
 
@@ -147,7 +149,8 @@
             {{inputs/generic-input
               value=model.nome
               maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+              actionOnFimValidacao="actValidarNome"
+              disabled=true}}
           </div>
         </div>
 
@@ -155,9 +158,8 @@
           <div class="col-lg-5">
             Modelo:
             {{inputs/generic-input
-              value=model.nome
-              maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+              value=produto.modelo
+              maxlength=255}}
           </div>
         </div>
 
@@ -183,21 +185,20 @@
               {{inputs/generic-input
                 value=model.nome
                 maxlength=255
-                actionOnFimValidacao="actValidarNome"}}
+                actionOnFimValidacao="actValidarNome"
+                disabled=true}}
             </div>
             <div class="col-lg-3">
-              Código: <span class="required-input">(*)</span>
+              Código: 
               {{inputs/generic-input
-                value=model.nome
-                maxlength=255
-                actionOnFimValidacao="actValidarNome"}}
+                value=fornecedor.codigo
+                maxlength=255}}
             </div>
             <div class="col-lg-3">
-              Observações: <span class="required-input">(*)</span>
+              Observações:
               {{inputs/generic-input
-                value=model.nome
-                maxlength=255
-                actionOnFimValidacao="actValidarNome"}}
+                value=fornecedor.observacao
+                maxlength=255}}
             </div>
             <div class="col-lg-3">
               <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
@@ -232,20 +233,20 @@
         {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada index|}}
         <div class="row">
           <div class="col-lg-3">
-            Nome: <span class="required-input">(*)</span>
+            Nome: <span class="required-input">(*) AUTOCOMPLETE</span>
             {{inputs/generic-input
-              value=model.nome
+              value=unidadeMedidaEntrada.nome
               maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+              actionOnFimValidacao="actValidarNome"
+              disabled=true}}
           </div>
           <div class="col-lg-1">
             <span>=</span>
           </div>
           <div class="col-lg-1">
-            {{inputs/generic-input
-              value=model.nome
-              maxlength=255
-              actionOnFimValidacao="actValidarNome"}}
+            {{inputs/numeric-input
+              value=unidadeMedidaEntrada.quantidade
+              actionOnFimValidacao="actValidarQuantidadeUnidadeEntrada"}}
           </div>
           <div class="col-lg-7">
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
