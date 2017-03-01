@@ -6,10 +6,6 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
 
     return Ember.RSVP.hash(
       tipoProduto: @get("store").createRecord("tipo-produto")
-      categoriaProduto: @get("store").findAll("categoria-produto")
-      marca: @get("store").findAll("marca")
-      fornecedores: @get("store").findAll("pessoa")
-      unidadesMedida: @get("store").findAll("unidade-medida")
     )
 
   actions:
@@ -18,7 +14,7 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
 
       store = @get("store")
 
-      model = @controllerFor("cadastrar-tipo-de-produto").get("model")
+      model = @controllerFor("cadastrar-tipo-de-produto").get("model")["tipoProduto"]
 
       if model.get("isNew")
 
@@ -35,6 +31,8 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
 
         store.unloadRecord(model)
 
+    actRedirecionarAposCadastro: ->
+      @transitionTo("tipos-de-produto")
 
 )
 

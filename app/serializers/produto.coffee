@@ -13,12 +13,18 @@ ProdutoSerializer = ApplicationSerializer.extend(
     if records.get("length") == 0
       return
 
-    newKey = relationship.key.underscore() + "_attributes"
+    key    = relationship.key
+    newKey = key.underscore() + "_attributes"
 
     json[newKey] = []
 
     records.forEach(
-      (r) ->
+
+      (r, index) ->
+
+        if key == "unidadesMedidaEntrada" && !r.get("ordem")
+          r.set("ordem", (index + 1))
+
         json[newKey].pushObject(r.serialize())
     )
 

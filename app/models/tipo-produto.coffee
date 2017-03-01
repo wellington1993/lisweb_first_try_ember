@@ -3,8 +3,8 @@ import DS from 'ember-data'
 TipoProduto = DS.Model.extend(
 
   produtos: DS.hasMany("produtos")
-  unidadeSaida: DS.belongsTo("unidade-medida")
-  categoria: DS.belongsTo("categoria-produto")
+  unidadeMedidaSaida: DS.belongsTo("unidade-medida")
+  categoriaProduto: DS.belongsTo("categoria-produto")
 
   mnemonico: DS.attr("string")
   nome: DS.attr("string")

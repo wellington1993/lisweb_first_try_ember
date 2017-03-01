@@ -68,6 +68,13 @@ ApplicationSerializer = DS.RESTSerializer.extend(
       if (!newValue || new String(newValue).trim().length == 0) && (!oldValue || new String(oldValue).trim().length == 0)
         return
 
+    else
+
+      value = snapshot.record.get(key)
+
+      if !value || new String(value).trim().length == 0
+        return
+
     return @_super(snapshot, json, key, attribute)
 
 )

@@ -33,22 +33,23 @@
 
     <div class="row">
       <div class="col-lg-12">
-        Categoria: <span class="required-input">(*) AUTOCOMPLETE</span>
-        {{inputs/generic-input
-          maxlength=255
-          actionOnFimValidacao=""
-          disabled=true}}
+        Categoria: <span class="required-input">(*)</span>
+        {{inputs/input-autocomplete
+          modelName="categoria-produto"
+          suggestionField="nome"
+          onSelect="actValidarCategoria"
+          onDeselect="actValidarCategoria"}}
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-12">
-        Unidade de Saída: <span class="required-input">(*) AUTOCOMPLETE</span>
-        {{inputs/generic-input
-          value=model.nome
-          maxlength=255
-          actionOnFimValidacao=""
-          disabled=true}}
+        Unidade de Saída: <span class="required-input">(*)</span>
+        {{inputs/input-autocomplete
+          modelName="unidade-medida"
+          suggestionField="nome"
+          onSelect="actValidarUnidadeSaida"
+          onDeselect="actValidarUnidadeSaida"}}
       </div>
     </div>
 
@@ -144,12 +145,13 @@
 
         <div class="row">
           <div class="col-lg-5">
-            Marca:  AUTOCOMPLETE
-            {{inputs/generic-input
-              value=model.nome
-              maxlength=255
-              actionOnFimValidacao=""
-              disabled=true}}
+            Marca:
+            {{inputs/input-autocomplete
+              modelName="marca"
+              suggestionField="nome"
+              refIndex=index
+              onSelect="actValidarMarca"
+              onDeselect="actValidarMarca"}}
           </div>
         </div>
 
@@ -180,12 +182,13 @@
         {{#each produto.fornecedores as |fornecedor index|}}
           <div class="row">
             <div class="col-lg-3">
-              Nome: <span class="required-input">(*) AUTOCOMPLETE</span>
-              {{inputs/generic-input
-                value=model.nome
-                maxlength=255
-                actionOnFimValidacao=""
-                disabled=true}}
+              Nome: <span class="required-input">(*)</span>
+              {{inputs/input-autocomplete
+                modelName="pessoa"
+                suggestionField="nome"
+                refIndex=index
+                onSelect="actValidarNomeFornecedor"
+                onDeselect="actValidarNomeFornecedor"}}
             </div>
             <div class="col-lg-3">
               Código:
@@ -232,12 +235,13 @@
         {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada index|}}
         <div class="row">
           <div class="col-lg-3">
-            Nome: <span class="required-input">(*) AUTOCOMPLETE</span>
-            {{inputs/generic-input
-              value=unidadeMedidaEntrada.nome
-              maxlength=255
-              actionOnFimValidacao=""
-              disabled=true}}
+            Nome: <span class="required-input">(*) </span>
+            {{inputs/input-autocomplete
+              modelName="unidade-medida"
+              suggestionField="nome"
+              refIndex=index
+              onSelect="actValidarNomeUnidadeMedidaProduto"
+              onDeselect="actValidarNomeUnidadeMedidaProduto"}}
           </div>
           <div class="col-lg-1">
             <span>=</span>

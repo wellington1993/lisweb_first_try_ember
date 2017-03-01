@@ -131,6 +131,12 @@ UtilsMixin = Ember.Mixin.create(
     expressaoRegular = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
     expressaoRegular.test email
 
+  moverScrollComAnimacao: (target = 0, params = {}) ->
+
+    if target != 0
+      target = target.offset().top
+
+    $("html, body").animate({ scrollTop: target }, "slow")
 
 )
 

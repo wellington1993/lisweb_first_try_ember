@@ -1,0 +1,66 @@
+<div class="autocomplete-group {{if filled 'autocomplete_filled' 'autocomplete_unfilled'}}">
+
+  <span class="suggestion-group">
+    {{#if searchModalAction}}
+    <div class="input-group">
+        {{input value=textValue
+                type="text"
+                class="form-control autocomplete-input"
+                placeholder=placeholder
+                disabled=disabled
+        }}
+
+        <span class="input-group-btn">
+            <button class="btn btn-default btn-info" type="button" {{action "openSearchModal"}}><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+    </div><!-- /input-group -->
+    {{else}}
+
+
+        {{input value=textValue
+          type="text"
+          class="form-control autocomplete-input"
+          placeholder=placeholder
+          disabled=disabled}}
+
+    {{/if}}
+
+
+
+    {{#if showingSuggestions}}
+
+      <span class="suggestions suggestions-show"
+            {{action 'clearPreSelected' on='mouseEnter'}}
+      >
+
+        {{#if showingMinLetters}}
+          <p>Digite mais {{lettersRemaining}} letras para iniciar a busca...</p>
+        {{/if}}
+        {{#if showNothingFound}}
+          {{partial nothingFoundTemplate}}
+        {{/if}}
+        {{#if showingLoading}}
+          {{partial loadingTemplate}}
+          <div class="msg-standby">Aguarde...</div>
+        {{/if}}
+        {{#each suggestions as |s|}}
+          {{partial suggestionTemplate}}
+        {{/each}}
+        {{#if showNewLink}}
+          {{partial newRecordTemplate}}
+        {{/if}}
+
+      </span>
+    {{/if}}
+  </span>
+
+  <!--
+  <div {{bind-attr class=":data-suggest :btn :btn-danger-light :autocomplete-button filled:autocomplete_filled"}}>
+  -->
+
+  <div class="data-suggest btn btn-danger-light autocomplete-button {{if filled 'autocomplete_filled' ''}}">
+    <div class="textless">{{textValue}}</div>
+    <i {{action 'clearSelection'}} class="fa fa-times frame-close-button"></i>
+  </div>
+
+</div>

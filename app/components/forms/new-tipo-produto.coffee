@@ -1,7 +1,9 @@
 import Ember from 'ember'
 import FormsGenericFormComponent from './generic-form'
+import RequestsTipoProdutoMixin from '../../mixins/requests/tipo-produto'
+import UtilsMixin from '../../mixins/utils'
 
-FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
+FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProdutoMixin, UtilsMixin,
 
   store: Ember.inject.service()
 
@@ -19,6 +21,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
 
   produtoAbaAtual: null
   indexProdutoAbaAtual: null
+
+  testMode: false
 
   validacoesProdutoAtual: Ember.computed("indexProdutoAbaAtual", ->
     return @get("validacoesProdutos").objectAt(@get("indexProdutoAbaAtual"))
@@ -61,9 +65,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
-    @testMode()
+    if @get("testMode")
+      @fillTestMode()
 
-  testMode: ->
+  fillTestMode: ->
 
     self = @
 
@@ -75,8 +80,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     tipoProduto.set("pontoCompra", "2")
     tipoProduto.set("estoqueIdeal", "3")
 
-    tipoProduto.set("unidadeSaida", @get("store").peekRecord("unidade-medida", 29))
-    tipoProduto.set("categoria", @get("store").peekRecord("categoria-produto", 42))
+    tipoProduto.set("unidadeMedidaSaida", @get("store").peekRecord("unidade-medida", 29))
+    tipoProduto.set("categoriaProduto", @get("store").peekRecord("categoria-produto", 42))
     @set("categoriaValida", true)
     @set("unidadeDeSaidaValida", true)
 
@@ -138,7 +143,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
       {
         nomeValido: false
         statusValido: false
-        marcaValida: false
+        marcaValida: true
         validacoesFornecedores: []
         validacoesUnidadeEntrada: []
       }
@@ -300,7 +305,38 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
 
   submitForm: (callbackOnSubmitComplete) ->
 
-    console.log(@get("tipoProduto").serialize())
+    self = @
+
+    @cadastrarTipoProduto(@, tipoProduto: @get("tipoProduto")).then(
+      (marca) ->
+        self.mostrarMensagem(message: "Tipo de produto cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+
+          ->
+            setTimeout(
+              ->
+                self.sendAction("actionOnSubmitted")
+                callbackOnSubmitComplete()
+              3000
+            )
+
+        )
+      (errs) ->
+        self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
+          ->
+            callbackOnSubmitComplete()
+        )
+    )
+
+  mostrarMensagem: (options, callbackOnAnimationComplete) ->
+
+    self = @
+    messageBox = @get("messageBox")
+
+    @_super(options,
+      ->
+        self.moverScrollComAnimacao(messageBox)
+        callbackOnAnimationComplete()
+    )
 
   actions:
 
@@ -451,13 +487,22 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
       @set("descricaoValida", params["valido"])
       callback()
 
-    actValidarCategoria: (params, callback) ->
-      @set("categoriaValida", params["valido"])
-      callback()
+    actValidarCategoria: (params) ->
 
-    actValidarUnidadeSaida: (params, callback) ->
-      @set("unidadeDeSaidaValida", params["valido"])
-      callback()
+      record = params["record"]
+      valido = if record == null then false else true
+
+      @set("tipoProduto.categoriaProduto", record)
+      @set("categoriaValida", valido)
+
+    actValidarUnidadeSaida: (params) ->
+
+      record = params["record"]
+      valido = if record == null then false else true
+
+      @set("tipoProduto.unidadeMedidaSaida", record)
+      @set("unidadeDeSaidaValida", valido)
+
 
     actValidarEstoqueMinimo: (params, callback) ->
 
@@ -556,6 +601,47 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
       validacoes.removeAt((index + 1))
 
       callback()
+
+    actValidarMarca: (params) ->
+
+      record = params["record"]
+      valido = true
+
+      produto = @set("produtoAbaAtual.marca", record)
+
+    actValidarNomeUnidadeMedidaProduto: (params) ->
+
+      index  = params["refIndex"]
+      record = params["record"]
+      valido = if record == null then false else true
+
+      validacoes = @get("validacoesUnidadeEntradaProdutoAtual")
+      validacao  = validacoes.objectAt(index)
+
+      validacao["nomeValido"] = valido
+      validacoes.insertAt(index, validacao)
+      validacoes.removeAt((index + 1))
+
+      unidades = @get("produtoAbaAtual.unidadesMedidaEntrada")
+      unidade  = unidades.objectAt(index)
+      unidade.set("unidadeMedida", record)
+
+    actValidarNomeFornecedor: (params) ->
+
+      index  = params["refIndex"]
+      record = params["record"]
+      valido = if record == null then false else true
+
+      validacoes = @get("validacoesFornecedoresProdutoAtual")
+      validacao  = validacoes.objectAt(index)
+
+      validacao["nomeValido"] = valido
+      validacoes.insertAt(index, validacao)
+      validacoes.removeAt((index + 1))
+
+      fornecedores = @get("produtoAbaAtual.fornecedores")
+      fornecedor   = fornecedores.objectAt(index)
+      fornecedor.set("pessoa", record)
 
 )
 
