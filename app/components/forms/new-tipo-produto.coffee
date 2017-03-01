@@ -140,6 +140,11 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
       valido = false
       arrayMensagensErro.push("Você deve preencher corretamente o campo <b>Status.</b>")
 
+    if arrayMensagensErro.length > 0
+      stringFinalErros = @messageArrayToUlLiTags(arrayMensagensErro)
+    else
+      stringFinalErros = ""
+
     @get("validacoesProdutos").forEach(
 
       (validacao, indexProduto) ->
@@ -170,9 +175,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
           (v, indexFornecedor) ->
 
             fornecedor = produto.get("fornecedores").objectAt(indexFornecedor)
+            fornecedor = fornecedor.get("pessoa")
 
             if !v["nomeValido"]
-              errosProduto.push("Você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Fornecedor #{(indexFornecedor + 1)}: você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
               produtoValido = false
 
@@ -183,20 +189,51 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
           (v, indexUnidadeEntrada) ->
 
             unidadeEntrada = produto.get("unidadesMedidaEntrada").objectAt(indexUnidadeEntrada)
+            unidadeEntrada = unidadeEntrada.get("unidadeMedida")
 
             if !v["nomeValido"]
-              errosProduto.push("Você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Unidade de Entrada #{(indexUnidadeEntrada + 1)}: você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
               produtoValido = false
 
             if !v["quantidadeValida"]
-              errosProduto.push("Você deve preencher corretamente o campo quantidade.")
+
+              if v["nomeValido"]
+                nome = unidadeEntrada.get("nome")
+              else
+                nome = indexUnidadeEntrada + 1
+
+              errosProduto.push("Unidade de entrada #{nome}: você deve preencher corretamente o campo <b>quantidade.</b>")
               valido = false
               produtoValido = false
 
         )
-        
+
+        if errosProduto.length > 0
+
+          if validacao["nomeValido"]
+            nome = produto.get("nome")
+          else
+            nome = indexProduto + 1
+
+          stringFinalErros = stringFinalErros + "O produto #{nome} possui inconsistências: " + self.messageArrayToUlLiTags(errosProduto)
+
     )
+
+    if valido
+
+      return @esconderMensagem({},
+        ->
+          callbackAfterValidate(true)
+      )
+
+
+    else
+
+      return @mostrarMensagem(message: stringFinalErros, type: "danger",
+        ->
+          callbackAfterValidate(false)
+      )
 
   actions:
 
