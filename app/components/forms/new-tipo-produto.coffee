@@ -65,6 +65,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
 
   testMode: ->
 
+    self = @
+
     tipoProduto = @get("tipoProduto")
     tipoProduto.set("mnemonico", "Mnemonico")
     tipoProduto.set("nome", "Nome")
@@ -74,7 +76,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
     tipoProduto.set("estoqueIdeal", "3")
 
     tipoProduto.set("unidadeSaida", @get("store").peekRecord("unidade-medida", 29))
-    tipoProduto.set("caregoria", @get("store").peekRecord("categoria-produto", 42))
+    tipoProduto.set("categoria", @get("store").peekRecord("categoria-produto", 42))
     @set("categoriaValida", true)
     @set("unidadeDeSaidaValida", true)
 
@@ -116,6 +118,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
         $("select").trigger("change")
       150
     )
+
 
   inicializarArrayValidacao: ->
     @set("validacoesProdutos", [])
@@ -294,6 +297,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
         ->
           callbackAfterValidate(false)
       )
+
+  submitForm: (callbackOnSubmitComplete) ->
+
+    console.log(@get("tipoProduto").serialize())
 
   actions:
 
