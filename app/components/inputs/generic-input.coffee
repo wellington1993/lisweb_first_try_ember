@@ -25,16 +25,16 @@ InputsGenericInputComponent = Ember.TextField.extend(UtilsComponentsInputMixin, 
   #({}, callbackOnValidacaoFinalizada[params])
   actionOnRealizarValidacaoAssincrona: null
 
+  #Valor opcional para ser enviado junto aos parametros de validacao para a action
+  #actionOnFimValidacao
+  valorRefIndex: null
+
   #Fim - Atributos definidos pelo contexto externo.
   #############################################################################
 
 
   #############################################################################
   #Inicio - Atributos definidos pelo proprio componente.
-
-  #Valor opcional para ser enviado junto aos parametros de validacao para a action
-  #actionOnFimValidacao
-  valorRefIndex: null
 
   #Atribui a classe fixa do bootstrap.
   classNames: ["form-control"]

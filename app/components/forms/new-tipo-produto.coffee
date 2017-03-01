@@ -17,21 +17,25 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
   pontoDeCompraValido: false
   estoqueIdealValido: false
   statusValido: false
+
+  #Array de flags de validacao dos produtos vinculados.
   validacoesProdutos: []
 
+  #Indica qual produto esta sendo processado.
   produtoAbaAtual: null
   indexProdutoAbaAtual: null
 
-  testMode: false
-
+  #Flags de validacao do produto atual.
   validacoesProdutoAtual: Ember.computed("indexProdutoAbaAtual", ->
     return @get("validacoesProdutos").objectAt(@get("indexProdutoAbaAtual"))
   )
 
+  #Flags de validacao dos fornecedores do produto atual
   validacoesFornecedoresProdutoAtual: Ember.computed("indexProdutoAbaAtual", ->
     return @get("validacoesProdutos").objectAt(@get("indexProdutoAbaAtual"))["validacoesFornecedores"]
   )
 
+  #Flags de validacao das unidades de entrada do produto atual
   validacoesUnidadeEntradaProdutoAtual: Ember.computed("indexProdutoAbaAtual", ->
     return @get("validacoesProdutos").objectAt(@get("indexProdutoAbaAtual"))["validacoesUnidadeEntrada"]
   )
@@ -51,92 +55,40 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       return retorno
   )
 
+  #Ao receber os atributos do controlador:
   didReceiveAttrs: (args) ->
     @_super()
 
-    @inicializarArrayValidacao()
+    #Inicializa o array de validacao de produtos.
+    @inicializarArrayValidacaoProdutos()
 
     #Vincula um novo produto ao tipo de produto.
     @criarProduto()
 
+  #Ao componente ser inserido na DOM:
   didInsertElement: ->
     @_super()
 
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
-    if @get("testMode")
-      @fillTestMode()
-
-  fillTestMode: ->
-
-    self = @
-
-    tipoProduto = @get("tipoProduto")
-    tipoProduto.set("mnemonico", "Mnemonico")
-    tipoProduto.set("nome", "Nome")
-    tipoProduto.set("descricao", "descricao")
-    tipoProduto.set("estoqueMinimo", "1")
-    tipoProduto.set("pontoCompra", "2")
-    tipoProduto.set("estoqueIdeal", "3")
-
-    tipoProduto.set("unidadeMedidaSaida", @get("store").peekRecord("unidade-medida", 29))
-    tipoProduto.set("categoriaProduto", @get("store").peekRecord("categoria-produto", 42))
-    @set("categoriaValida", true)
-    @set("unidadeDeSaidaValida", true)
-
-
-    @$("select").val("ATIVO")
-
-    produto = @get("produtoAbaAtual")
-
-    fornecedor    = @get("store").createRecord("fornecedor-produto", codigo: "Codigo", observacao: "observacoes")
-    unidadeMedida = @get("store").createRecord("unidade-medida-entrada", quantidade: 12)
-
-    fornecedor.set("fornecedor", @get("store").peekRecord("pessoa", 69))
-    unidadeMedida.set("unidadeMedida", @get("store").peekRecord("unidade-medida", 39))
-
-    produto.get("fornecedores").pushObject(fornecedor)
-    produto.get("unidadesMedidaEntrada").pushObject(unidadeMedida)
-    produto.set("nome", "nome do produto")
-    produto.set("marca", @get("store").peekRecord("marca", 63))
-
-    validacoesProduto = @get("validacoesProdutos").objectAt(0)
-    validacoesProduto["marcaValida"] = true
-    @get("validacoesProdutos").removeAt(0)
-    @get("validacoesProdutos").pushObject(validacoesProduto)
-
-
-    validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
-    validacao = @criarObjetoInicialValidacaoFornecedorProduto()
-    validacao["nomeValido"] = true
-    validacoesFornecedores.pushObject(validacao)
-
-    validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
-    validacao = @criarObjetoInicialValidacaoUnidadeEntrada()
-    validacao["nomeValido"] = true
-    validacoesUnidadeEntrada.pushObject(validacao)
-
-    setTimeout(
-      ->
-        $("input").trigger("change")
-        $("select").trigger("change")
-      150
-    )
-
-
-  inicializarArrayValidacao: ->
+  #Inicializa o array de validacao de produtos.
+  inicializarArrayValidacaoProdutos: ->
     @set("validacoesProdutos", [])
 
+  #Cria um novo produto vinculado ao tipo de produto.
   criarProduto: (nome = "Novo produto") ->
     tipoProduto = @get("tipoProduto")
     produto     = @get("store").createRecord("produto")
     produto.set("nome", nome)
     tipoProduto.get("produtos").pushObject(produto)
 
+    #Cria um objeto de validacao referente ao produto criado e adiciona no array
+    #de flags de validacao de produtos.
     validacoesProdutos = @get("validacoesProdutos")
     validacoesProdutos.push(@criarObjetoInicialValidacaoProduto())
 
+  #Cria um objeto inicial de flags de validacao de produtos.
   criarObjetoInicialValidacaoProduto: ->
 
     retorno =
@@ -150,6 +102,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     return retorno
 
+  #Cria um objeto inicial de flags de validacao de fornecedor do produto.
   criarObjetoInicialValidacaoFornecedorProduto: ->
 
     retorno =
@@ -157,6 +110,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     return retorno
 
+  #Cria um objeto inicial de flags de validacao de unidade de entrada do produto.
   criarObjetoInicialValidacaoUnidadeEntrada: ->
 
     retorno =
@@ -165,6 +119,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     return retorno
 
+  #Valida o formulario.
   validate: (callbackAfterValidate) ->
 
     self = @
@@ -172,6 +127,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     arrayMensagensErro = []
     valido = true
 
+    #Valida os campos do Tipo de Produto
     if !@get("mnemonicoValido")
       valido = false
       arrayMensagensErro.push("Você deve preencher o campo <b>Mnemônico.</b>")
@@ -213,6 +169,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     else
       stringFinalErros = ""
 
+    #Valida os campos de cada aba de produto:
     @get("validacoesProdutos").forEach(
 
       (validacao, indexProduto) ->
@@ -238,6 +195,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           valido = false
           produtoValido = false
 
+        #Valida os campos dos fornecedores vinculados ao produto.
         validacao["validacoesFornecedores"].forEach(
 
           (v, indexFornecedor) ->
@@ -252,6 +210,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
         )
 
+        #Valida os campos das unidades de entrada vinculadas ao produto.
         validacao["validacoesUnidadeEntrada"].forEach(
 
           (v, indexUnidadeEntrada) ->
@@ -277,6 +236,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
         )
 
+        #Prepara a mensagem de erro do produto iterado.
         if errosProduto.length > 0
 
           if validacao["nomeValido"]
@@ -284,10 +244,12 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           else
             nome = indexProduto + 1
 
+          #Associa a mensagem do produto a variavel de mensagens final.
           stringFinalErros = stringFinalErros + "O produto <b>#{nome}</b> possui inconsistências: " + self.messageArrayToUlLiTags(errosProduto)
 
     )
 
+    #Se o formulario é valido:
     if valido
 
       return @esconderMensagem({},
@@ -297,36 +259,51 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
 
     else
+    #Se o formulario é inválido:
 
       return @mostrarMensagem(message: stringFinalErros, type: "danger",
         ->
           callbackAfterValidate(false)
       )
 
+  #Ao submeter o formulario:
   submitForm: (callbackOnSubmitComplete) ->
 
     self = @
 
+    #Tenta cadastrar o novo tipo de produto.
     @cadastrarTipoProduto(@, tipoProduto: @get("tipoProduto")).then(
+
+      #Sucesso no submit:
       (marca) ->
+
+        #Se cadastrado com sucesso exibe a mensagem de sucesso e apos 3s
+        #chama a action de redirecionamento.
         self.mostrarMensagem(message: "Tipo de produto cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
 
           ->
             setTimeout(
               ->
                 self.sendAction("actionOnSubmitted")
-                callbackOnSubmitComplete()
+                callbackOnSubmitComplete(true)
               3000
             )
 
         )
+
+      #Erro no submit:
       (errs) ->
+
+        #Mostra mensagem de erro.
         self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
-            callbackOnSubmitComplete()
+            callbackOnSubmitComplete(false)
         )
+
     )
 
+  #Override do metodo da superclasse para alem de mostrar a mensagem, tambem
+  #mover o cursor.
   mostrarMensagem: (options, callbackOnAnimationComplete) ->
 
     self = @
@@ -340,6 +317,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
   actions:
 
+    #Action ao clicar no botao para criar novo produto.
     actCriarNovaAbaProduto: ->
 
       self = @
@@ -355,17 +333,17 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       #Tenta obter o botao da aba que se refere ao produto criado.
       btn = @$("#btn-aba-produto-#{index}")
 
-      #Simula o clique na aba referente ao produto criado para o formulario ser
-      #visivel.
+      #Simula o clique na aba referente ao produto criado para o formulario
+      #atual ser o do novo produto criado.
       if btn.length == 0
         setTimeout(->
           self.$("#btn-aba-produto-#{index}").trigger("click")
           125
         )
-
       else
         btn.trigger("click")
 
+    #Action ao fechar a aba de algum produto.
     actFecharAbaProduto: (index) ->
 
       produtos = @get("tipoProduto").get("produtos")
@@ -411,6 +389,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           #ativa.
           @$("#btn-aba-produto-#{indexAbaAtual}").trigger("click")
 
+    #Adiciona um novo fornecedor para o produto atual em processamento.
     actAdicionarFornecedor: (produto) ->
       fornecedores = produto.get("fornecedores")
       fornecedores.pushObject(@get("store").createRecord("fornecedor-produto"))
@@ -418,6 +397,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
       validacoesFornecedores.pushObject(@criarObjetoInicialValidacaoFornecedorProduto())
 
+    #Adiciona uma nova unidade de entrada para o produto atual em processamento.
     actAdicionarUnidadeEntrada: (produto) ->
       unidadesEntrada = produto.get("unidadesMedidaEntrada")
       unidadesEntrada.pushObject(@get("store").createRecord("unidade-medida-entrada"))
@@ -425,19 +405,21 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
       validacoesUnidadeEntrada.pushObject(@criarObjetoInicialValidacaoUnidadeEntrada())
 
-
+    #Exclui um fornecedor vinculado ao produto.
     actExcluirLinhaFornecedor: (produto, index, fornecedor) ->
       produto.get("fornecedores").removeObject(fornecedor)
 
       validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
       validacoesFornecedores.removeAt(index)
 
+    #Exclui uma unidade de entrada vinculado ao produto.
     actExcluirLinhaUnidadeEntrada: (produto, index, unidadeEntrada) ->
       produto.get("unidadesMedidaEntrada").removeObject(unidadeEntrada)
 
       validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
       validacoesUnidadeEntrada.removeAt(index)
 
+    #Move uma unidade de entrada para cima.
     actMoverUnidadeCima: (produto, index, unidadeEntrada) ->
 
       if index == 0
@@ -452,6 +434,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacoesUnidadeEntrada.removeAt(index)
       validacoesUnidadeEntrada.insertAt((index - 1), validacao)
 
+    #Move uma nidade de entrada para baixo.
     actMoverUnidadeBaixo: (produto, index, unidadeEntrada) ->
 
       unidades = produto.get("unidadesMedidaEntrada")
@@ -467,6 +450,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacoesUnidadeEntrada.removeAt(index)
       validacoesUnidadeEntrada.insertAt((index + 1), validacao)
 
+    #Indica qual é o produto atual apos clicar em alguma aba de produtos.
     actEscolherProdutoAbaAtual: (index, produto) ->
       @set("indexProdutoAbaAtual", index)
       @set("produtoAbaAtual", produto)
