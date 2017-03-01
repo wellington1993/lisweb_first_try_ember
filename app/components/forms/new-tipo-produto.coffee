@@ -142,50 +142,60 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(
 
     @get("validacoesProdutos").forEach(
 
-      (validacao) ->
+      (validacao, indexProduto) ->
+
+        produto = self.get("tipoProduto.produtos").objectAt(indexProduto)
+
+        produtoValido = false
 
         errosProduto = []
 
         if !validacao["nomeValido"]
           errosProduto.push("Você deve preencher o campo <b>Nome.</b>")
           valido = false
+          produtoValido = false
 
         if !validacao["marcaValida"]
           errosProduto.push("Você deve preencher o campo <b>Marca.</b>")
           valido = false
+          produtoValido = false
 
         if !validacao["statusValido"]
           errosProduto.push("Você deve preencher o campo <b>Status.</b>")
           valido = false
-
-        errosFornecedor = []
+          produtoValido = false
 
         validacao["validacoesFornecedores"].forEach(
 
-          (v, index) ->
+          (v, indexFornecedor) ->
+
+            fornecedor = produto.get("fornecedores").objectAt(indexFornecedor)
 
             if !v["nomeValido"]
-              errosFornecedor.push("Você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
+              produtoValido = false
 
         )
-
-        errosUnidade = []
 
         validacao["validacoesUnidadeEntrada"].forEach(
 
-          (v, index) ->
+          (v, indexUnidadeEntrada) ->
+
+            unidadeEntrada = produto.get("unidadesMedidaEntrada").objectAt(indexUnidadeEntrada)
 
             if !v["nomeValido"]
-              errosUnidade.push("Você deve preencher corretamente o campo <b>Nome.</b>")
+              errosProduto.push("Você deve preencher corretamente o campo <b>Nome.</b>")
               valido = false
+              produtoValido = false
 
             if !v["quantidadeValida"]
-              errosUnidade.push("Você deve preencher corretamente o campo quantidade.")
+              errosProduto.push("Você deve preencher corretamente o campo quantidade.")
               valido = false
+              produtoValido = false
 
         )
-
+        
     )
 
   actions:
