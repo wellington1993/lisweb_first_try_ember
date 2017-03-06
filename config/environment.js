@@ -53,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = "http://minha-api-de-producao";
+    ENV.host = "http://apilisweb.acras.com.br";
   }
 
   ENV['ember-simple-auth'] = {
