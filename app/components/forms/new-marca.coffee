@@ -4,11 +4,17 @@ import RequestsMarcaMixin from '../../mixins/requests/marca'
 
 FormsNewMarcaComponent = FormsGenericFormComponent.extend(RequestsMarcaMixin,
 
-  nome: null
-  descricao: null
+  isEdit: false
 
   nomeValido: false
   descricaoValida: false
+
+  didReceiveAttrs: (args) ->
+    @_super()
+
+    if @get("isEdit")
+      @set("nomeValido", true)
+      @set("descricaoValida", true)
 
   #Método de validação do formulário.
   validate: (callbackAfterValidate) ->
@@ -39,34 +45,41 @@ FormsNewMarcaComponent = FormsGenericFormComponent.extend(RequestsMarcaMixin,
 
   submitForm: (callbackOnSubmitComplete) ->
 
+
     self = @
 
-    options           = {}
-    options["attrs"]  = nome: @get("nome"), descricao: @get("descricao")
+    if @get("isEdit")
 
-    @cadastrarMarca(@, options).then(
+      metodo   = @atualizarMarca
+      mensagem = "Marca atualizada com sucesso! <br> Você será redirecionado em instantes..."
 
-      (marca) ->
+    else
 
-        self.mostrarMensagem(message: "Marca cadastrada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+      metodo   = @cadastrarMarca
+      mensagem = "Marca criada com sucesso! <br> Você será redirecionado em instantes..."
+
+    metodo(@, marca: @get("model")).then(
+
+      (data) ->
+
+        self.mostrarMensagem(message: mensagem, type: "success",
 
           ->
             setTimeout(
               ->
                 self.sendAction("actionOnSubmitted")
-                callbackOnSubmitComplete()
+                callbackOnSubmitComplete(true)
               3000
             )
 
         )
 
-      (errors) ->
+      (errs) ->
+
         self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
-            callbackOnSubmitComplete()
+            callbackOnSubmitComplete(false)
         )
-
-
     )
 
 

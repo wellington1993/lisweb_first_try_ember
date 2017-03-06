@@ -20,6 +20,7 @@
           <tr>
             <th>Marca</th>
             <th>Descrição</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
           <tr>
             <td>{{marca.nome}}</td>
             <td>{{marca.descricao}}</td>
+            <td>{{#link-to "marcas.show" marca.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
