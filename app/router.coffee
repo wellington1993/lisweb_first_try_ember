@@ -25,6 +25,12 @@ Router.map( ->
   @route("tipos-de-produto")
   @route("unidades-de-medida")
 
+  @route("categorias-de-produto.show", path: "/categorias-de-produto/:categoria_produto_id")
+  @route("marcas.show", path: "/marcas/:marca_id")
+  @route("tipos-de-pessoa.show", path: "/tipos-de-pessoa/:tipo_pessoa_id")
+  @route("tipos-de-produto.show", path: "/tipos-de-produto/:tipo_produto_id")
+  @route("unidades-de-medida.show", path: "/unidades-de-medida/:unidade_medida_id")
+
   @route("pagina-nao-encontrada", { path: "/*path" })
 
 )
