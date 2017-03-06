@@ -4,11 +4,17 @@ import RequestsCategoriaProdutoMixin from '../../mixins/requests/categoria-produ
 
 FormsNewCategoriaProdutoComponent = FormsGenericFormComponent.extend(RequestsCategoriaProdutoMixin,
 
-  nome: null
-  descricao: null
+  isEdit: false
 
   nomeValido: false
   descricaoValida: false
+
+  didReceiveAttrs: (args) ->
+    @_super()
+
+    if @get("isEdit")
+      @set("nomeValido", true)
+      @set("descricaoValida", true)
 
   #Método de validação do formulário.
   validate: (callbackAfterValidate) ->
@@ -41,32 +47,38 @@ FormsNewCategoriaProdutoComponent = FormsGenericFormComponent.extend(RequestsCat
 
     self = @
 
-    options           = {}
-    options["attrs"]  = nome: @get("nome"), descricao: @get("descricao")
+    if @get("isEdit")
 
-    @cadastrarCategoriaProduto(@, options).then(
+      metodo   = @atualizarCategoriaProduto
+      mensagem = "Categoria de produto atualizada com sucesso! <br> Você será redirecionado em instantes..."
 
-      (marca) ->
+    else
 
-        self.mostrarMensagem(message: "Categoria de produto cadastrada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+      metodo   = @cadastrarCategoriaProduto
+      mensagem = "Categoria de produto criada com sucesso! <br> Você será redirecionado em instantes..."
+
+    metodo(@, categoriaProduto: @get("model")).then(
+
+      (data) ->
+
+        self.mostrarMensagem(message: mensagem, type: "success",
 
           ->
             setTimeout(
               ->
                 self.sendAction("actionOnSubmitted")
-                callbackOnSubmitComplete()
+                callbackOnSubmitComplete(true)
               3000
             )
 
         )
 
-      (errors) ->
+      (errs) ->
+
         self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
-            callbackOnSubmitComplete()
+            callbackOnSubmitComplete(false)
         )
-
-
     )
 
 
