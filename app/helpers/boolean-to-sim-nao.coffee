@@ -15,6 +15,5 @@ booleanToSimNao = (params) ->
 
 BooleanToSimNaoHelper = Ember.Helper.helper booleanToSimNao
 
-export { booleanToSimNao }
-
-export default BooleanToSimNaoHelper
+`export { booleanToSimNao }`
+`export default BooleanToSimNaoHelper`
