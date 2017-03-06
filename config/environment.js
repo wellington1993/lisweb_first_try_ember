@@ -6,7 +6,13 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     contentSecurityPolicy: {
-      'connect-src': "*"
+        'default-src': ["'none'"],
+        'script-src':  ["'self'", "'unsafe-eval'", "*"],
+        'font-src':    ["'self'"],
+        'connect-src': ["'self'", "*"],
+        'img-src':     ["'self'"],
+        'style-src':   ["'self'", "'unsafe-inline'"],
+        'media-src':   ["'self'"]
     },
     locationType: 'auto',
     EmberENV: {
