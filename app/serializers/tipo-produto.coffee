@@ -1,7 +1,10 @@
-import DS from 'ember-data'
-import ApplicationSerializer from './application'
+`import DS from 'ember-data'`
+`import ApplicationSerializer from './application'`
 
-TipoProdutoSerializer = ApplicationSerializer.extend(
+TipoProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
+
+  attrs:
+    produtos: embedded: "always"
 
   #Tratamento para serializar os relacionamentos hasMany.
   serializeHasMany: (snapshot, json, relationship) ->
@@ -23,7 +26,7 @@ TipoProdutoSerializer = ApplicationSerializer.extend(
     #Cria a chave do JSON com o nome tratado.
     json[newKey] = []
 
-    #Serializa cada registro do hasMany e atribui ao array do JSON. 
+    #Serializa cada registro do hasMany e atribui ao array do JSON.
     records.forEach(
       (r) ->
         json[newKey].pushObject(r.serialize())
@@ -31,8 +34,16 @@ TipoProdutoSerializer = ApplicationSerializer.extend(
 
     return json
 
+  keyForRelationship: (key, relationship, method) ->
+
+    if method != "serialize"
+
+      if key == "produtos"
+        return key
+
+    @_super(key, relationship, method)
 
 
 )
 
-export default TipoProdutoSerializer
+`export default TipoProdutoSerializer`

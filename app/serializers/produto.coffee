@@ -1,7 +1,11 @@
 import DS from 'ember-data'
 import ApplicationSerializer from './application'
 
-ProdutoSerializer = ApplicationSerializer.extend(
+ProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
+
+  attrs:
+    unidadesMedidaEntrada: embedded: "always"
+    fornecedores: embedded: "always"
 
   #Tratamento para serializar os relacionamentos hasMany.
   serializeHasMany: (snapshot, json, relationship) ->
@@ -42,6 +46,15 @@ ProdutoSerializer = ApplicationSerializer.extend(
     )
 
     return json
+
+  keyForRelationship: (key, relationship, method) ->
+
+    if method != "serialize"
+
+      if ["unidadesMedidaEntrada", "fornecedores"].indexOf(key) > -1
+        return key
+
+    @_super(key, relationship, method)
 
 )
 
