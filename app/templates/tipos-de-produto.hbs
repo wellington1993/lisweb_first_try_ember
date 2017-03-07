@@ -23,6 +23,7 @@
           <tr>
             <th>Nome</th>
             <th>Descrição</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,7 @@
           <tr>
             <td>{{tipoProduto.nome}}</td>
             <td>{{tipoProduto.descricao}}</td>
+            <td>{{#link-to "tipos-de-produto.show" tipoProduto.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
