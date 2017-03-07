@@ -4,11 +4,23 @@ import RequestsTipoPessoaMixin from '../../mixins/requests/tipo-pessoa'
 
 FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPessoaMixin,
 
-  nome: null
-  tipo: null
+  isEdit: false
 
   nomeValido: false
   tipoValido: false
+
+  didReceiveAttrs: (args) ->
+    @_super()
+
+    if @get("isEdit")
+      @set("nomeValido", true)
+      @set("tipoValido", true)
+
+  didInsertElement: ->
+    @_super()
+
+    if @get("isEdit")
+      @$("select").val(@get("model").get("tipo"))
 
   #Método de validação do formulário.
   validate: (callbackAfterValidate) ->
@@ -41,33 +53,40 @@ FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPesso
 
     self = @
 
-    options = {}
-    options["attrs"] = nome: @get("nome"), tipo: @get("tipo")
+    if @get("isEdit")
 
-    @cadastrarTipoPessoa(@, options).then(
+      metodo   = @atualizarTipoPessoa
+      mensagem = "Tipo de pessoa atualizado com sucesso! <br> Você será redirecionado em instantes..."
 
-      (marca) ->
+    else
 
-        self.mostrarMensagem(message: "Tipo de pessoa cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+      metodo   = @cadastrarTipoPessoa
+      mensagem = "Tipo de pessoa criado com sucesso! <br> Você será redirecionado em instantes..."
+
+    metodo(@, tipoPessoa: @get("model")).then(
+
+      (data) ->
+
+        self.mostrarMensagem(message: mensagem, type: "success",
 
           ->
             setTimeout(
               ->
                 self.sendAction("actionOnSubmitted")
-                callbackOnSubmitComplete()
+                callbackOnSubmitComplete(true)
               3000
             )
 
         )
 
-      (errors) ->
+      (errs) ->
+
         self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
-            callbackOnSubmitComplete()
+            callbackOnSubmitComplete(false)
         )
-
-
     )
+
 
   actions:
 
@@ -76,7 +95,7 @@ FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPesso
       callback()
 
     actAtribuirTipoPessoa: (tipoPessoa) ->
-      @set("tipo", tipoPessoa)
+      @set("model.tipo", tipoPessoa)
       @set("tipoValido", if !tipoPessoa then false else true)
 
 

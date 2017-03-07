@@ -3,9 +3,18 @@ import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
 
 CadastrarTipoDePessoaRoute = AbstractRoutesPrivateRouteRoute.extend(
 
+  model: (params, transition) ->
+    return @get("store").createRecord("tipo-pessoa")
+
   actions:
 
-    actRedirecionarAposCadastro: ->
+    willTransition: ->
+      model = @controllerFor("cadastrar-tipo-de-pessoa").get("model")
+
+      if model.get("isNew")
+        @get("store").unloadRecord(model)
+
+    actRedirecionar: ->
       @transitionTo("tipos-de-pessoa")
 
 )
