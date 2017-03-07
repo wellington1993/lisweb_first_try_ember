@@ -4,13 +4,20 @@ import RequestsUnidadeMedidaMixin from '../../mixins/requests/unidade-medida'
 
 FormsNewUnidadeMedidaComponent = FormsGenericFormComponent.extend(RequestsUnidadeMedidaMixin,
 
-  nome: null
-  descricao: null
-  sigla: null
+
+  isEdit: false
 
   nomeValido: false
   descricaoValida: false
   siglaValida: false
+
+  didReceiveAttrs: (args) ->
+    @_super()
+
+    if @get("isEdit")
+      @set("nomeValido", true)
+      @set("descricaoValida", true)
+      @set("siglaValida", true)
 
   #Método de validação do formulário.
   validate: (callbackAfterValidate) ->
@@ -47,34 +54,39 @@ FormsNewUnidadeMedidaComponent = FormsGenericFormComponent.extend(RequestsUnidad
 
     self = @
 
-    options           = {}
-    options["attrs"]  = nome: @get("nome"), descricao: @get("descricao"), sigla: @get("sigla")
+    if @get("isEdit")
 
-    @cadastrarUnidadeMedida(@, options).then(
+      metodo   = @atualizarUnidadeMedida
+      mensagem = "Unidade de medida atualizada com sucesso! <br> Você será redirecionado em instantes..."
 
-      (marca) ->
+    else
 
-        self.mostrarMensagem(message: "Unidade de medida cadastrada com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+      metodo   = @cadastrarUnidadeMedida
+      mensagem = "Unidade de medida criada com sucesso! <br> Você será redirecionado em instantes..."
+
+    metodo(@, unidadeMedida: @get("model")).then(
+
+      (data) ->
+
+        self.mostrarMensagem(message: mensagem, type: "success",
 
           ->
             setTimeout(
               ->
                 self.sendAction("actionOnSubmitted")
-                callbackOnSubmitComplete()
+                callbackOnSubmitComplete(true)
               3000
             )
 
         )
 
-      (errors) ->
+      (errs) ->
+
         self.mostrarMensagem(message: "Ocorreu um erro.", type: "danger",
           ->
-            callbackOnSubmitComplete()
+            callbackOnSubmitComplete(false)
         )
-
-
     )
-
 
   actions:
 

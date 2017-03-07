@@ -5,7 +5,17 @@ RequestsUnidadeMedidaMixin = Ember.Mixin.create(
   store: Ember.inject.service()
 
   cadastrarUnidadeMedida: (context, options, callback = ->) ->
-    return @get("store").createRecord("unidade-medida", options["attrs"]).save()
+
+    if options.hasOwnProperty("unidadeMedida")
+      return options["unidadeMedida"].save()
+    else
+      return @get("store").createRecord("unidade-medida", options["attrs"]).save()
+
+  atualizarUnidadeMedida: (context, options, callback = ->) ->
+
+    if options.hasOwnProperty("unidadeMedida")
+      return options["unidadeMedida"].save()
+
 
 )
 
