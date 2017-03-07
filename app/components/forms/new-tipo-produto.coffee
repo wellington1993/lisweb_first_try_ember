@@ -7,6 +7,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
   store: Ember.inject.service()
 
+  isEdit: false
+
   #Flags de validacao do tipo do produto
   mnemonicoValido: false
   nomeValido: false
@@ -62,8 +64,24 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     #Inicializa o array de validacao de produtos.
     @inicializarArrayValidacaoProdutos()
 
-    #Vincula um novo produto ao tipo de produto.
-    @criarProduto()
+    #Se é um novo cadastro:
+    if !@get("isEdit")
+
+      #Vincula um novo produto ao tipo de produto.
+      @criarProduto()
+
+    else
+
+      #Considera os campos iniciais válidos.
+      @set("mnemonicoValido", true)
+      @set("nomeValido", true)
+      @set("descricaoValida", true)
+      @set("categoriaValida", true)
+      @set("unidadeDeSaidaValida", true)
+      @set("estoqueMinimoValido", true)
+      @set("pontoDeCompraValido", true)
+      @set("estoqueIdealValido", true)
+      @set("statusValido", true)
 
   #Ao componente ser inserido na DOM:
   didInsertElement: ->
@@ -74,7 +92,51 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
   #Inicializa o array de validacao de produtos.
   inicializarArrayValidacaoProdutos: ->
-    @set("validacoesProdutos", [])
+
+    self = @
+
+    validacoesProduto = []
+
+    if @get("isEdit")
+
+      produtos = @get("tipoProduto.produtos").forEach(
+
+        (produto) ->
+
+          validacaoProduto = self.criarObjetoInicialValidacaoProduto()
+          validacaoProduto["nomeValido"]   = true
+          validacaoProduto["statusValido"] = true
+          validacaoProduto["marcaValida"]  = true
+
+          unidadesEntrada = produto.get("unidadesMedidaEntrada")
+
+          if unidadesEntrada && unidadesEntrada.get("length") > 0
+
+            unidadesEntrada.forEach(
+              (unidade) ->
+                validacaoUnidade                     = self.criarObjetoInicialValidacaoUnidadeEntrada()
+                validacaoUnidade["nomeValido"]       = true
+                validacaoUnidade["quantidadeValida"] = true
+                validacaoProduto["validacoesUnidadeEntrada"].pushObject(validacaoUnidade)
+            )
+
+
+          fornecedores = produto.get("fornecedores")
+
+          if fornecedores && fornecedores.get("length") > 0
+
+            fornecedores.forEach(
+              (unidade) ->
+                validacaoFornecedor               = self.criarObjetoInicialValidacaoFornecedorProduto()
+                validacaoFornecedor["nomeValido"] = true
+                validacaoProduto["validacoesFornecedores"].pushObject(validacaoFornecedor)
+            )
+
+          validacoesProduto.pushObject(validacaoProduto)
+
+      )
+
+    @set("validacoesProdutos", validacoesProduto)
 
   #Cria um novo produto vinculado ao tipo de produto.
   criarProduto: (nome = "Novo produto") ->

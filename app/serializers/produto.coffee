@@ -4,8 +4,12 @@ import ApplicationSerializer from './application'
 ProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
 
   attrs:
-    unidadesMedidaEntrada: embedded: "always"
-    fornecedores: embedded: "always"
+
+    unidadesMedidaEntrada:
+      deserialize: "records"
+
+    fornecedores: 
+      deserialize: "records"
 
   #Tratamento para serializar os relacionamentos hasMany.
   serializeHasMany: (snapshot, json, relationship) ->

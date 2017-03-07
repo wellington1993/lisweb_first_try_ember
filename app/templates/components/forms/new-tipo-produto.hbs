@@ -101,9 +101,16 @@
         <li role="presentation">
           <a id="btn-aba-produto-{{index}}" href="#tab-produto-{{index}}" aria-controls="home" role="tab" data-toggle="tab" {{action "actEscolherProdutoAbaAtual" index produto}}>
             {{produto.nome}}
+
             {{#unless possuiUnicoProduto}}
-            <a id="btn-fechar-produto-{{index}}" {{action "actFecharAbaProduto" index}} style="cursor:pointer;"><i class="fa fa-close"></i> </a>
+              <a id="btn-fechar-produto-{{index}}" {{action "actFecharAbaProduto" index}} style="cursor:pointer;"><i class="fa fa-close text-danger"></i> </a>
             {{/unless}}
+
+
+            {{#if isEdit}}
+              <i id="i-delecao-produto-{{index}}" class="fa fa-exclamation text-danger"></i>
+            {{/if}}
+
         </a>
         </li>
       {{/each }}
@@ -123,6 +130,18 @@
       <div role="tabpanel" class="tab-pane" id="tab-produto-{{index}}">
 
         <br>
+
+        {{#if isEdit}}
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="alert alert-danger">
+              <strong>Esté produto será excluído ao salvar o registro.</strong>
+              <br>
+               <a href="">Cancelar</a>
+            </div>
+          </div>
+        </div>
+        {{/if}}
 
         <div class="row">
           <div class="col-lg-5">
@@ -207,6 +226,16 @@
               <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
             </div>
           </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="alert alert-danger">
+                O fornecedor será excluído ao salvar o registro.
+                <br>
+                <a href="">Cancelar</a>
+              </div>
+            </div>
+          </div>
         {{/each}}
 
         {{#if produto.fornecedores}}
@@ -266,6 +295,18 @@
             <button class="btn btn-default btn-md" {{action "actExcluirLinhaUnidadeEntrada" produto index unidadeMedidaEntrada}}><i class="fa fa-close"></i></button>
           </div>
         </div>
+
+        <br>
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="alert alert-danger">
+              A unidade de medida será excluída ao salvar o registro.
+              <br>
+              <a href="">Cancelar</a>
+            </div>
+          </div>
+        </div>
+
         {{/each}}
 
         {{#if produto.unidadesMedidaEntrada}}

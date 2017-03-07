@@ -4,7 +4,8 @@
 TipoProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
 
   attrs:
-    produtos: embedded: "always"
+    produtos:
+      deserialize: "records"
 
   #Tratamento para serializar os relacionamentos hasMany.
   serializeHasMany: (snapshot, json, relationship) ->
