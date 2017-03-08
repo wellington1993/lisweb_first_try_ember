@@ -109,7 +109,7 @@
 
 
             {{#if isEdit}}
-              <i id="i-delecao-produto-{{index}}" class="fa fa-exclamation text-danger" style="display:none;"></i>
+              <i id="i-delecao-produto-{{produto.id}}" class="fa fa-exclamation text-danger" style="display:none;"></i>
             {{/if}}
 
         </a>
@@ -135,10 +135,10 @@
         {{#if isEdit}}
         <div class="row">
           <div class="col-lg-5">
-            <div id="mensagem-delecao-produto-{{index}}" class="alert alert-danger" style="display:none;">
+            <div id="mensagem-delecao-produto-{{produto.id}}" class="alert alert-danger" style="display:none;">
               <strong>Esté produto será excluído ao salvar o registro.</strong>
               <br>
-               <a href="">Cancelar</a>
+               <a href="" {{action "actCancelarExclusaoProduto" index produto}}>Cancelar</a>
             </div>
           </div>
         </div>
@@ -289,7 +289,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-7">
+          <div  id="botoes-controle-uidade-entrada-{{index}}" class="col-lg-7">
             <br>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
@@ -300,7 +300,7 @@
         <br>
         <div class="row">
           <div class="col-lg-5">
-            <div class="alert alert-danger">
+            <div id="mensagem-delecao-unidade-entrada-{{index}}" class="alert alert-danger" style="display:none;">
               A unidade de medida será excluída ao salvar o registro.
               <br>
               <a href="">Cancelar</a>

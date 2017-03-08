@@ -27,6 +27,11 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
   produtoAbaAtual: null
   indexProdutoAbaAtual: null
 
+  #Arrays de delecao para modo edicao
+  produtosExcluidos: []
+  fornecedoresExcluidos: []
+  unidadesEntradaExcluidos: []
+
   #Flags de validacao do produto atual.
   validacoesProdutoAtual: Ember.computed("indexProdutoAbaAtual", ->
     return @get("validacoesProdutos").objectAt(@get("indexProdutoAbaAtual"))
@@ -381,7 +386,23 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
         callbackOnAnimationComplete()
     )
 
-  indicarDelecaoProduto: (indicar, tipoProduto) ->
+  indicarDelecaoProduto: (indicar, tipoProduto, index) ->
+
+    exclamacaoAba   = @$("#i-delecao-produto-" + tipoProduto.get("id"))
+    mensagemAlerta  = @$("#mensagem-delecao-produto-" + tipoProduto.get("id"))
+    componentesForm = @$("#tab-produto-" + index).find("*")
+    botaoFechar     = @$("#btn-fechar-produto-" + index)
+
+    metodo = if indicar then "show" else "hide"
+
+    exclamacaoAba[metodo]()
+    mensagemAlerta[metodo]()
+    componentesForm.attr("disabled", indicar)
+
+    if indicar
+      botaoFechar.hide()
+    else
+      botaoFechar.show()
 
   actions:
 
@@ -423,39 +444,53 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       #Obtem o produto a ser excluido.
       produto = produtos.objectAt(index)
 
-      #Remove do array hasMany.
-      @get("tipoProduto").get("produtos").removeAt(index)
+      #Se é modo edicao e o produto nao é um novo produto:
+      if @get("isEdit") && !produto.get("isNew")
 
-      #Remove do Ember-Data.
-      @get("store").unloadRecord(produto)
+        @get("produtosExcluidos").pushObject(produto)
 
-      #Remove o objeto de validacao do produto.
-      @get("validacoesProdutos").removeAt(index)
+        @indicarDelecaoProduto(true, produto, index)
 
-      #Obtem a aba ativa.
-      abaAtiva = @$(".nav-tabs").find(".active")
-
-      #Se nao ha aba ativa a aba do primeiro produto sera clicada.
-      if !abaAtiva
-        @$("#btn-aba-produto-0").trigger("click")
       else
 
-        #Obtem o index do produto referente a aba atual
-        indexAbaAtual = parseInt(abaAtiva.find("a").attr("id").split("-").get("lastObject"))
+        #Remove do array hasMany.
+        @get("tipoProduto").get("produtos").removeAt(index)
 
-        #Se a aba atual é a aba a ser fechada:
-        if indexAbaAtual == index
+        #Remove do Ember-Data.
+        @get("store").unloadRecord(produto)
 
-          #Se é a primeira aba, a segunda aba passará a ser a aba ativa.
-          if index == 0
-            indexAbaAtual = 1
-          else
-            #A aba anterior a aba a ser fechada será aba ativa.
-            indexAbaAtual = indexAbaAtual - 1
+        #Obtem a aba ativa.
+        abaAtiva = @$(".nav-tabs").find(".active")
 
-          #Simula o evento click para que ao fechar a aba uma nova aba esteja
-          #ativa.
-          @$("#btn-aba-produto-#{indexAbaAtual}").trigger("click")
+        #Se nao ha aba ativa a aba do primeiro produto sera clicada.
+        if !abaAtiva
+          @$("#btn-aba-produto-0").trigger("click")
+        else
+
+          #Obtem o index do produto referente a aba atual
+          indexAbaAtual = parseInt(abaAtiva.find("a").attr("id").split("-").get("lastObject"))
+
+          #Se a aba atual é a aba a ser fechada:
+          if indexAbaAtual == index
+
+            #Se é a primeira aba, a segunda aba passará a ser a aba ativa.
+            if index == 0
+              indexAbaAtual = 1
+            else
+              #A aba anterior a aba a ser fechada será aba ativa.
+              indexAbaAtual = indexAbaAtual - 1
+
+            #Simula o evento click para que ao fechar a aba uma nova aba esteja
+            #ativa.
+            @$("#btn-aba-produto-#{indexAbaAtual}").trigger("click")
+
+        #Remove o objeto de validacao do produto.
+        @get("validacoesProdutos").removeAt(index)
+
+    actCancelarExclusaoProduto: (index, produto) ->
+
+      @get("produtosExcluidos").removeObject(produto)
+      @indicarDelecaoProduto(false, produto, index)
 
     #Adiciona um novo fornecedor para o produto atual em processamento.
     actAdicionarFornecedor: (produto) ->
