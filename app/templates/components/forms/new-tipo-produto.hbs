@@ -84,6 +84,7 @@
       <div class="col-lg-2">
         Status: <span class="required-input">(*)</span>
         {{select-options-ativo-inativo
+          id="cmb-tipo-produto-status"
           class="form-control"
           actionOnChange="actValidarStatusTipoProduto"}}
       </div>
@@ -108,7 +109,7 @@
 
 
             {{#if isEdit}}
-              <i id="i-delecao-produto-{{index}}" class="fa fa-exclamation text-danger"></i>
+              <i id="i-delecao-produto-{{index}}" class="fa fa-exclamation text-danger" style="display:none;"></i>
             {{/if}}
 
         </a>
@@ -134,7 +135,7 @@
         {{#if isEdit}}
         <div class="row">
           <div class="col-lg-5">
-            <div class="alert alert-danger">
+            <div id="mensagem-delecao-produto-{{index}}" class="alert alert-danger" style="display:none;">
               <strong>Esté produto será excluído ao salvar o registro.</strong>
               <br>
                <a href="">Cancelar</a>
@@ -221,7 +222,7 @@
                 value=fornecedor.observacao
                 maxlength=255}}
             </div>
-            <div class="col-lg-3">
+            <div id="botoes-controle-fornecedor-{{index}}" class="col-lg-3">
               <br>
               <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
             </div>
@@ -229,7 +230,7 @@
           <br>
           <div class="row">
             <div class="col-lg-9">
-              <div class="alert alert-danger">
+              <div id="mensagem-delecao-fornecedor-{{index}}" class="alert alert-danger" style="display:none;">
                 O fornecedor será excluído ao salvar o registro.
                 <br>
                 <a href="">Cancelar</a>

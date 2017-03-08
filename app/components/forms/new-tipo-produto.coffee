@@ -90,6 +90,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
+    #Se modo edição:
+    if @get("isEdit")
+      @$("#cmb-tipo-produto-status").val(@get("tipoProduto").get("status"))
+
   #Inicializa o array de validacao de produtos.
   inicializarArrayValidacaoProdutos: ->
 
@@ -376,6 +380,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
         self.moverScrollComAnimacao(messageBox)
         callbackOnAnimationComplete()
     )
+
+  indicarDelecaoProduto: (indicar, tipoProduto) ->
 
   actions:
 
