@@ -417,6 +417,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     else
       botaoFechar.show()
 
+  indicarDelecaoFornecedor: (indicar, produto, index, fornecedor) ->
+
+
   actions:
 
     #Action ao clicar no botao para criar novo produto.
@@ -523,10 +526,6 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     #Exclui um fornecedor vinculado ao produto.
     actExcluirLinhaFornecedor: (produto, index, fornecedor) ->
-      produto.get("fornecedores").removeObject(fornecedor)
-
-      validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
-      validacoesFornecedores.removeAt(index)
 
     #Exclui uma unidade de entrada vinculado ao produto.
     actExcluirLinhaUnidadeEntrada: (produto, index, unidadeEntrada) ->

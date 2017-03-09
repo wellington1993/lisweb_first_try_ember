@@ -98,13 +98,13 @@
 
     <ul class="nav nav-tabs" role="tablist">
 
-      {{#each tipoProduto.produtos as |produto index|}}
+      {{#each tipoProduto.produtos as |produto indexProduto|}}
         <li role="presentation">
-          <a id="btn-aba-produto-{{index}}" href="#tab-produto-{{index}}" aria-controls="home" role="tab" data-toggle="tab" {{action "actEscolherProdutoAbaAtual" index produto}}>
+          <a id="btn-aba-produto-{{indexProduto}}" href="#tab-produto-{{indexProduto}}" aria-controls="home" role="tab" data-toggle="tab" {{action "actEscolherProdutoAbaAtual" indexProduto produto}}>
             {{produto.nome}}
 
             {{#unless possuiUnicoProduto}}
-              <a id="btn-fechar-produto-{{index}}" {{action "actFecharAbaProduto" index}} style="cursor:pointer;"><i class="fa fa-close text-danger"></i> </a>
+              <a id="btn-fechar-produto-{{indexProduto}}" {{action "actFecharAbaProduto" indexProduto}} style="cursor:pointer;"><i class="fa fa-close text-danger"></i> </a>
             {{/unless}}
 
 
@@ -126,9 +126,9 @@
 
     <div class="tab-content">
 
-      {{#each tipoProduto.produtos as |produto index| }}
+      {{#each tipoProduto.produtos as |produto indexProduto| }}
 
-      <div role="tabpanel" class="tab-pane" id="tab-produto-{{index}}">
+      <div role="tabpanel" class="tab-pane" id="tab-produto-{{indexProduto}}">
 
         <br>
 
@@ -138,7 +138,7 @@
             <div id="mensagem-delecao-produto-{{produto.id}}" class="alert alert-danger" style="display:none;">
               <strong>Esté produto será excluído ao salvar o registro.</strong>
               <br>
-               <a href="" {{action "actCancelarExclusaoProduto" index produto}}>Cancelar</a>
+               <a href="" {{action "actCancelarExclusaoProduto" indexProduto produto}}>Cancelar</a>
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@
 
         </div>
 
-        {{#each produto.fornecedores as |fornecedor index|}}
+        {{#each produto.fornecedores as |fornecedor indexFornecedor|}}
           <div class="row">
             <div class="col-lg-3">
               Nome: <span class="required-input">(*)</span>
@@ -222,15 +222,15 @@
                 value=fornecedor.observacao
                 maxlength=255}}
             </div>
-            <div id="botoes-controle-fornecedor-{{index}}" class="col-lg-3">
+            <div id="botoes-controle-fornecedor-{{indexFornecedor}}" class="col-lg-3">
               <br>
-              <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto index fornecedor}}><i class="fa fa-close"></i></button>
+              <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto indexFornecedor fornecedor}}><i class="fa fa-close"></i></button>
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-lg-9">
-              <div id="mensagem-delecao-fornecedor-{{index}}" class="alert alert-danger" style="display:none;">
+              <div id="mensagem-delecao-fornecedor-{{indexFornecedor}}" class="alert alert-danger" style="display:none;">
                 O fornecedor será excluído ao salvar o registro.
                 <br>
                 <a href="">Cancelar</a>
@@ -263,7 +263,7 @@
 
         </div>
 
-        {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada index|}}
+        {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada indexUnidadeEntrada|}}
         <div class="row">
           <div class="col-lg-3">
             Nome: <span class="required-input">(*) </span>
@@ -289,18 +289,18 @@
               </div>
             </div>
           </div>
-          <div  id="botoes-controle-uidade-entrada-{{index}}" class="col-lg-7">
+          <div  id="botoes-controle-uidade-entrada-{{indexUnidadeEntrada}}" class="col-lg-7">
             <br>
-            <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
-            <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto index unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
-            <button class="btn btn-default btn-md" {{action "actExcluirLinhaUnidadeEntrada" produto index unidadeMedidaEntrada}}><i class="fa fa-close"></i></button>
+            <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto indexUnidadeEntrada unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
+            <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto indexUnidadeEntrada unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
+            <button class="btn btn-default btn-md" {{action "actExcluirLinhaUnidadeEntrada" produto indexUnidadeEntrada unidadeMedidaEntrada}}><i class="fa fa-close"></i></button>
           </div>
         </div>
 
         <br>
         <div class="row">
           <div class="col-lg-5">
-            <div id="mensagem-delecao-unidade-entrada-{{index}}" class="alert alert-danger" style="display:none;">
+            <div id="mensagem-delecao-unidade-entrada-{{indexUnidadeEntrada}}" class="alert alert-danger" style="display:none;">
               A unidade de medida será excluída ao salvar o registro.
               <br>
               <a href="">Cancelar</a>
