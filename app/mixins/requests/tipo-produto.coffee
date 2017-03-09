@@ -15,12 +15,11 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     fornecedoresExcluidos    = options["fornecedoresExcluidos"]
     unidadesEntradaExcluidos = options["unidadesEntradaExcluidos"]
 
-
     #Exclui cada fornecedor.
     fornecedoresExcluidos.forEach(
       (f) ->
         try
-          f.destroyRecord()
+          f.deleteRecord()
         catch e
     )
 
@@ -28,7 +27,7 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     unidadesEntradaExcluidos.forEach(
       (u) ->
         try
-          u.destroyRecord()
+          u.deleteRecord()
         catch
     )
 
@@ -36,7 +35,7 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     produtosExcluidos.forEach(
       (p) ->
         try
-          p.destroyRecord()
+          p.deleteRecord()
         catch
     )
 
@@ -80,7 +79,7 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
 
                 (hasManyName) ->
 
-                  recs.forEach(
+                  p.get(hasManyName).forEach(
                     (item) ->
                       item.save()
                   )

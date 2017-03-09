@@ -169,7 +169,7 @@
             {{inputs/input-autocomplete
               modelName="marca"
               suggestionField="nome"
-              refIndex=index
+              refIndex=indexProduto
               onSelect="actValidarMarca"
               onDeselect="actValidarMarca"}}
           </div>
@@ -206,7 +206,7 @@
               {{inputs/input-autocomplete
                 modelName="pessoa"
                 suggestionField="nome"
-                refIndex=index
+                refIndex=indexFornecedor
                 onSelect="actValidarNomeFornecedor"
                 onDeselect="actValidarNomeFornecedor"}}
             </div>
@@ -270,7 +270,7 @@
             {{inputs/input-autocomplete
               modelName="unidade-medida"
               suggestionField="nome"
-              refIndex=index
+              refIndex=indexUnidadeEntrada
               onSelect="actValidarNomeUnidadeMedidaProduto"
               onDeselect="actValidarNomeUnidadeMedidaProduto"}}
           </div>
@@ -284,7 +284,7 @@
               <br>
               {{inputs/numeric-input
                 value=unidadeMedidaEntrada.quantidade
-                valorRefIndex=index
+                valorRefIndex=indexUnidadeEntrada
                 actionOnFimValidacao="actValidarQuantidadeUnidadeEntrada"}}
               </div>
             </div>
@@ -322,7 +322,7 @@
         <hr>
 
         <div class="row">
-          <div class="col-lg-2">
+          <div id="div-produto-{{indexProduto}}-status" class="col-lg-2">
             Status: <span class="required-input">(*)</span>
             {{select-options-ativo-inativo
               class="form-control"

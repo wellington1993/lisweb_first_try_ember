@@ -90,6 +90,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
   #Ao componente ser inserido na DOM:
   didInsertElement: ->
+
+    self = @
+
     @_super()
 
     @set("messageBox", @$("#box-alert").find(".alert"))
@@ -100,6 +103,15 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     #Se modo edição:
     if @get("isEdit")
       @$("#cmb-tipo-produto-status").val(@get("tipoProduto").get("status"))
+
+      @get("tipoProduto.produtos").forEach(
+        (p, index) ->
+          if p.get("isNew")
+            return
+
+          self.$("#div-produto-#{index}-status").find("select").val(p.get("status"))
+
+      )
 
   #Inicializa o array de validacao de produtos.
   inicializarArrayValidacaoProdutos: ->
@@ -249,7 +261,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
         produto = self.get("tipoProduto.produtos").objectAt(indexProduto)
 
-        if self.get("produtosExcluidos").indexOf(produto) < 0
+        if self.get("produtosExcluidos").indexOf(produto) > -1
           return
 
         produtoValido = false
@@ -278,7 +290,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
             fornecedor = produto.get("fornecedores").objectAt(indexFornecedor)
 
-            if self.get("fornecedoresExcluidos").indexOf(fornecedor) < 0
+            if self.get("fornecedoresExcluidos").indexOf(fornecedor) > -1
               return
 
             fornecedor = fornecedor.get("pessoa")
@@ -297,7 +309,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
             unidadeEntrada = produto.get("unidadesMedidaEntrada").objectAt(indexUnidadeEntrada)
 
-            if self.get("unidadesEntradaExcluidos").indexOf(unidadeEntrada) < 0
+            if self.get("unidadesEntradaExcluidos").indexOf(unidadeEntrada) > -1
               return
 
             unidadeEntrada = unidadeEntrada.get("unidadeMedida")
@@ -314,7 +326,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
               else
                 nome = indexUnidadeEntrada + 1
 
-              errosProduto.push("Unidade de entrada <b>#{nome}</b>: você deve preencher corretamente o campo <b>Quantidade.</b>")
+              errosProduto.push("Unidade de Entrada <b>#{nome}</b>: você deve preencher corretamente o campo <b>Quantidade.</b>")
               valido = false
               produtoValido = false
 
