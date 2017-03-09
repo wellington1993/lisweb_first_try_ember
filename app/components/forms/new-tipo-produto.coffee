@@ -55,8 +55,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
       try
         length = @get("tipoProduto.produtos.length")
+      
         if length > 1
           retorno = false
+
       catch e
 
       return retorno
