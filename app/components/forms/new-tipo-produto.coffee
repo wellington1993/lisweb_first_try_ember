@@ -342,15 +342,28 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     self = @
 
+    if @get("isEdit")
+      metodo   = @atualizarTipoProduto
+      mensagem = "Tipo de produto atualizado com sucesso! <br> Você será redirecionado em instantes..."
+      params   =
+        tipoProduto: @get("tipoProduto")
+        produtosExcluidos: @get("produtosExcluidos")
+        fornecedoresExcluidos: @get("fornecedoresExcluidos")
+        unidadesEntradaExcluidos: @get("unidadesEntradaExcluidos")
+    else
+      metodo   = @cadastrarTipoProduto
+      mensagem = "Tipo de produto cadastrado com sucesso! <br> Você será redirecionado em instantes..."
+      params   = tipoProduto: @get("tipoProduto")
+
     #Tenta cadastrar o novo tipo de produto.
-    @cadastrarTipoProduto(@, tipoProduto: @get("tipoProduto")).then(
+    metodo(@, params).then(
 
       #Sucesso no submit:
       (marca) ->
 
         #Se cadastrado com sucesso exibe a mensagem de sucesso e apos 3s
         #chama a action de redirecionamento.
-        self.mostrarMensagem(message: "Tipo de produto cadastrado com sucesso! <br> Você será redirecionado em instantes...", type: "success",
+        self.mostrarMensagem(message: mensagem, type: "success",
 
           ->
             setTimeout(
