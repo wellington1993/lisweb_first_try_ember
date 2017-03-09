@@ -92,6 +92,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
   didInsertElement: ->
     @_super()
 
+    @set("messageBox", @$("#box-alert").find(".alert"))
+
     #Simula o clique na aba para o formulario de produto ser visivel.
     @$("#btn-aba-produto-0").trigger("click")
 
@@ -247,6 +249,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
         produto = self.get("tipoProduto.produtos").objectAt(indexProduto)
 
+        if self.get("produtosExcluidos").indexOf(produto) < 0
+          return
+
         produtoValido = false
 
         errosProduto = []
@@ -272,6 +277,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           (v, indexFornecedor) ->
 
             fornecedor = produto.get("fornecedores").objectAt(indexFornecedor)
+
+            if self.get("fornecedoresExcluidos").indexOf(fornecedor) < 0
+              return
+
             fornecedor = fornecedor.get("pessoa")
 
             if !v["nomeValido"]
@@ -287,6 +296,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           (v, indexUnidadeEntrada) ->
 
             unidadeEntrada = produto.get("unidadesMedidaEntrada").objectAt(indexUnidadeEntrada)
+
+            if self.get("unidadesEntradaExcluidos").indexOf(unidadeEntrada) < 0
+              return
+
             unidadeEntrada = unidadeEntrada.get("unidadeMedida")
 
             if !v["nomeValido"]

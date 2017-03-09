@@ -45,7 +45,40 @@ ApplicationAdapter = DS.RESTAdapter.extend(DataAdapterMixin,
       delete query["action"]
 
     return @_super(store, type, query)
-    
+
+  #Realiza tratamento para models que possui endpoint diferente do padrão.
+  buildURL: (modelName, id, snapshot, requestType, query) ->
+
+    url = null
+
+    try
+
+      record = snapshot.record
+      host   = @get("host")
+
+      switch modelName
+
+        when "produto"
+
+          url = "#{host}/tipos_produto/#{record.get("tipoProduto.id")}/produtos"
+
+        when "fornecedor-produto"
+          url = "#{host}/tipos_produto/#{record.get("produto.tipoProduto.id")}/produtos/#{record.get("produto.id")}/fornecedores_produto"
+
+        when "unidade-medida-entrada"
+
+          url = "#{host}/tipos_produto/#{record.get("produto.tipoProduto.id")}/produtos/#{record.get("produto.id")}/unidades_medida_entrada"
+
+      if url != null && id
+        url = url + "/" + id
+
+    catch
+
+    if url == null
+      return @_super(modelName, id, snapshot, requestType, query)
+
+    return url
+
 )
 
 export default ApplicationAdapter

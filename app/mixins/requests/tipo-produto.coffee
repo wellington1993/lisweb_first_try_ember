@@ -20,7 +20,6 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     fornecedoresExcluidos.forEach(
       (f) ->
         try
-          f.get("produto.fornecedores").removeObject(f)
           f.destroyRecord()
         catch e
     )
@@ -29,7 +28,6 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     unidadesEntradaExcluidos.forEach(
       (u) ->
         try
-          u.get("produto.unidadesMedidaEntrada").removeObject(u)
           u.destroyRecord()
         catch
     )
@@ -38,7 +36,6 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
     produtosExcluidos.forEach(
       (p) ->
         try
-          p.get("tipoProduto.produtos").removeObject(p)
           p.destroyRecord()
         catch
     )
@@ -94,7 +91,7 @@ RequestsTipoProdutoMixin = Ember.Mixin.create(
           )
 
     )
-    
+
     return tipoProduto.save()
 
 )
