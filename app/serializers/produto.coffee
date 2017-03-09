@@ -8,7 +8,7 @@ ProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
     unidadesMedidaEntrada:
       deserialize: "records"
 
-    fornecedores: 
+    fornecedores:
       deserialize: "records"
 
   #Tratamento para serializar os relacionamentos hasMany.
@@ -38,13 +38,6 @@ ProdutoSerializer = ApplicationSerializer.extend(DS.EmbeddedRecordsMixin,
     records.forEach(
 
       (r, index) ->
-
-        #Se o registro iterado é um registro de unidade de medida de entrada e
-        #o atributo "ordem" nao foi definido, o atributo "ordem" sera o indice
-        #da iteracao + 1.
-        if key == "unidadesMedidaEntrada" && !r.get("ordem")
-          r.set("ordem", (index + 1))
-
         json[newKey].pushObject(r.serialize())
 
     )

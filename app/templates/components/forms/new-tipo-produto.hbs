@@ -264,7 +264,7 @@
         </div>
 
         {{#each produto.unidadesMedidaEntrada as |unidadeMedidaEntrada indexUnidadeEntrada|}}
-        <div class="row">
+        <div id="componentes-produto-{{indexProduto}}-unidade-{{indexUnidadeEntrada}}" class="row">
           <div class="col-lg-3">
             Nome: <span class="required-input">(*) </span>
             {{inputs/input-autocomplete
@@ -289,7 +289,7 @@
               </div>
             </div>
           </div>
-          <div  id="botoes-controle-uidade-entrada-{{indexUnidadeEntrada}}" class="col-lg-7">
+          <div id="botoes-controle-produto-{{indexProduto}}-unidade-{{indexUnidadeEntrada}}" class="col-lg-7">
             <br>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeCima" produto indexUnidadeEntrada unidadeMedidaEntrada}}><i class="fa fa-arrow-up"></i></button>
             <button class="btn btn-default btn-md" {{action "actMoverUnidadeBaixo" produto indexUnidadeEntrada unidadeMedidaEntrada}}><i class="fa fa-arrow-down"></i></button>
@@ -300,10 +300,10 @@
         <br>
         <div class="row">
           <div class="col-lg-5">
-            <div id="mensagem-delecao-produto-{{indexProduto}}-unidade-entrada-{{indexUnidadeEntrada}}" class="alert alert-danger" style="display:none;">
+            <div id="mensagem-delecao-produto-{{indexProduto}}-unidade-{{indexUnidadeEntrada}}" class="alert alert-danger" style="display:none;">
               A unidade de medida será excluída ao salvar o registro.
               <br>
-              <a href="">Cancelar</a>
+              <a href="" {{action "actCancelarExclusaoUnidade" unidadesMedidaEntrada indexUnidadeEntrada}}>Cancelar</a>
             </div>
           </div>
         </div>

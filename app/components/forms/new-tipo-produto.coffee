@@ -423,6 +423,12 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
           self.indicarDelecaoFornecedor(true, i, f)
       )
 
+      @get("unidadesEntradaExcluidos").forEach(
+        (u) ->
+          i = self.get("produtoAbaAtual").get("unidadesMedidaEntrada").indexOf(u)
+          self.indicarDelecaoUnidade(true, i, u)
+      )
+
       botaoFechar.show()
 
   indicarDelecaoFornecedor: (indicar, index, fornecedor) ->
@@ -442,6 +448,29 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       mensagemAlerta.hide()
       botoesControle.show()
 
+  indicarDelecaoUnidade: (indicar, index, unidade) ->
+
+    indexProduto = @get("indexProdutoAbaAtual")
+
+    componentesForm = @$("#componentes-produto-#{indexProduto}-unidade-#{index}").find("*")
+    mensagemAlerta  = @$("#mensagem-delecao-produto-#{indexProduto}-unidade-#{index}")
+    botoesControle  = @$("#botoes-controle-produto-#{indexProduto}-unidade-#{index}")
+
+    componentesForm.attr("disabled", indicar)
+
+    if indicar
+      mensagemAlerta.show()
+      botoesControle.hide()
+    else
+      mensagemAlerta.hide()
+      botoesControle.show()
+
+  atualizarOrdenacaoUnidades: ->
+
+    @get("produtoAbaAtual.unidadesMedidaEntrada").forEach(
+      (u, index) ->
+        u.set("ordem", (index + 1))
+    )
   actions:
 
     #Action ao clicar no botao para criar novo produto.
@@ -541,7 +570,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     #Adiciona uma nova unidade de entrada para o produto atual em processamento.
     actAdicionarUnidadeEntrada: (produto) ->
       unidadesEntrada = produto.get("unidadesMedidaEntrada")
-      unidadesEntrada.pushObject(@get("store").createRecord("unidade-medida-entrada"))
+      unidadesEntrada.pushObject(@get("store").createRecord("unidade-medida-entrada", ordem: (unidadesEntrada.get("length") + 1)))
 
       validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
       validacoesUnidadeEntrada.pushObject(@criarObjetoInicialValidacaoUnidadeEntrada())
@@ -566,10 +595,22 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     #Exclui uma unidade de entrada vinculado ao produto.
     actExcluirLinhaUnidadeEntrada: (produto, index, unidadeEntrada) ->
-      produto.get("unidadesMedidaEntrada").removeObject(unidadeEntrada)
 
-      validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
-      validacoesUnidadeEntrada.removeAt(index)
+      if @get("isEdit") && !unidadeEntrada.get("isNew")
+
+        @indicarDelecaoUnidade(true, index, unidadeEntrada)
+        @get("unidadesEntradaExcluidos").pushObject(unidadeEntrada)
+
+      else
+
+        produto.get("unidadesMedidaEntrada").removeObject(unidadeEntrada)
+
+        validacoesUnidadeEntrada = @get("validacoesUnidadeEntradaProdutoAtual")
+        validacoesUnidadeEntrada.removeAt(index)
+
+    actCancelarExclusaoUnidade: (unidade, indexUnidade) ->
+      @get("unidadesEntradaExcluidos").removeObject(unidade)
+      @indicarDelecaoUnidade(false, indexUnidade, unidade)
 
     #Move uma unidade de entrada para cima.
     actMoverUnidadeCima: (produto, index, unidadeEntrada) ->
@@ -585,6 +626,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacao = validacoesUnidadeEntrada.objectAt(index)
       validacoesUnidadeEntrada.removeAt(index)
       validacoesUnidadeEntrada.insertAt((index - 1), validacao)
+      @atualizarOrdenacaoUnidades()
 
     #Move uma nidade de entrada para baixo.
     actMoverUnidadeBaixo: (produto, index, unidadeEntrada) ->
@@ -601,6 +643,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       validacao = validacoesUnidadeEntrada.objectAt(index)
       validacoesUnidadeEntrada.removeAt(index)
       validacoesUnidadeEntrada.insertAt((index + 1), validacao)
+      @atualizarOrdenacaoUnidades()
+
 
     #Indica qual é o produto atual apos clicar em alguma aba de produtos.
     actEscolherProdutoAbaAtual: (index, produto) ->
