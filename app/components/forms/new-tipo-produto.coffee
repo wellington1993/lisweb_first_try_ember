@@ -401,6 +401,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
   indicarDelecaoProduto: (indicar, tipoProduto, index) ->
 
+    self = @
+
     exclamacaoAba   = @$("#i-delecao-produto-" + tipoProduto.get("id"))
     mensagemAlerta  = @$("#mensagem-delecao-produto-" + tipoProduto.get("id"))
     componentesForm = @$("#tab-produto-" + index).find("*")
@@ -415,10 +417,30 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
     if indicar
       botaoFechar.hide()
     else
+      @get("fornecedoresExcluidos").forEach(
+        (f) ->
+          i = self.get("produtoAbaAtual").get("fornecedores").indexOf(f)
+          self.indicarDelecaoFornecedor(true, i, f)
+      )
+
       botaoFechar.show()
 
-  indicarDelecaoFornecedor: (indicar, produto, index, fornecedor) ->
+  indicarDelecaoFornecedor: (indicar, index, fornecedor) ->
 
+    indexProduto = @get("indexProdutoAbaAtual")
+
+    componentesForm = @$("#componentes-produto-#{indexProduto}-fornecedor-#{index}").find("*")
+    mensagemAlerta  = @$("#mensagem-delecao-produto-#{indexProduto}-fornecedor-#{index}")
+    botoesControle  = @$("#botoes-controle-produto-#{indexProduto}-fornecedor-#{index}")
+
+    componentesForm.attr("disabled", indicar)
+
+    if indicar
+      mensagemAlerta.show()
+      botoesControle.hide()
+    else
+      mensagemAlerta.hide()
+      botoesControle.show()
 
   actions:
 
@@ -526,6 +548,21 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     #Exclui um fornecedor vinculado ao produto.
     actExcluirLinhaFornecedor: (produto, index, fornecedor) ->
+
+      if @get("isEdit") && !fornecedor.get("isNew")
+
+        @indicarDelecaoFornecedor(true, index, fornecedor)
+        @get("fornecedoresExcluidos").pushObject(fornecedor)
+      else
+
+        produto.get("fornecedores").removeObject(fornecedor)
+
+        validacoesFornecedores = @get("validacoesFornecedoresProdutoAtual")
+        validacoesFornecedores.removeAt(index)
+
+    actCancelarExclusaoFornecedor: (fornecedor, indexFornecedor) ->
+      @get("fornecedoresExcluidos").removeObject(fornecedor)
+      @indicarDelecaoFornecedor(false, indexFornecedor, fornecedor)
 
     #Exclui uma unidade de entrada vinculado ao produto.
     actExcluirLinhaUnidadeEntrada: (produto, index, unidadeEntrada) ->

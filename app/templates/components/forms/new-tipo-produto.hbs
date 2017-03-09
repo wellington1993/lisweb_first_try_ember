@@ -200,7 +200,7 @@
         </div>
 
         {{#each produto.fornecedores as |fornecedor indexFornecedor|}}
-          <div class="row">
+          <div id="componentes-produto-{{indexProduto}}-fornecedor-{{indexFornecedor}}" class="row">
             <div class="col-lg-3">
               Nome: <span class="required-input">(*)</span>
               {{inputs/input-autocomplete
@@ -222,7 +222,7 @@
                 value=fornecedor.observacao
                 maxlength=255}}
             </div>
-            <div id="botoes-controle-fornecedor-{{indexFornecedor}}" class="col-lg-3">
+            <div id="botoes-controle-produto-{{indexProduto}}-fornecedor-{{indexFornecedor}}" class="col-lg-3">
               <br>
               <button class="btn btn-default btn-md" {{action "actExcluirLinhaFornecedor" produto indexFornecedor fornecedor}}><i class="fa fa-close"></i></button>
             </div>
@@ -230,10 +230,10 @@
           <br>
           <div class="row">
             <div class="col-lg-9">
-              <div id="mensagem-delecao-fornecedor-{{indexFornecedor}}" class="alert alert-danger" style="display:none;">
+              <div id="mensagem-delecao-produto-{{indexProduto}}-fornecedor-{{indexFornecedor}}" class="alert alert-danger" style="display:none;">
                 O fornecedor será excluído ao salvar o registro.
                 <br>
-                <a href="">Cancelar</a>
+                <a href="" {{action "actCancelarExclusaoFornecedor" fornecedor indexFornecedor}}>Cancelar</a>
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@
         <br>
         <div class="row">
           <div class="col-lg-5">
-            <div id="mensagem-delecao-unidade-entrada-{{indexUnidadeEntrada}}" class="alert alert-danger" style="display:none;">
+            <div id="mensagem-delecao-produto-{{indexProduto}}-unidade-entrada-{{indexUnidadeEntrada}}" class="alert alert-danger" style="display:none;">
               A unidade de medida será excluída ao salvar o registro.
               <br>
               <a href="">Cancelar</a>
