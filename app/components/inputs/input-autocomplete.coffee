@@ -69,6 +69,34 @@ InputsInputAutocompleteComponent = Ember.Component.extend(
       @clearSelected(true)
   ).observes('selectedRecord').on('init')
 
+  didReceiveAttrs: (args) ->
+    @_super(args)
+    @prepareInitialRecord()
+
+  prepareInitialRecord: ->
+
+    self = @
+
+    record = @get("initialRecord")
+
+    if !record
+      return
+
+    if !record.get("isLoaded")
+
+      id = record.get("id")
+
+      if !id
+        return
+
+      @get("store").findRecord(@get("modelName"), record.get("id")).then(
+        (r) ->
+          self.set("selectedRecord", r)
+        (e) ->
+      )
+    else
+      @set("selectedRecord", record)
+
   showLoading: () ->
     unless @get("showingLoading")
       @set('showingLoading', true)
@@ -201,7 +229,9 @@ InputsInputAutocompleteComponent = Ember.Component.extend(
     @set('clearSelectedRunning',false)
 
   onSelectedRecordChange: (->
+
     selectedRecord = @get('selectedRecord')
+
     if selectedRecord == null
       @clearSelected()
       @sendAction('onDeselect', record: null, refIndex: @get("refIndex"))

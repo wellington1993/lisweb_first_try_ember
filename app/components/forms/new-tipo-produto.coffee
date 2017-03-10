@@ -55,7 +55,7 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
       try
         length = @get("tipoProduto.produtos.length")
-      
+
         if length > 1
           retorno = false
 
@@ -696,6 +696,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     actValidarCategoria: (params) ->
 
+      if !@ || !@$()
+        return false
+
       record = params["record"]
       valido = if record == null then false else true
 
@@ -703,6 +706,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       @set("categoriaValida", valido)
 
     actValidarUnidadeSaida: (params) ->
+
+      if !@ || !@$()
+        return false
 
       record = params["record"]
       valido = if record == null then false else true
@@ -811,12 +817,18 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
     actValidarMarca: (params) ->
 
+      if !@ || !@$()
+        return false
+
       record = params["record"]
       valido = true
 
       produto = @set("produtoAbaAtual.marca", record)
 
     actValidarNomeUnidadeMedidaProduto: (params) ->
+
+      if !@ || !@$()
+        return false
 
       index  = params["refIndex"]
       record = params["record"]
@@ -834,6 +846,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       unidade.set("unidadeMedida", record)
 
     actValidarNomeFornecedor: (params) ->
+
+      if !@ || !@$()
+        return false
 
       index  = params["refIndex"]
       record = params["record"]
