@@ -705,6 +705,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       @set("tipoProduto.categoriaProduto", record)
       @set("categoriaValida", valido)
 
+      if @get("isEdit") && !@get("tipoProduto.hasDirtyAttributes")
+        @set("tipoProduto.hasDirtyAttributes", true)
+
     actValidarUnidadeSaida: (params) ->
 
       if !@ || !@$()
@@ -716,6 +719,8 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       @set("tipoProduto.unidadeMedidaSaida", record)
       @set("unidadeDeSaidaValida", valido)
 
+      if @get("isEdit") && !@get("tipoProduto.hasDirtyAttributes")
+        @set("tipoProduto.hasDirtyAttributes", true)
 
     actValidarEstoqueMinimo: (params, callback) ->
 
@@ -823,7 +828,10 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       record = params["record"]
       valido = true
 
-      produto = @set("produtoAbaAtual.marca", record)
+      @set("produtoAbaAtual.marca", record)
+
+      if @get("isEdit") && !@get("produtoAbaAtual.hasDirtyAttributes")
+        @set("produtoAbaAtual.hasDirtyAttributes", true)
 
     actValidarNomeUnidadeMedidaProduto: (params) ->
 
@@ -845,6 +853,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       unidade  = unidades.objectAt(index)
       unidade.set("unidadeMedida", record)
 
+      if @get("isEdit") && !unidade.get("isNew") && !unidade.get("hasDirtyAttributes")
+        unidade.set("hasDirtyAttributes", true)
+
     actValidarNomeFornecedor: (params) ->
 
       if !@ || !@$()
@@ -864,6 +875,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       fornecedores = @get("produtoAbaAtual.fornecedores")
       fornecedor   = fornecedores.objectAt(index)
       fornecedor.set("pessoa", record)
+
+      if @get("isEdit") && !fornecedor.get("isNew") && !fornecedor.get("hasDirtyAttributes")
+        fornecedor.set("hasDirtyAttributes", true)
 
 )
 
