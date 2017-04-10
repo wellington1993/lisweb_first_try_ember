@@ -1,8 +1,6 @@
 {
   "name": "lisweb-cli",
   "dependencies": {
-    "ember": "~2.8.0",
-    "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
     "jquery-mask-plugin": "^1.14.3"
   },
