@@ -1,1 +1,35 @@
-{{yield}}
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=model.chave
+      lengthMinimo=1
+      maxlength=255
+      placeholder="Chave:"
+      actionOnFimValidacao="actValidarChave"}}
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{inputs/generic-input
+      value=model.valor
+      lengthMinimo=1
+      maxlength=255
+      placeholder="Valor:"
+      actionOnFimValidacao="actValidarValor"}}
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-lg-12">
+    {{#link-to "chaves-nfse" class="btn btn-default"}}<i class="fa fa-long-arrow-left"></i>&nbsp;Voltar{{/link-to}}
+    <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Salvar</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    {{bootstrap/box-alert}}
+  </div>
+</div>

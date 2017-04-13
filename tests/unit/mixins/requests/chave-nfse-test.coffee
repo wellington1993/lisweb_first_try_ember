@@ -1,8 +1,8 @@
 import Ember from 'ember'
-import ChaveNfseMixin from '../../../mixins/chave-nfse'
+import ChaveNfseMixin from '../../../mixins/requests/chave-nfse'
 import { module, test } from 'qunit'
 
-module 'Unit | Mixin | chave nfse'
+module 'Unit | Mixin | requests/chave-nfse'
 
 # Replace this with your real tests.
 test 'it works', (assert) ->

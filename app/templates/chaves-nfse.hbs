@@ -1,1 +1,70 @@
-{{outlet}}
+<div class="container animated fadeIn">
+  {{#if model.length}}
+
+  <div class="container">
+    <div class="col-lg-12 table-responsive">
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h3>Chaves Nfse</h3>
+        </div>
+
+        <div class="col-lg-6">
+          {{#link-to "cadastrar-chave-nfse" class="btn btn-default btn-md pull-right"}}
+            <i class="fa fa-file"></i>&nbsp;Novo registro
+          {{/link-to}}
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Chave</th>
+            <th>Valor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |chave index|}}
+          <tr>
+            <td>{{chave.chave}}</td>
+            <td>{{chave.valor}}</td>
+            <td>{{#link-to "chaves-nfse.show" chave.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="pagination-center text-center">
+  {{bootstrap/dynamic-pagination
+    class="pagination"
+    actionOnClick="actPaginar"
+    totalPaginas=pagination.total_pages
+    paginaAtual=pagination.current_page
+    mostrarProximoAnterior=true}}
+  </div>
+
+  {{else}}
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="error-template">
+                  <h1>
+                      Não há Chaves Nfse a serem listadas</h1>
+                  <div class="text-center">
+                      Nenhum registro foi encontrado.
+                  </div>
+                  <div class="error-actions">
+                    {{#link-to "cadastrar-chave-nfse" class="btn btn-primary btn-lg"}} Cadastrar nova Chave Nfse {{/link-to}}
+                    {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  {{/if}}
+
+</div>

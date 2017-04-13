@@ -1,5 +1,10 @@
 import DS from 'ember-data'
 
-export default DS.Model.extend {
-  
-}
+ChaveNfseEntrada = DS.Model.extend(
+
+  chave: DS.attr("string")
+  valor: DS.attr("string")
+
+)
+
+export default ChaveNfseEntrada
