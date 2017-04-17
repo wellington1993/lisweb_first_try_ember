@@ -1,0 +1,9 @@
+import DS from 'ember-data'
+
+UnidadeAtendimentoEntrada = DS.Model.extend(
+
+  nome: DS.attr("string")
+
+)
+
+export default UnidadeAtendimentoEntrada
