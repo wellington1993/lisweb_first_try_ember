@@ -23,10 +23,10 @@
           </tr>
         </thead>
         <tbody>
-          {{#each model as |chave index|}}
+          {{#each model as |unidade index|}}
           <tr>
-            <td>{{chave.nome}}</td>
-            <td>{{#link-to "unidades-atendimento.show" chave.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{unidade.nome}}</td>
+            <td>{{#link-to "unidades-atendimento.show" unidade.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
