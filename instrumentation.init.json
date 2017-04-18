@@ -1,0 +1,7770 @@
+{
+  "summary": {
+    "totalTime": 784286941,
+    "platform": {
+      "name": "linux"
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": {
+        "name": "init"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 143251701
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 124,
+            "time": 3877096
+          },
+          "lstatSync": {
+            "count": 149,
+            "time": 1010869
+          },
+          "readFileSync": {
+            "count": 87,
+            "time": 3861042
+          },
+          "openSync": {
+            "count": 95,
+            "time": 969272
+          },
+          "fstatSync": {
+            "count": 94,
+            "time": 338352
+          },
+          "readSync": {
+            "count": 94,
+            "time": 384824
+          },
+          "closeSync": {
+            "count": 95,
+            "time": 355486
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 62323
+          },
+          "mkdirSync": {
+            "count": 1,
+            "time": 68866
+          },
+          "statSync": {
+            "count": 1,
+            "time": 7574
+          },
+          "writeSync": {
+            "count": 1,
+            "time": 68420
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 40718
+          }
+        }
+      },
+      "children": [
+        2,
+        3,
+        4,
+        205
+      ]
+    },
+    {
+      "id": 2,
+      "label": {
+        "name": "load-tasks"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 67134578
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 183,
+            "time": 6369856
+          },
+          "lstatSync": {
+            "count": 177,
+            "time": 1000791
+          },
+          "readFileSync": {
+            "count": 112,
+            "time": 3728114
+          },
+          "openSync": {
+            "count": 113,
+            "time": 715033
+          },
+          "fstatSync": {
+            "count": 112,
+            "time": 345913
+          },
+          "readSync": {
+            "count": 112,
+            "time": 483228
+          },
+          "closeSync": {
+            "count": 113,
+            "time": 476659
+          },
+          "readdirSync": {
+            "count": 1,
+            "time": 67146
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 80972
+          },
+          "writeFileSync": {
+            "count": 1,
+            "time": 126109
+          },
+          "symlinkSync": {
+            "count": 1,
+            "time": 106139
+          },
+          "unlinkSync": {
+            "count": 2,
+            "time": 58312
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 3,
+      "label": {
+        "name": "load-commands"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 14713226
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 48,
+            "time": 967913
+          },
+          "readdirSync": {
+            "count": 1,
+            "time": 40083
+          },
+          "lstatSync": {
+            "count": 28,
+            "time": 165851
+          },
+          "readFileSync": {
+            "count": 24,
+            "time": 897031
+          },
+          "openSync": {
+            "count": 24,
+            "time": 168896
+          },
+          "fstatSync": {
+            "count": 24,
+            "time": 80267
+          },
+          "readSync": {
+            "count": 24,
+            "time": 103594
+          },
+          "closeSync": {
+            "count": 24,
+            "time": 60062
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 4,
+      "label": {
+        "name": "lookup-command"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6220934
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 2,
+            "time": 16032
+          }
+        }
+      },
+      "children": [
+        5,
+        6,
+        202,
+        203,
+        204
+      ]
+    },
+    {
+      "id": 5,
+      "label": {
+        "name": "lisweb-cli: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 23014758
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 39,
+            "time": 2324264
+          },
+          "lstatSync": {
+            "count": 110,
+            "time": 758571
+          },
+          "readFileSync": {
+            "count": 64,
+            "time": 2735893
+          },
+          "openSync": {
+            "count": 64,
+            "time": 503439
+          },
+          "fstatSync": {
+            "count": 64,
+            "time": 349073
+          },
+          "readSync": {
+            "count": 64,
+            "time": 398542
+          },
+          "closeSync": {
+            "count": 64,
+            "time": 156363
+          },
+          "statSync": {
+            "count": 126,
+            "time": 1684124
+          },
+          "accessSync": {
+            "count": 59,
+            "time": 931158
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 6,
+      "label": {
+        "name": "lisweb-cli: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1651991
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 1,
+            "time": 8813
+          }
+        }
+      },
+      "children": [
+        7,
+        8,
+        9,
+        15,
+        16,
+        19,
+        20,
+        21,
+        22,
+        28,
+        34,
+        43,
+        46,
+        67,
+        70,
+        76,
+        79,
+        82,
+        85,
+        97,
+        100,
+        109,
+        112,
+        115,
+        121,
+        124,
+        127,
+        130,
+        136,
+        142,
+        148,
+        190,
+        199
+      ]
+    },
+    {
+      "id": 7,
+      "label": {
+        "name": "initialize testem-url-rewriter-middleware",
+        "addonName": "testem-url-rewriter-middleware",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 821307
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 19269
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 71253
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 56467
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6941
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 13532
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4165
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 3023
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 8,
+      "label": {
+        "name": "initialize tests-server-middleware",
+        "addonName": "tests-server-middleware",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 888555
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 14826
+          },
+          "realpathSync": {
+            "count": 4,
+            "time": 108779
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 29939
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6023
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3242
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3732
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2444
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 9,
+      "label": {
+        "name": "initialize ember-cli-content-security-policy",
+        "addonName": "ember-cli-content-security-policy",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2515033
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 4,
+            "time": 25495
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 100259
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 75483
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11991
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6715
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8634
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5181
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 38648
+          }
+        }
+      },
+      "children": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": 10,
+      "label": {
+        "name": "ember-cli-content-security-policy: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3287403
+        },
+        "fs": {
+          "statSync": {
+            "count": 45,
+            "time": 1284968
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 324209
+          },
+          "openSync": {
+            "count": 5,
+            "time": 26956
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 14810
+          },
+          "readSync": {
+            "count": 5,
+            "time": 31535
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 22973
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 86335
+          },
+          "lstatSync": {
+            "count": 6,
+            "time": 32490
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 90393
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 11,
+      "label": {
+        "name": "ember-cli-content-security-policy: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 156639
+        }
+      },
+      "children": [
+        12
+      ]
+    },
+    {
+      "id": 12,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6002115
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 6,
+            "time": 35492
+          },
+          "realpathSync": {
+            "count": 5,
+            "time": 233672
+          },
+          "readFileSync": {
+            "count": 4,
+            "time": 278475
+          },
+          "openSync": {
+            "count": 4,
+            "time": 23651
+          },
+          "fstatSync": {
+            "count": 4,
+            "time": 13075
+          },
+          "readSync": {
+            "count": 4,
+            "time": 17975
+          },
+          "closeSync": {
+            "count": 4,
+            "time": 10636
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 191721
+          }
+        }
+      },
+      "children": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": 13,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3862658
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1065587
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 269037
+          },
+          "openSync": {
+            "count": 10,
+            "time": 51784
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 27702
+          },
+          "readSync": {
+            "count": 10,
+            "time": 34111
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 24422
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 145963
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 55111
+          },
+          "realpathSync": {
+            "count": 5,
+            "time": 378881
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 14,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 44203
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 15,
+      "label": {
+        "name": "initialize history-support-middleware",
+        "addonName": "history-support-middleware",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 614056
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 17619
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 56424
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 39837
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6742
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3367
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4465
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2660
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 16,
+      "label": {
+        "name": "initialize ember-cli-inject-live-reload",
+        "addonName": "ember-cli-inject-live-reload",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 795072
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 15753
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 38840
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 34276
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5875
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3289
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4092
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2654
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 98271
+          }
+        }
+      },
+      "children": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": 17,
+      "label": {
+        "name": "live-reload-middleware: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 26093
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 18,
+      "label": {
+        "name": "live-reload-middleware: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 37438
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 19,
+      "label": {
+        "name": "initialize broccoli-watcher",
+        "addonName": "broccoli-watcher",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 733732
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 14648
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 53361
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 31124
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6497
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3248
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3789
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2596
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 20,
+      "label": {
+        "name": "initialize broccoli-serve-files",
+        "addonName": "broccoli-serve-files",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 619525
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 15033
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 53757
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 99243
+          },
+          "openSync": {
+            "count": 1,
+            "time": 7252
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 68704
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4055
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2761
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 21,
+      "label": {
+        "name": "initialize proxy-server-middleware",
+        "addonName": "proxy-server-middleware",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 371979
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13772
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 42500
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 30026
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5999
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3208
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3694
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2545
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 22,
+      "label": {
+        "name": "initialize ember-try",
+        "addonName": "ember-try",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3299552
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 8576
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 21429
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 62444
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10868
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6165
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7846
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5077
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 18793
+          }
+        }
+      },
+      "children": [
+        23,
+        24
+      ]
+    },
+    {
+      "id": 23,
+      "label": {
+        "name": "ember-try: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 9832342
+        },
+        "fs": {
+          "statSync": {
+            "count": 194,
+            "time": 2685876
+          },
+          "readFileSync": {
+            "count": 25,
+            "time": 740443
+          },
+          "openSync": {
+            "count": 25,
+            "time": 124275
+          },
+          "fstatSync": {
+            "count": 25,
+            "time": 148915
+          },
+          "readSync": {
+            "count": 25,
+            "time": 83901
+          },
+          "closeSync": {
+            "count": 25,
+            "time": 60646
+          },
+          "accessSync": {
+            "count": 35,
+            "time": 525830
+          },
+          "lstatSync": {
+            "count": 32,
+            "time": 148482
+          },
+          "realpathSync": {
+            "count": 10,
+            "time": 1223781
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 24,
+      "label": {
+        "name": "ember-try: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 129605
+        }
+      },
+      "children": [
+        25
+      ]
+    },
+    {
+      "id": 25,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1004343
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7708
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 44031
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 44045
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5907
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3279
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4588
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2958
+          }
+        }
+      },
+      "children": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": 26,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3298523
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1001041
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 475006
+          },
+          "openSync": {
+            "count": 5,
+            "time": 24526
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12917
+          },
+          "readSync": {
+            "count": 5,
+            "time": 20948
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12981
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 151726
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 95411
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 27,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 37323
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 28,
+      "label": {
+        "name": "initialize ember-ajax",
+        "addonName": "ember-ajax",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 721816
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 14952
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 39914
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 36938
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6256
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3339
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3980
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2736
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 32792
+          }
+        }
+      },
+      "children": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": 29,
+      "label": {
+        "name": "ember-ajax: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 615022
+        },
+        "fs": {
+          "statSync": {
+            "count": 15,
+            "time": 180944
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 33344
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4935
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2542
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3982
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2978
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 25629
+          },
+          "lstatSync": {
+            "count": 1,
+            "time": 6403
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 30,
+      "label": {
+        "name": "ember-ajax: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 63676
+        }
+      },
+      "children": [
+        31
+      ]
+    },
+    {
+      "id": 31,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 885138
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7531
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 39873
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27482
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4841
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2671
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3855
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2585
+          }
+        }
+      },
+      "children": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": 32,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2915549
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 970284
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 129907
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23322
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 13009
+          },
+          "readSync": {
+            "count": 5,
+            "time": 17597
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12448
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 138085
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 67765
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 33,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 48285
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 34,
+      "label": {
+        "name": "initialize ember-cli-app-version",
+        "addonName": "ember-cli-app-version",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 808587
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 15474
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 42290
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 38455
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6727
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3974
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3619
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2707
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 9255
+          }
+        }
+      },
+      "children": [
+        35,
+        36
+      ]
+    },
+    {
+      "id": 35,
+      "label": {
+        "name": "ember-cli-app-version: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1889962
+        },
+        "fs": {
+          "statSync": {
+            "count": 34,
+            "time": 467867
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 199929
+          },
+          "openSync": {
+            "count": 5,
+            "time": 26784
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 14409
+          },
+          "readSync": {
+            "count": 5,
+            "time": 17130
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12184
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 77138
+          },
+          "lstatSync": {
+            "count": 8,
+            "time": 39335
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 103147
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 36,
+      "label": {
+        "name": "ember-cli-app-version: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 162538
+        }
+      },
+      "children": [
+        37,
+        40
+      ]
+    },
+    {
+      "id": 37,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1625381
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 12654
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 121461
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 63825
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10813
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6387
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8637
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5278
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 44113
+          }
+        }
+      },
+      "children": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": 38,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 7623200
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 2741732
+          },
+          "readFileSync": {
+            "count": 15,
+            "time": 534277
+          },
+          "openSync": {
+            "count": 15,
+            "time": 76154
+          },
+          "fstatSync": {
+            "count": 15,
+            "time": 41648
+          },
+          "readSync": {
+            "count": 15,
+            "time": 50996
+          },
+          "closeSync": {
+            "count": 15,
+            "time": 36911
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 285900
+          },
+          "lstatSync": {
+            "count": 20,
+            "time": 94289
+          },
+          "realpathSync": {
+            "count": 6,
+            "time": 266149
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 39,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 35764
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 40,
+      "label": {
+        "name": "initialize ember-cli-htmlbars",
+        "addonName": "ember-cli-htmlbars",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 10202117
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 21,
+            "time": 228872
+          },
+          "realpathSync": {
+            "count": 26,
+            "time": 776973
+          },
+          "readFileSync": {
+            "count": 14,
+            "time": 1974554
+          },
+          "openSync": {
+            "count": 14,
+            "time": 83054
+          },
+          "fstatSync": {
+            "count": 14,
+            "time": 121081
+          },
+          "readSync": {
+            "count": 14,
+            "time": 58118
+          },
+          "closeSync": {
+            "count": 14,
+            "time": 35275
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 41123
+          }
+        }
+      },
+      "children": [
+        41,
+        42
+      ]
+    },
+    {
+      "id": 41,
+      "label": {
+        "name": "ember-cli-htmlbars: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2909922
+        },
+        "fs": {
+          "statSync": {
+            "count": 71,
+            "time": 814440
+          },
+          "readFileSync": {
+            "count": 9,
+            "time": 230871
+          },
+          "openSync": {
+            "count": 9,
+            "time": 47122
+          },
+          "fstatSync": {
+            "count": 9,
+            "time": 24462
+          },
+          "readSync": {
+            "count": 9,
+            "time": 29620
+          },
+          "closeSync": {
+            "count": 9,
+            "time": 30746
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 131248
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 51045
+          },
+          "realpathSync": {
+            "count": 4,
+            "time": 158594
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 42,
+      "label": {
+        "name": "ember-cli-htmlbars: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 40590
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 43,
+      "label": {
+        "name": "initialize ember-cli-legacy-blueprints",
+        "addonName": "ember-cli-legacy-blueprints",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 679947
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 9604
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 21477
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 30345
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6424
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3695
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3679
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2468
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 9356
+          }
+        }
+      },
+      "children": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": 44,
+      "label": {
+        "name": "ember-cli-legacy-blueprints: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 10502346
+        },
+        "fs": {
+          "statSync": {
+            "count": 230,
+            "time": 3026981
+          },
+          "readFileSync": {
+            "count": 31,
+            "time": 874843
+          },
+          "openSync": {
+            "count": 31,
+            "time": 170742
+          },
+          "fstatSync": {
+            "count": 31,
+            "time": 82575
+          },
+          "readSync": {
+            "count": 31,
+            "time": 117648
+          },
+          "closeSync": {
+            "count": 31,
+            "time": 73115
+          },
+          "accessSync": {
+            "count": 37,
+            "time": 482786
+          },
+          "lstatSync": {
+            "count": 40,
+            "time": 183551
+          },
+          "realpathSync": {
+            "count": 14,
+            "time": 596226
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 45,
+      "label": {
+        "name": "ember-cli-legacy-blueprints: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 38871
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 46,
+      "label": {
+        "name": "initialize ember-data",
+        "addonName": "ember-data",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3044988
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 4,
+            "time": 27628
+          },
+          "realpathSync": {
+            "count": 6,
+            "time": 83958
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 154058
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11620
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 19169
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8151
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5941
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 10366
+          }
+        }
+      },
+      "children": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": 47,
+      "label": {
+        "name": "ember-data: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 16186659
+        },
+        "fs": {
+          "statSync": {
+            "count": 305,
+            "time": 3742069
+          },
+          "readFileSync": {
+            "count": 36,
+            "time": 976116
+          },
+          "openSync": {
+            "count": 36,
+            "time": 180107
+          },
+          "fstatSync": {
+            "count": 36,
+            "time": 98565
+          },
+          "readSync": {
+            "count": 36,
+            "time": 121917
+          },
+          "closeSync": {
+            "count": 36,
+            "time": 85550
+          },
+          "accessSync": {
+            "count": 48,
+            "time": 667711
+          },
+          "lstatSync": {
+            "count": 50,
+            "time": 401532
+          },
+          "realpathSync": {
+            "count": 13,
+            "time": 615212
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 48,
+      "label": {
+        "name": "ember-data: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 118521
+        }
+      },
+      "children": [
+        49,
+        52,
+        58,
+        64
+      ]
+    },
+    {
+      "id": 49,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 946194
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7897
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 43324
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 78912
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5204
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 4446
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4753
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2740
+          }
+        }
+      },
+      "children": [
+        50,
+        51
+      ]
+    },
+    {
+      "id": 50,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2082500
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 717233
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 138879
+          },
+          "openSync": {
+            "count": 5,
+            "time": 25105
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12365
+          },
+          "readSync": {
+            "count": 5,
+            "time": 17251
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12151
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 130334
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 23724
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 51,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 38380
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 52,
+      "label": {
+        "name": "initialize ember-inflector",
+        "addonName": "ember-inflector",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 888548
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13024
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 34792
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 36537
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5784
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3193
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3518
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2570
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 33836
+          }
+        }
+      },
+      "children": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": 53,
+      "label": {
+        "name": "ember-inflector: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 585909
+        },
+        "fs": {
+          "statSync": {
+            "count": 15,
+            "time": 284685
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 29075
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6351
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3003
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3926
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2552
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 24916
+          },
+          "lstatSync": {
+            "count": 1,
+            "time": 5795
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 54,
+      "label": {
+        "name": "ember-inflector: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 76786
+        }
+      },
+      "children": [
+        55
+      ]
+    },
+    {
+      "id": 55,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 973387
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6798
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 38710
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 28741
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5340
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2682
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4310
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2675
+          }
+        }
+      },
+      "children": [
+        56,
+        57
+      ]
+    },
+    {
+      "id": 56,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2139502
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 736097
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 123351
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22582
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 13161
+          },
+          "readSync": {
+            "count": 5,
+            "time": 17333
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12233
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 311719
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 23591
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 57,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 34096
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 58,
+      "label": {
+        "name": "initialize ember-runtime-enumerable-includes-polyfill",
+        "addonName": "ember-runtime-enumerable-includes-polyfill",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 861942
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13879
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 34746
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 35627
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6119
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3209
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3879
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 3042
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 31857
+          }
+        }
+      },
+      "children": [
+        59,
+        60
+      ]
+    },
+    {
+      "id": 59,
+      "label": {
+        "name": "ember-runtime-enumerable-includes-polyfill: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 976606
+        },
+        "fs": {
+          "statSync": {
+            "count": 29,
+            "time": 331967
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 53869
+          },
+          "openSync": {
+            "count": 2,
+            "time": 9720
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5172
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7027
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5243
+          },
+          "accessSync": {
+            "count": 4,
+            "time": 47691
+          },
+          "lstatSync": {
+            "count": 2,
+            "time": 9799
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 60,
+      "label": {
+        "name": "ember-runtime-enumerable-includes-polyfill: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 50014
+        }
+      },
+      "children": [
+        61
+      ]
+    },
+    {
+      "id": 61,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 480894
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6577
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 36999
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 25069
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4458
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2436
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3768
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2541
+          }
+        }
+      },
+      "children": [
+        62,
+        63
+      ]
+    },
+    {
+      "id": 62,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1849836
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 703678
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 119256
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22712
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 13315
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16262
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12056
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 118698
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 22267
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 63,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 34447
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 64,
+      "label": {
+        "name": "initialize enable-optional-features-via-url",
+        "addonName": "enable-optional-features-via-url",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 560959
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13538
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 32845
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27480
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5854
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2923
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3512
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2514
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 42989
+          }
+        }
+      },
+      "children": [
+        65,
+        66
+      ]
+    },
+    {
+      "id": 65,
+      "label": {
+        "name": "enable-optional-features-via-url: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 13413
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 66,
+      "label": {
+        "name": "enable-optional-features-via-url: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 34002
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 67,
+      "label": {
+        "name": "initialize ember-source",
+        "addonName": "ember-source",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1140397
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 3,
+            "time": 20621
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 32069
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 33560
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5406
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3010
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3932
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2591
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 33726
+          }
+        }
+      },
+      "children": [
+        68,
+        69
+      ]
+    },
+    {
+      "id": 68,
+      "label": {
+        "name": "ember-source: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 5394443
+        },
+        "fs": {
+          "statSync": {
+            "count": 182,
+            "time": 1957943
+          },
+          "readFileSync": {
+            "count": 15,
+            "time": 368438
+          },
+          "openSync": {
+            "count": 15,
+            "time": 68625
+          },
+          "fstatSync": {
+            "count": 15,
+            "time": 36737
+          },
+          "readSync": {
+            "count": 15,
+            "time": 49532
+          },
+          "closeSync": {
+            "count": 15,
+            "time": 35266
+          },
+          "accessSync": {
+            "count": 29,
+            "time": 358095
+          },
+          "lstatSync": {
+            "count": 17,
+            "time": 73105
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 76006
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 69,
+      "label": {
+        "name": "ember-source: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 37440
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 70,
+      "label": {
+        "name": "initialize ember-cli-coffeescript",
+        "addonName": "ember-cli-coffeescript",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 76266207
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 48,
+            "time": 1797626
+          },
+          "realpathSync": {
+            "count": 47,
+            "time": 3161926
+          },
+          "readFileSync": {
+            "count": 29,
+            "time": 1143787
+          },
+          "openSync": {
+            "count": 29,
+            "time": 207917
+          },
+          "fstatSync": {
+            "count": 29,
+            "time": 92497
+          },
+          "readSync": {
+            "count": 29,
+            "time": 224459
+          },
+          "closeSync": {
+            "count": 29,
+            "time": 82974
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 9746
+          }
+        }
+      },
+      "children": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": 71,
+      "label": {
+        "name": "Ember CLI Coffeescript Addon: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6312577
+        },
+        "fs": {
+          "statSync": {
+            "count": 163,
+            "time": 2465006
+          },
+          "readFileSync": {
+            "count": 18,
+            "time": 422363
+          },
+          "openSync": {
+            "count": 18,
+            "time": 85278
+          },
+          "fstatSync": {
+            "count": 18,
+            "time": 44247
+          },
+          "readSync": {
+            "count": 18,
+            "time": 57888
+          },
+          "closeSync": {
+            "count": 18,
+            "time": 42002
+          },
+          "accessSync": {
+            "count": 27,
+            "time": 444459
+          },
+          "lstatSync": {
+            "count": 20,
+            "time": 105958
+          },
+          "realpathSync": {
+            "count": 6,
+            "time": 177878
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 72,
+      "label": {
+        "name": "Ember CLI Coffeescript Addon: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 89855
+        }
+      },
+      "children": [
+        73
+      ]
+    },
+    {
+      "id": 73,
+      "label": {
+        "name": "initialize ember-cli-legacy-blueprints",
+        "addonName": "ember-cli-legacy-blueprints",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 416975
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6924
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 7855
+          }
+        }
+      },
+      "children": [
+        74,
+        75
+      ]
+    },
+    {
+      "id": 74,
+      "label": {
+        "name": "ember-cli-legacy-blueprints: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 11190744
+        },
+        "fs": {
+          "statSync": {
+            "count": 230,
+            "time": 6841432
+          },
+          "readFileSync": {
+            "count": 17,
+            "time": 423977
+          },
+          "openSync": {
+            "count": 17,
+            "time": 82796
+          },
+          "fstatSync": {
+            "count": 17,
+            "time": 40637
+          },
+          "readSync": {
+            "count": 17,
+            "time": 59345
+          },
+          "closeSync": {
+            "count": 17,
+            "time": 42550
+          },
+          "accessSync": {
+            "count": 37,
+            "time": 605797
+          },
+          "lstatSync": {
+            "count": 17,
+            "time": 75432
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 75,
+      "label": {
+        "name": "ember-cli-legacy-blueprints: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 37510
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 76,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 750624
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 8102
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 44892
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 34828
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6514
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2772
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4550
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2733
+          }
+        }
+      },
+      "children": [
+        77,
+        78
+      ]
+    },
+    {
+      "id": 77,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2308179
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1046938
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 133448
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23371
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11798
+          },
+          "readSync": {
+            "count": 5,
+            "time": 24912
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12769
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 150846
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 24166
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 78,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 39114
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 79,
+      "label": {
+        "name": "initialize ember-cli-dependency-checker",
+        "addonName": "ember-cli-dependency-checker",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 23046549
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 59,
+            "time": 292360
+          },
+          "realpathSync": {
+            "count": 20,
+            "time": 590069
+          },
+          "readFileSync": {
+            "count": 50,
+            "time": 1345084
+          },
+          "openSync": {
+            "count": 50,
+            "time": 282967
+          },
+          "fstatSync": {
+            "count": 50,
+            "time": 167658
+          },
+          "readSync": {
+            "count": 50,
+            "time": 175976
+          },
+          "closeSync": {
+            "count": 50,
+            "time": 179967
+          },
+          "existsSync": {
+            "count": 76,
+            "time": 559117
+          },
+          "readdirSync": {
+            "count": 5,
+            "time": 117715
+          }
+        }
+      },
+      "children": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": 80,
+      "label": {
+        "name": "ember-cli-dependency-checker: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1452031
+        },
+        "fs": {
+          "statSync": {
+            "count": 23,
+            "time": 339184
+          },
+          "readFileSync": {
+            "count": 6,
+            "time": 140194
+          },
+          "openSync": {
+            "count": 6,
+            "time": 30029
+          },
+          "fstatSync": {
+            "count": 6,
+            "time": 14839
+          },
+          "readSync": {
+            "count": 6,
+            "time": 18648
+          },
+          "closeSync": {
+            "count": 6,
+            "time": 13855
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 93509
+          },
+          "lstatSync": {
+            "count": 9,
+            "time": 37580
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 118585
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 81,
+      "label": {
+        "name": "ember-cli-dependency-checker: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 33422
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 82,
+      "label": {
+        "name": "initialize ember-cli-eslint",
+        "addonName": "ember-cli-eslint",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 822351
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13245
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 35971
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 32739
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5496
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2938
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3975
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2654
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 35444
+          }
+        }
+      },
+      "children": [
+        83,
+        84
+      ]
+    },
+    {
+      "id": 83,
+      "label": {
+        "name": "ember-cli-eslint: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2616954
+        },
+        "fs": {
+          "statSync": {
+            "count": 56,
+            "time": 849752
+          },
+          "readFileSync": {
+            "count": 7,
+            "time": 185855
+          },
+          "openSync": {
+            "count": 7,
+            "time": 35063
+          },
+          "fstatSync": {
+            "count": 7,
+            "time": 20180
+          },
+          "readSync": {
+            "count": 7,
+            "time": 24124
+          },
+          "closeSync": {
+            "count": 7,
+            "time": 16778
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 180207
+          },
+          "lstatSync": {
+            "count": 9,
+            "time": 53041
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 118761
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 84,
+      "label": {
+        "name": "ember-cli-eslint: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 36918
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 85,
+      "label": {
+        "name": "initialize ember-cli-qunit",
+        "addonName": "ember-cli-qunit",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1499831
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 14646
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 43737
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 69127
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10349
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5816
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8711
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5051
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 15301
+          }
+        }
+      },
+      "children": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": 86,
+      "label": {
+        "name": "ember-cli-qunit: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6130549
+        },
+        "fs": {
+          "statSync": {
+            "count": 156,
+            "time": 2464858
+          },
+          "readFileSync": {
+            "count": 15,
+            "time": 371833
+          },
+          "openSync": {
+            "count": 15,
+            "time": 80813
+          },
+          "fstatSync": {
+            "count": 15,
+            "time": 40580
+          },
+          "readSync": {
+            "count": 15,
+            "time": 48962
+          },
+          "closeSync": {
+            "count": 15,
+            "time": 35575
+          },
+          "accessSync": {
+            "count": 24,
+            "time": 409451
+          },
+          "lstatSync": {
+            "count": 19,
+            "time": 81447
+          },
+          "realpathSync": {
+            "count": 4,
+            "time": 135126
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 87,
+      "label": {
+        "name": "ember-cli-qunit: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 78097
+        }
+      },
+      "children": [
+        88,
+        91
+      ]
+    },
+    {
+      "id": 88,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 603961
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6797
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 47788
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 38783
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5190
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2649
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4392
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2734
+          }
+        }
+      },
+      "children": [
+        89,
+        90
+      ]
+    },
+    {
+      "id": 89,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 5684354
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1257213
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 142065
+          },
+          "openSync": {
+            "count": 5,
+            "time": 25711
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12928
+          },
+          "readSync": {
+            "count": 5,
+            "time": 19439
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 13140
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 175973
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 69846
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 90,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 37798
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 91,
+      "label": {
+        "name": "initialize ember-cli-test-loader",
+        "addonName": "ember-cli-test-loader",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 572772
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11639
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 34946
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27926
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5942
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3042
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3664
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2427
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36547
+          }
+        }
+      },
+      "children": [
+        92,
+        93
+      ]
+    },
+    {
+      "id": 92,
+      "label": {
+        "name": "ember-cli-test-loader: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 556885
+        },
+        "fs": {
+          "statSync": {
+            "count": 15,
+            "time": 261587
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 26292
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4787
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2482
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3572
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2491
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 30699
+          },
+          "lstatSync": {
+            "count": 1,
+            "time": 5407
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 93,
+      "label": {
+        "name": "ember-cli-test-loader: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 51335
+        }
+      },
+      "children": [
+        94
+      ]
+    },
+    {
+      "id": 94,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1455946
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6553
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 44662
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 29661
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4443
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3614
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3914
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2584
+          }
+        }
+      },
+      "children": [
+        95,
+        96
+      ]
+    },
+    {
+      "id": 95,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3178943
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1382346
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 127406
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23531
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12464
+          },
+          "readSync": {
+            "count": 5,
+            "time": 18101
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12641
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 660596
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 24472
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 96,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 33439
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 97,
+      "label": {
+        "name": "initialize ember-cli-htmlbars",
+        "addonName": "ember-cli-htmlbars",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 667601
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 38681
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36356
+          }
+        }
+      },
+      "children": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": 98,
+      "label": {
+        "name": "ember-cli-htmlbars: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2500605
+        },
+        "fs": {
+          "statSync": {
+            "count": 71,
+            "time": 1209106
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 125559
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23263
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12062
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16447
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12199
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 177619
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 31992
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 99,
+      "label": {
+        "name": "ember-cli-htmlbars: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 31280
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 100,
+      "label": {
+        "name": "initialize ember-cli-htmlbars-inline-precompile",
+        "addonName": "ember-cli-htmlbars-inline-precompile",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1287579
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 4,
+            "time": 24286
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 76383
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 77421
+          },
+          "openSync": {
+            "count": 2,
+            "time": 12012
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6842
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7922
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5079
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 34276
+          }
+        }
+      },
+      "children": [
+        101,
+        102
+      ]
+    },
+    {
+      "id": 101,
+      "label": {
+        "name": "ember-cli-htmlbars-inline-precompile: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2084208
+        },
+        "fs": {
+          "statSync": {
+            "count": 58,
+            "time": 878891
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 124640
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23791
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12195
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16684
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12005
+          },
+          "accessSync": {
+            "count": 8,
+            "time": 147174
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 22784
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 29451
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 102,
+      "label": {
+        "name": "ember-cli-htmlbars-inline-precompile: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 69444
+        }
+      },
+      "children": [
+        103,
+        106
+      ]
+    },
+    {
+      "id": 103,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 503352
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6986
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 42597
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 35274
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4624
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2332
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4412
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2632
+          }
+        }
+      },
+      "children": [
+        104,
+        105
+      ]
+    },
+    {
+      "id": 104,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2393781
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1167917
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 133040
+          },
+          "openSync": {
+            "count": 5,
+            "time": 21713
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12200
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16735
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11885
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 157234
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 22058
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 105,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30306
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 106,
+      "label": {
+        "name": "initialize ember-cli-htmlbars",
+        "addonName": "ember-cli-htmlbars",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 479558
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 37651
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 34200
+          }
+        }
+      },
+      "children": [
+        107,
+        108
+      ]
+    },
+    {
+      "id": 107,
+      "label": {
+        "name": "ember-cli-htmlbars: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2351674
+        },
+        "fs": {
+          "statSync": {
+            "count": 71,
+            "time": 1147696
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 116183
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22095
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11656
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16393
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11746
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 156754
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 24813
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 108,
+      "label": {
+        "name": "ember-cli-htmlbars: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30094
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 109,
+      "label": {
+        "name": "initialize ember-cli-jshint",
+        "addonName": "ember-cli-jshint",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 893296
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13059
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 28332
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27655
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5971
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2946
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3556
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2424
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36991
+          }
+        }
+      },
+      "children": [
+        110,
+        111
+      ]
+    },
+    {
+      "id": 110,
+      "label": {
+        "name": "ember-cli-jshint: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 721399
+        },
+        "fs": {
+          "statSync": {
+            "count": 14,
+            "time": 217418
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 53771
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11000
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5681
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7125
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4978
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 41077
+          },
+          "lstatSync": {
+            "count": 3,
+            "time": 13352
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 41643
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 111,
+      "label": {
+        "name": "ember-cli-jshint: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 34163
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 112,
+      "label": {
+        "name": "initialize ember-cli-release",
+        "addonName": "ember-cli-release",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 559650
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13542
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 30280
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 28125
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6407
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3005
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3533
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2609
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8739
+          }
+        }
+      },
+      "children": [
+        113,
+        114
+      ]
+    },
+    {
+      "id": 113,
+      "label": {
+        "name": "ember-cli-release: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 7214320
+        },
+        "fs": {
+          "statSync": {
+            "count": 146,
+            "time": 2200591
+          },
+          "readFileSync": {
+            "count": 19,
+            "time": 480001
+          },
+          "openSync": {
+            "count": 19,
+            "time": 94228
+          },
+          "fstatSync": {
+            "count": 19,
+            "time": 47459
+          },
+          "readSync": {
+            "count": 19,
+            "time": 70399
+          },
+          "closeSync": {
+            "count": 19,
+            "time": 44267
+          },
+          "accessSync": {
+            "count": 25,
+            "time": 437307
+          },
+          "lstatSync": {
+            "count": 28,
+            "time": 114820
+          },
+          "realpathSync": {
+            "count": 8,
+            "time": 275271
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 114,
+      "label": {
+        "name": "ember-cli-release: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 32956
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 115,
+      "label": {
+        "name": "initialize ember-cli-shims",
+        "addonName": "ember-cli-shims",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 698741
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11983
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 33974
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27030
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5815
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2877
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3494
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2568
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8137
+          }
+        }
+      },
+      "children": [
+        116,
+        117
+      ]
+    },
+    {
+      "id": 116,
+      "label": {
+        "name": "ember-cli-shims: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1356363
+        },
+        "fs": {
+          "statSync": {
+            "count": 33,
+            "time": 483394
+          },
+          "readFileSync": {
+            "count": 4,
+            "time": 96333
+          },
+          "openSync": {
+            "count": 4,
+            "time": 19182
+          },
+          "fstatSync": {
+            "count": 4,
+            "time": 10004
+          },
+          "readSync": {
+            "count": 4,
+            "time": 13005
+          },
+          "closeSync": {
+            "count": 4,
+            "time": 9502
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 90020
+          },
+          "lstatSync": {
+            "count": 6,
+            "time": 24836
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 44774
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 117,
+      "label": {
+        "name": "ember-cli-shims: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 50175
+        }
+      },
+      "children": [
+        118
+      ]
+    },
+    {
+      "id": 118,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1367801
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13226
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 41457
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 63472
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10606
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5599
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8923
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5151
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 46437
+          }
+        }
+      },
+      "children": [
+        119,
+        120
+      ]
+    },
+    {
+      "id": 119,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6613402
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 3544331
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 282970
+          },
+          "openSync": {
+            "count": 10,
+            "time": 56366
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 23778
+          },
+          "readSync": {
+            "count": 10,
+            "time": 33949
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 50297
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 381485
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 49866
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 37962
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 120,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30678
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 121,
+      "label": {
+        "name": "initialize ember-cli-uglify",
+        "addonName": "ember-cli-uglify",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 639807
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 12002
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 26533
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 35902
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5958
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3013
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3700
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2732
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 34522
+          }
+        }
+      },
+      "children": [
+        122,
+        123
+      ]
+    },
+    {
+      "id": 122,
+      "label": {
+        "name": "ember-cli-uglify: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 883908
+        },
+        "fs": {
+          "statSync": {
+            "count": 14,
+            "time": 313930
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 56092
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10645
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5476
+          },
+          "readSync": {
+            "count": 2,
+            "time": 6862
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4856
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 32580
+          },
+          "lstatSync": {
+            "count": 3,
+            "time": 13814
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 38759
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 123,
+      "label": {
+        "name": "ember-cli-uglify: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 33255
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 124,
+      "label": {
+        "name": "initialize broccoli-asset-rev",
+        "addonName": "broccoli-asset-rev",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 974583
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 4,
+            "time": 22031
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 68524
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 74889
+          },
+          "openSync": {
+            "count": 2,
+            "time": 12114
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6045
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7628
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5351
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 33494
+          }
+        }
+      },
+      "children": [
+        125,
+        126
+      ]
+    },
+    {
+      "id": 125,
+      "label": {
+        "name": "broccoli-asset-rev: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2771600
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1073774
+          },
+          "readFileSync": {
+            "count": 8,
+            "time": 195854
+          },
+          "openSync": {
+            "count": 8,
+            "time": 37990
+          },
+          "fstatSync": {
+            "count": 8,
+            "time": 21164
+          },
+          "readSync": {
+            "count": 8,
+            "time": 25568
+          },
+          "closeSync": {
+            "count": 8,
+            "time": 18687
+          },
+          "accessSync": {
+            "count": 11,
+            "time": 178328
+          },
+          "lstatSync": {
+            "count": 10,
+            "time": 42716
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 96321
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 126,
+      "label": {
+        "name": "broccoli-asset-rev: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30333
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 127,
+      "label": {
+        "name": "initialize ember-cli-sri",
+        "addonName": "ember-cli-sri",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 671824
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 14619
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 31814
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27951
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6067
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2994
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3570
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2652
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 42345
+          }
+        }
+      },
+      "children": [
+        128,
+        129
+      ]
+    },
+    {
+      "id": 128,
+      "label": {
+        "name": "ember-cli-sri: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 663511
+        },
+        "fs": {
+          "statSync": {
+            "count": 14,
+            "time": 233130
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 50362
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10529
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5241
+          },
+          "readSync": {
+            "count": 2,
+            "time": 6741
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4988
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 32303
+          },
+          "lstatSync": {
+            "count": 3,
+            "time": 12463
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 38765
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 129,
+      "label": {
+        "name": "ember-cli-sri: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 35413
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 130,
+      "label": {
+        "name": "initialize ember-export-application-global",
+        "addonName": "ember-export-application-global",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 592265
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 13185
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 27206
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 27592
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5949
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2867
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3999
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2544
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8360
+          }
+        }
+      },
+      "children": [
+        131,
+        132
+      ]
+    },
+    {
+      "id": 131,
+      "label": {
+        "name": "ember-export-application-global: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 837821
+        },
+        "fs": {
+          "statSync": {
+            "count": 5,
+            "time": 152617
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 54725
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11217
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5342
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7037
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4938
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 31958
+          },
+          "lstatSync": {
+            "count": 4,
+            "time": 17910
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 47410
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 132,
+      "label": {
+        "name": "ember-export-application-global: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 53223
+        }
+      },
+      "children": [
+        133
+      ]
+    },
+    {
+      "id": 133,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1532174
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11759
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 41516
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 62807
+          },
+          "openSync": {
+            "count": 2,
+            "time": 12194
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6259
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8988
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5302
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 49972
+          }
+        }
+      },
+      "children": [
+        134,
+        135
+      ]
+    },
+    {
+      "id": 134,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6507821
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 3545256
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 241865
+          },
+          "openSync": {
+            "count": 10,
+            "time": 45840
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 24113
+          },
+          "readSync": {
+            "count": 10,
+            "time": 33177
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 23914
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 368597
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 49902
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 40238
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 135,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 31058
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 136,
+      "label": {
+        "name": "initialize ember-load-initializers",
+        "addonName": "ember-load-initializers",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 591581
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 20818
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 26769
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 32603
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5616
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2868
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3534
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2498
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8182
+          }
+        }
+      },
+      "children": [
+        137,
+        138
+      ]
+    },
+    {
+      "id": 137,
+      "label": {
+        "name": "ember-load-initializers: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 526555
+        },
+        "fs": {
+          "statSync": {
+            "count": 5,
+            "time": 84384
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 58045
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11178
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5411
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7002
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4942
+          },
+          "accessSync": {
+            "count": 2,
+            "time": 31408
+          },
+          "lstatSync": {
+            "count": 4,
+            "time": 16547
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 48743
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 138,
+      "label": {
+        "name": "ember-load-initializers: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 51523
+        }
+      },
+      "children": [
+        139
+      ]
+    },
+    {
+      "id": 139,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1316522
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11332
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 40025
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 59694
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10336
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5603
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8111
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4779
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 47936
+          }
+        }
+      },
+      "children": [
+        140,
+        141
+      ]
+    },
+    {
+      "id": 140,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6519432
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 3573495
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 268632
+          },
+          "openSync": {
+            "count": 10,
+            "time": 54907
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 23850
+          },
+          "readSync": {
+            "count": 10,
+            "time": 48036
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 23755
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 365301
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 48880
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 38980
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 141,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30221
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 142,
+      "label": {
+        "name": "initialize ember-resolver",
+        "addonName": "ember-resolver",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 4018953
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 10,
+            "time": 59286
+          },
+          "realpathSync": {
+            "count": 7,
+            "time": 272161
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 153702
+          },
+          "openSync": {
+            "count": 5,
+            "time": 29310
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 14748
+          },
+          "readSync": {
+            "count": 5,
+            "time": 20732
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12317
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8814
+          }
+        }
+      },
+      "children": [
+        143,
+        144
+      ]
+    },
+    {
+      "id": 143,
+      "label": {
+        "name": "ember-resolver: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 4120274
+        },
+        "fs": {
+          "statSync": {
+            "count": 79,
+            "time": 1246379
+          },
+          "readFileSync": {
+            "count": 11,
+            "time": 562890
+          },
+          "openSync": {
+            "count": 11,
+            "time": 56022
+          },
+          "fstatSync": {
+            "count": 11,
+            "time": 316749
+          },
+          "readSync": {
+            "count": 11,
+            "time": 36666
+          },
+          "closeSync": {
+            "count": 11,
+            "time": 25597
+          },
+          "accessSync": {
+            "count": 18,
+            "time": 318745
+          },
+          "lstatSync": {
+            "count": 17,
+            "time": 69156
+          },
+          "realpathSync": {
+            "count": 4,
+            "time": 177154
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 144,
+      "label": {
+        "name": "ember-resolver: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 58239
+        }
+      },
+      "children": [
+        145
+      ]
+    },
+    {
+      "id": 145,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2161323
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11011
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 40189
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 68633
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11749
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5982
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8729
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5359
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 93206
+          }
+        }
+      },
+      "children": [
+        146,
+        147
+      ]
+    },
+    {
+      "id": 146,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 7761048
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 3786781
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 248435
+          },
+          "openSync": {
+            "count": 10,
+            "time": 45666
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 22990
+          },
+          "readSync": {
+            "count": 10,
+            "time": 33973
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 24359
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 392200
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 57506
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 37963
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 147,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 32745
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 148,
+      "label": {
+        "name": "initialize ember-simple-auth",
+        "addonName": "ember-simple-auth",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1560398
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 3,
+            "time": 18543
+          },
+          "realpathSync": {
+            "count": 6,
+            "time": 76351
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 68990
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11206
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 6100
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7331
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4757
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 43648
+          }
+        }
+      },
+      "children": [
+        149,
+        150
+      ]
+    },
+    {
+      "id": 149,
+      "label": {
+        "name": "ember-simple-auth: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3768000
+        },
+        "fs": {
+          "statSync": {
+            "count": 101,
+            "time": 1542825
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 253151
+          },
+          "openSync": {
+            "count": 10,
+            "time": 48453
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 24621
+          },
+          "readSync": {
+            "count": 10,
+            "time": 33674
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 23387
+          },
+          "accessSync": {
+            "count": 14,
+            "time": 210609
+          },
+          "lstatSync": {
+            "count": 13,
+            "time": 52640
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 104889
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 150,
+      "label": {
+        "name": "ember-simple-auth: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 136402
+        }
+      },
+      "children": [
+        151,
+        154,
+        172,
+        184
+      ]
+    },
+    {
+      "id": 151,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 573111
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7273
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 44164
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 37012
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5012
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2679
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4324
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2740
+          }
+        }
+      },
+      "children": [
+        152,
+        153
+      ]
+    },
+    {
+      "id": 152,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2335900
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1119512
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 131153
+          },
+          "openSync": {
+            "count": 5,
+            "time": 21498
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 12078
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16975
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11710
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 159797
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21626
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 153,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 31717
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 154,
+      "label": {
+        "name": "initialize ember-cookies",
+        "addonName": "ember-cookies",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 557874
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11120
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 27718
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 26528
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5582
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2686
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3221
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2393
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 35112
+          }
+        }
+      },
+      "children": [
+        155,
+        156
+      ]
+    },
+    {
+      "id": 155,
+      "label": {
+        "name": "ember-cookies: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1071447
+        },
+        "fs": {
+          "statSync": {
+            "count": 29,
+            "time": 482836
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 48718
+          },
+          "openSync": {
+            "count": 2,
+            "time": 9127
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 4756
+          },
+          "readSync": {
+            "count": 2,
+            "time": 6908
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4954
+          },
+          "accessSync": {
+            "count": 4,
+            "time": 64610
+          },
+          "lstatSync": {
+            "count": 2,
+            "time": 11013
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 156,
+      "label": {
+        "name": "ember-cookies: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 70335
+        }
+      },
+      "children": [
+        157,
+        160
+      ]
+    },
+    {
+      "id": 157,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 553999
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6791
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 46144
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 24813
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4658
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2357
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3704
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2423
+          }
+        }
+      },
+      "children": [
+        158,
+        159
+      ]
+    },
+    {
+      "id": 158,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2446632
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1249424
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 118286
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22043
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11181
+          },
+          "readSync": {
+            "count": 5,
+            "time": 15758
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11728
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 171753
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21595
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 159,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30144
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 160,
+      "label": {
+        "name": "initialize ember-getowner-polyfill",
+        "addonName": "ember-getowner-polyfill",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 697908
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11463
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 34625
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 26962
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5959
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2923
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3379
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2311
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36584
+          }
+        }
+      },
+      "children": [
+        161,
+        162
+      ]
+    },
+    {
+      "id": 161,
+      "label": {
+        "name": "ember-getowner-polyfill: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1707761
+        },
+        "fs": {
+          "statSync": {
+            "count": 43,
+            "time": 782898
+          },
+          "readFileSync": {
+            "count": 4,
+            "time": 97980
+          },
+          "openSync": {
+            "count": 4,
+            "time": 19066
+          },
+          "fstatSync": {
+            "count": 4,
+            "time": 9513
+          },
+          "readSync": {
+            "count": 4,
+            "time": 13279
+          },
+          "closeSync": {
+            "count": 4,
+            "time": 9645
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 103299
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21374
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 34246
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 162,
+      "label": {
+        "name": "ember-getowner-polyfill: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 64951
+        }
+      },
+      "children": [
+        163,
+        166
+      ]
+    },
+    {
+      "id": 163,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 574570
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6874
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 47208
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 62136
+          },
+          "openSync": {
+            "count": 1,
+            "time": 39063
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3159
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3843
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2628
+          }
+        }
+      },
+      "children": [
+        164,
+        165
+      ]
+    },
+    {
+      "id": 164,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2635339
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1374467
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 120789
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23787
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11513
+          },
+          "readSync": {
+            "count": 5,
+            "time": 15921
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11874
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 181670
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 30477
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 165,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30355
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 166,
+      "label": {
+        "name": "initialize ember-factory-for-polyfill",
+        "addonName": "ember-factory-for-polyfill",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 667974
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11242
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 31805
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 32193
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5391
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2820
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3864
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2359
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 38594
+          }
+        }
+      },
+      "children": [
+        167,
+        168
+      ]
+    },
+    {
+      "id": 167,
+      "label": {
+        "name": "ember-factory-for-polyfill: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1087359
+        },
+        "fs": {
+          "statSync": {
+            "count": 29,
+            "time": 555665
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 53801
+          },
+          "openSync": {
+            "count": 2,
+            "time": 9434
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 4649
+          },
+          "readSync": {
+            "count": 2,
+            "time": 6908
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4996
+          },
+          "accessSync": {
+            "count": 4,
+            "time": 70296
+          },
+          "lstatSync": {
+            "count": 2,
+            "time": 9520
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 168,
+      "label": {
+        "name": "ember-factory-for-polyfill: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 49777
+        }
+      },
+      "children": [
+        169
+      ]
+    },
+    {
+      "id": 169,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 481000
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6388
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 47390
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 31781
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4770
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2486
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4121
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2487
+          }
+        }
+      },
+      "children": [
+        170,
+        171
+      ]
+    },
+    {
+      "id": 170,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2766803
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1505488
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 117301
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22318
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11439
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16034
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11671
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 202710
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21568
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 171,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 29714
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 172,
+      "label": {
+        "name": "initialize ember-getowner-polyfill",
+        "addonName": "ember-getowner-polyfill",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 345262
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7923
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 35388
+          }
+        }
+      },
+      "children": [
+        173,
+        174
+      ]
+    },
+    {
+      "id": 173,
+      "label": {
+        "name": "ember-getowner-polyfill: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1494357
+        },
+        "fs": {
+          "statSync": {
+            "count": 43,
+            "time": 728045
+          },
+          "readFileSync": {
+            "count": 3,
+            "time": 71460
+          },
+          "openSync": {
+            "count": 3,
+            "time": 14214
+          },
+          "fstatSync": {
+            "count": 3,
+            "time": 7079
+          },
+          "readSync": {
+            "count": 3,
+            "time": 10367
+          },
+          "closeSync": {
+            "count": 3,
+            "time": 7220
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 95008
+          },
+          "lstatSync": {
+            "count": 3,
+            "time": 13982
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 174,
+      "label": {
+        "name": "ember-getowner-polyfill: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 56659
+        }
+      },
+      "children": [
+        175,
+        178
+      ]
+    },
+    {
+      "id": 175,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 575598
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6853
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 45791
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 55291
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5897
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2706
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3759
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2579
+          }
+        }
+      },
+      "children": [
+        176,
+        177
+      ]
+    },
+    {
+      "id": 176,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2475011
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1255631
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 119359
+          },
+          "openSync": {
+            "count": 5,
+            "time": 21799
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11478
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16045
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11683
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 180855
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21626
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 177,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 29724
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 178,
+      "label": {
+        "name": "initialize ember-factory-for-polyfill",
+        "addonName": "ember-factory-for-polyfill",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 449211
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6819
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36119
+          }
+        }
+      },
+      "children": [
+        179,
+        180
+      ]
+    },
+    {
+      "id": 179,
+      "label": {
+        "name": "ember-factory-for-polyfill: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2671280
+        },
+        "fs": {
+          "statSync": {
+            "count": 29,
+            "time": 534366
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 52531
+          },
+          "openSync": {
+            "count": 2,
+            "time": 9610
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 4774
+          },
+          "readSync": {
+            "count": 2,
+            "time": 6637
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4793
+          },
+          "accessSync": {
+            "count": 4,
+            "time": 94824
+          },
+          "lstatSync": {
+            "count": 2,
+            "time": 10863
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 180,
+      "label": {
+        "name": "ember-factory-for-polyfill: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 56501
+        }
+      },
+      "children": [
+        181
+      ]
+    },
+    {
+      "id": 181,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1302406
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 7627
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 134338
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 35919
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5374
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2611
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4477
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 3056
+          }
+        }
+      },
+      "children": [
+        182,
+        183
+      ]
+    },
+    {
+      "id": 182,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2698703
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1374291
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 122421
+          },
+          "openSync": {
+            "count": 5,
+            "time": 23842
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11780
+          },
+          "readSync": {
+            "count": 5,
+            "time": 17133
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12882
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 192928
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 21806
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 183,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30496
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 184,
+      "label": {
+        "name": "initialize ember-network",
+        "addonName": "ember-network",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 14495298
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 55,
+            "time": 259330
+          },
+          "realpathSync": {
+            "count": 69,
+            "time": 1344201
+          },
+          "readFileSync": {
+            "count": 34,
+            "time": 918845
+          },
+          "openSync": {
+            "count": 34,
+            "time": 186618
+          },
+          "fstatSync": {
+            "count": 34,
+            "time": 95793
+          },
+          "readSync": {
+            "count": 34,
+            "time": 133025
+          },
+          "closeSync": {
+            "count": 34,
+            "time": 79402
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 48044
+          }
+        }
+      },
+      "children": [
+        185,
+        186
+      ]
+    },
+    {
+      "id": 185,
+      "label": {
+        "name": "ember-network: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 3959636
+        },
+        "fs": {
+          "statSync": {
+            "count": 99,
+            "time": 1690163
+          },
+          "readFileSync": {
+            "count": 11,
+            "time": 265300
+          },
+          "openSync": {
+            "count": 11,
+            "time": 54150
+          },
+          "fstatSync": {
+            "count": 11,
+            "time": 25917
+          },
+          "readSync": {
+            "count": 11,
+            "time": 34603
+          },
+          "closeSync": {
+            "count": 11,
+            "time": 25789
+          },
+          "accessSync": {
+            "count": 14,
+            "time": 234744
+          },
+          "lstatSync": {
+            "count": 13,
+            "time": 53720
+          },
+          "realpathSync": {
+            "count": 4,
+            "time": 117331
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 186,
+      "label": {
+        "name": "ember-network: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 59157
+        }
+      },
+      "children": [
+        187
+      ]
+    },
+    {
+      "id": 187,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 532849
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 1,
+            "time": 6742
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 46464
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 34043
+          },
+          "openSync": {
+            "count": 1,
+            "time": 4635
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 2481
+          },
+          "readSync": {
+            "count": 1,
+            "time": 4856
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2711
+          }
+        }
+      },
+      "children": [
+        188,
+        189
+      ]
+    },
+    {
+      "id": 188,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2579792
+        },
+        "fs": {
+          "statSync": {
+            "count": 70,
+            "time": 1323160
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 117715
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22017
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 10957
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16045
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 11636
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 180473
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 22511
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 189,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 38766
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 190,
+      "label": {
+        "name": "initialize ember-welcome-page",
+        "addonName": "ember-welcome-page",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 627211
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 12552
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 28415
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 28279
+          },
+          "openSync": {
+            "count": 1,
+            "time": 5950
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3000
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3514
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2593
+          },
+          "existsSync": {
+            "count": 1,
+            "time": 8802
+          }
+        }
+      },
+      "children": [
+        191,
+        192
+      ]
+    },
+    {
+      "id": 191,
+      "label": {
+        "name": "ember-welcome-page: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1422092
+        },
+        "fs": {
+          "statSync": {
+            "count": 33,
+            "time": 517042
+          },
+          "readFileSync": {
+            "count": 4,
+            "time": 106883
+          },
+          "openSync": {
+            "count": 4,
+            "time": 19893
+          },
+          "fstatSync": {
+            "count": 4,
+            "time": 9769
+          },
+          "readSync": {
+            "count": 4,
+            "time": 13140
+          },
+          "closeSync": {
+            "count": 4,
+            "time": 9761
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 93879
+          },
+          "lstatSync": {
+            "count": 6,
+            "time": 25067
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 48815
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 192,
+      "label": {
+        "name": "ember-welcome-page: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 61207
+        }
+      },
+      "children": [
+        193,
+        196
+      ]
+    },
+    {
+      "id": 193,
+      "label": {
+        "name": "initialize ember-cli-babel",
+        "addonName": "ember-cli-babel",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 1739214
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 11258
+          },
+          "realpathSync": {
+            "count": 3,
+            "time": 42865
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 68163
+          },
+          "openSync": {
+            "count": 2,
+            "time": 10679
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5778
+          },
+          "readSync": {
+            "count": 2,
+            "time": 8611
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 5000
+          },
+          "existsSync": {
+            "count": 3,
+            "time": 48991
+          }
+        }
+      },
+      "children": [
+        194,
+        195
+      ]
+    },
+    {
+      "id": 194,
+      "label": {
+        "name": "ember-cli-babel: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 6710443
+        },
+        "fs": {
+          "statSync": {
+            "count": 206,
+            "time": 3719439
+          },
+          "readFileSync": {
+            "count": 10,
+            "time": 246971
+          },
+          "openSync": {
+            "count": 10,
+            "time": 45298
+          },
+          "fstatSync": {
+            "count": 10,
+            "time": 22961
+          },
+          "readSync": {
+            "count": 10,
+            "time": 33169
+          },
+          "closeSync": {
+            "count": 10,
+            "time": 23546
+          },
+          "accessSync": {
+            "count": 21,
+            "time": 376769
+          },
+          "lstatSync": {
+            "count": 11,
+            "time": 47513
+          },
+          "realpathSync": {
+            "count": 1,
+            "time": 39982
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 195,
+      "label": {
+        "name": "ember-cli-babel: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 31385
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 196,
+      "label": {
+        "name": "initialize ember-cli-htmlbars",
+        "addonName": "ember-cli-htmlbars",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 542344
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 2,
+            "time": 39846
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 37266
+          }
+        }
+      },
+      "children": [
+        197,
+        198
+      ]
+    },
+    {
+      "id": 197,
+      "label": {
+        "name": "ember-cli-htmlbars: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 2904570
+        },
+        "fs": {
+          "statSync": {
+            "count": 71,
+            "time": 1575192
+          },
+          "readFileSync": {
+            "count": 5,
+            "time": 119924
+          },
+          "openSync": {
+            "count": 5,
+            "time": 22665
+          },
+          "fstatSync": {
+            "count": 5,
+            "time": 11736
+          },
+          "readSync": {
+            "count": 5,
+            "time": 16978
+          },
+          "closeSync": {
+            "count": 5,
+            "time": 12312
+          },
+          "accessSync": {
+            "count": 10,
+            "time": 210845
+          },
+          "lstatSync": {
+            "count": 5,
+            "time": 23360
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 198,
+      "label": {
+        "name": "ember-cli-htmlbars: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 30474
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 199,
+      "label": {
+        "name": "initialize loader.js",
+        "addonName": "loader.js",
+        "addonInitializationNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 832806
+        },
+        "fs": {
+          "lstatSync": {
+            "count": 3,
+            "time": 18388
+          },
+          "realpathSync": {
+            "count": 2,
+            "time": 62457
+          },
+          "readFileSync": {
+            "count": 2,
+            "time": 61761
+          },
+          "openSync": {
+            "count": 2,
+            "time": 11073
+          },
+          "fstatSync": {
+            "count": 2,
+            "time": 5906
+          },
+          "readSync": {
+            "count": 2,
+            "time": 7169
+          },
+          "closeSync": {
+            "count": 2,
+            "time": 4845
+          },
+          "existsSync": {
+            "count": 2,
+            "time": 36424
+          }
+        }
+      },
+      "children": [
+        200,
+        201
+      ]
+    },
+    {
+      "id": 200,
+      "label": {
+        "name": "loader.js: addon-discovery",
+        "addonDiscoveryNode": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 13002
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 201,
+      "label": {
+        "name": "loader.js: initializeAddons"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 33257
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 202,
+      "label": {
+        "name": "lookup-commands: ember-cli-content-security-policy",
+        "addonName": "ember-cli-content-security-policy",
+        "addonCommandInitialization": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 642455
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 3,
+            "time": 48765
+          },
+          "lstatSync": {
+            "count": 1,
+            "time": 6640
+          },
+          "readFileSync": {
+            "count": 1,
+            "time": 51321
+          },
+          "openSync": {
+            "count": 1,
+            "time": 6892
+          },
+          "fstatSync": {
+            "count": 1,
+            "time": 3510
+          },
+          "readSync": {
+            "count": 1,
+            "time": 3959
+          },
+          "closeSync": {
+            "count": 1,
+            "time": 2872
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 203,
+      "label": {
+        "name": "lookup-commands: ember-try",
+        "addonName": "ember-try",
+        "addonCommandInitialization": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 8313276
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 27,
+            "time": 667155
+          },
+          "lstatSync": {
+            "count": 22,
+            "time": 113684
+          },
+          "readFileSync": {
+            "count": 17,
+            "time": 477054
+          },
+          "openSync": {
+            "count": 17,
+            "time": 103000
+          },
+          "fstatSync": {
+            "count": 17,
+            "time": 52078
+          },
+          "readSync": {
+            "count": 17,
+            "time": 61898
+          },
+          "closeSync": {
+            "count": 17,
+            "time": 41813
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 204,
+      "label": {
+        "name": "lookup-commands: ember-cli-release",
+        "addonName": "ember-cli-release",
+        "addonCommandInitialization": true
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 63305904
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 141,
+            "time": 4802218
+          },
+          "lstatSync": {
+            "count": 193,
+            "time": 994916
+          },
+          "readFileSync": {
+            "count": 103,
+            "time": 3182614
+          },
+          "openSync": {
+            "count": 103,
+            "time": 600798
+          },
+          "fstatSync": {
+            "count": 103,
+            "time": 311842
+          },
+          "readSync": {
+            "count": 103,
+            "time": 402761
+          },
+          "closeSync": {
+            "count": 103,
+            "time": 254392
+          }
+        }
+      },
+      "children": []
+    },
+    {
+      "id": 205,
+      "label": {
+        "name": "platform-checker"
+      },
+      "stats": {
+        "own": {},
+        "time": {
+          "self": 43860509
+        },
+        "fs": {
+          "realpathSync": {
+            "count": 46,
+            "time": 1544715
+          },
+          "lstatSync": {
+            "count": 41,
+            "time": 223917
+          },
+          "readFileSync": {
+            "count": 35,
+            "time": 1733294
+          },
+          "openSync": {
+            "count": 35,
+            "time": 208351
+          },
+          "fstatSync": {
+            "count": 35,
+            "time": 156286
+          },
+          "readSync": {
+            "count": 35,
+            "time": 195372
+          },
+          "closeSync": {
+            "count": 35,
+            "time": 97283
+          },
+          "accessSync": {
+            "count": 6,
+            "time": 195477
+          }
+        }
+      },
+      "children": []
+    }
+  ]
+}
