@@ -8,11 +8,11 @@ module.exports = function(environment) {
     rootURL: '/',
     contentSecurityPolicy: {
         'default-src': ["'none'"],
-        'script-src':  ["'self'", "'unsafe-eval'", "*"],
+        'script-src':  ["'self' 'unsafe-eval' *"],
         'font-src':    ["'self'"],
-        'connect-src': ["'self'", "*"],
-        'img-src':     ["'self'"],
-        'style-src':   ["'self'", "'unsafe-inline'"],
+        'connect-src': ["'self' *"],
+        'img-src':     ["'self' 'data'"],
+        'style-src':   ["'self' * 'unsafe-inline'"],
         'media-src':   ["'self'"]
     },
     locationType: 'auto',
@@ -38,6 +38,9 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.LOG_BINDINGS = true;
+    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.LOG_STACKTRACE_ON_DEPRECATION = true
     ENV.host = "http://localhost:3000";
     ENV.locationType = "hash"
   }
