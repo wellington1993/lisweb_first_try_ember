@@ -56,8 +56,9 @@ FormsNewPessoaComponent = FormsGenericFormComponent.extend(RequestsPessoaMixin,
 
   )
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super(args)
+    args = this.get('_args')
 
     #Se é modo edicao inicializa os campos que utilizam mascara.
     if @get("isEdit")
@@ -219,7 +220,7 @@ FormsNewPessoaComponent = FormsGenericFormComponent.extend(RequestsPessoaMixin,
     if @get("isEdit")
 
       metodo   = @atualizarPessoa
-      mensagem = "Pessoa atualizada com sucesso! <br> Você será redirecionado em instantes..." 
+      mensagem = "Pessoa atualizada com sucesso! <br> Você será redirecionado em instantes..."
 
     else
 

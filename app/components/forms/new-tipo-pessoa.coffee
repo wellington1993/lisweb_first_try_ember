@@ -9,8 +9,9 @@ FormsNewTipoPessoaComponent = FormsGenericFormComponent.extend(RequestsTipoPesso
   nomeValido: false
   tipoValido: false
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super()
+    args = this.get('_args')
 
     if @get("isEdit")
       @set("nomeValido", true)

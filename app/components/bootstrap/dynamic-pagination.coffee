@@ -28,9 +28,10 @@ BootstrapDynamicPaginationComponent = Ember.Component.extend(UtilsMixin,
 
   )
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @atualizarEstadoPaginador()
     @_super(args)
+    args = this.get('_args')
 
   didInsertElement: ->
     @atualizarEstadoPaginador()

@@ -69,9 +69,10 @@ InputsInputAutocompleteComponent = Ember.Component.extend(
       @clearSelected(true)
   ).observes('selectedRecord').on('init')
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super(args)
     @prepareInitialRecord()
+    args = this.get('_args')
 
   prepareInitialRecord: ->
 

@@ -8,8 +8,9 @@ FormsNewUnidadeAtendimentoComponent = FormsGenericFormComponent.extend(RequestsU
 
   nomeValido: false
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super()
+    args = this.get('_args')
 
     if @get("isEdit")
       @set("nomeValido", true)

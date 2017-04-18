@@ -11,8 +11,9 @@ FormsNewUnidadeMedidaComponent = FormsGenericFormComponent.extend(RequestsUnidad
   descricaoValida: false
   siglaValida: false
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super()
+    args = this.get('_args')
 
     if @get("isEdit")
       @set("nomeValido", true)

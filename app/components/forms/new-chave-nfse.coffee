@@ -9,8 +9,9 @@ FormsNewChaveNfseComponent = FormsGenericFormComponent.extend(RequestsChaveNfseM
   chaveValida: false
   valorValido: false
 
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super()
+    args = this.get('_args')
 
     if @get("isEdit")
       @set("chaveValida", true)

@@ -65,8 +65,9 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
   )
 
   #Ao receber os atributos do controlador:
-  didReceiveAttrs: (args) ->
+  didReceiveAttrs: () ->
     @_super()
+    args = this.get('_args')
 
     #Inicializa o array de validacao de produtos.
     @inicializarArrayValidacaoProdutos()
