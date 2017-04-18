@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+
+    <div class="row">
+      <div class="col-lg-12">
+        Nome: <span class="required-input">(*)</span>
+        {{inputs/generic-input
+          value=grupoParametroNFSe.nome
+          maxlength=255
+          actionOnFimValidacao="actValidarNome"}}
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="tab-content">
+        <div class="row">
+          <div class="col-lg-2">
+            Parâmetros:
+          </div>
+          {{#each grupoParametroNFSe.gruposParametrosChaveNFSe as |parametro indexParametro|}}
+            {{#unless  parametro.length}}
+              <div class="col-lg-3">
+                <button class="btn btn-default btn-xs" {{action "actAdicionarGrupoParametroChaveNFSe" produto}}><i class="fa fa-plus"></i>&nbsp;Adicionar Chave NFSe</button>
+              </div>
+            {{/unless}}
+          {{/each }}
+        </div>
+
+    <br>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        {{#link-to "tipos-de-produto" class="btn btn-default"}}<i class="fa fa-long-arrow-left"></i>&nbsp;Voltar{{/link-to}}
+        <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Salvar</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-lg-12">
+        {{bootstrap/box-alert
+          id="box-alert"}}
+      </div>
+    </div>
+
+   </div>
+  </div>
+</div>

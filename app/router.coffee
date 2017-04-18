@@ -16,6 +16,8 @@ Router.map( ->
   @route("cadastrar-unidade-de-medida")
   @route("cadastrar-chave-nfse")
   @route("cadastrar-unidade-atendimento")
+  @route("cadastrar-grupo-parametro-nfse")
+
   @route("categorias-de-produto")
   @route("laboratorios")
   @route("login")
@@ -28,6 +30,7 @@ Router.map( ->
   @route("unidades-de-medida")
   @route("chaves-nfse")
   @route("unidades-atendimento")
+  @route("grupos-parametros-nfse")
 
   @route("categorias-de-produto.show", path: "/categorias-de-produto/:categoria_produto_id")
   @route("marcas.show", path: "/marcas/:marca_id")
@@ -36,6 +39,7 @@ Router.map( ->
   @route("unidades-de-medida.show", path: "/unidades-de-medida/:unidade_medida_id")
   @route("chaves-nfse.show", path: "/chaves-nfse/:chave_nfse_id")
   @route("unidades-atendimento.show", path: "/unidades-atendimento/:unidade_atendimento_id")
+  @route("grupos-parametros-nfse.show", path: "/grupos-parametros-nfse/:grupo_parametro_nfse_id")
 
   @route("pagina-nao-encontrada", { path: "/*path" })
 

@@ -9,6 +9,7 @@ initialize = ->
   inflector.irregular("fornecedor-produto", "fornecedores-produtos")
   inflector.irregular("chave-nfse", "chaves-nfse")
   inflector.irregular("unidade-atendimento", "unidades-atendimento")
+  inflector.irregular("grupo-parametro-nfse", "grupos-parametros-nfse")
 
 InflectionsInitializer =
   name: 'inflections'
