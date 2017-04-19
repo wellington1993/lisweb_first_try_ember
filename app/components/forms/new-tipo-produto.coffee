@@ -228,13 +228,13 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
       valido = false
       arrayMensagensErro.push("Você deve preencher o campo <b>Descrição.</b>")
 
-    if !@get("categoriaValida")
+    ###if !@get("categoriaValida")
       valido = false
-      arrayMensagensErro.push("Você deve preencher o campo <b>Categoria.</b>")
+      arrayMensagensErro.push("Você deve preencher o campo <b>Categoria.</b>")###
 
-    if !@get("unidadeDeSaidaValida")
+    ###if !@get("unidadeDeSaidaValida")
       valido = false
-      arrayMensagensErro.push("Você deve preencher o campo <b>Unidade de Saída.</b>")
+      arrayMensagensErro.push("Você deve preencher o campo <b>Unidade de Saída.</b>")###
 
     if !@get("estoqueMinimoValido")
       valido = false
@@ -271,20 +271,20 @@ FormsNewTipoProdutoComponent = FormsGenericFormComponent.extend(RequestsTipoProd
 
         errosProduto = []
 
-        if !validacao["nomeValido"]
+        ###if !validacao["nomeValido"]
           errosProduto.push("Você deve preencher o campo <b>Nome.</b>")
           valido = false
-          produtoValido = false
+          produtoValido = false###
 
         if !validacao["marcaValida"]
           errosProduto.push("Você deve preencher o campo <b>Marca.</b>")
           valido = false
           produtoValido = false
 
-        if !validacao["statusValido"]
+        ###if !validacao["statusValido"]
           errosProduto.push("Você deve preencher o campo <b>Status.</b>")
           valido = false
-          produtoValido = false
+          produtoValido = false###
 
         #Valida os campos dos fornecedores vinculados ao produto.
         validacao["validacoesFornecedores"].forEach(
