@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
+    Nome: <span class="required-input">(*)</span>
     {{inputs/generic-input
       value=model.nome
       lengthMinimo=1
@@ -8,6 +9,18 @@
       actionOnFimValidacao="actValidarNome"}}
   </div>
 </div>
+<div class="row">
+  <div class="col-lg-12">
+    Grupo de Parâmetros NFSe:
+    {{inputs/input-autocomplete
+      initialRecord=grupoParametroNFSe.nome
+      modelName="grupo-parametro-nfse"
+      suggestionField="nome"
+      onSelect="actValidarGrupoParametroNFSe"
+      onDeselect="actValidarGrupoParametroNFSe"}}
+  </div>
+</div>
+
 <br>
 <div class="row">
   <div class="col-lg-12">

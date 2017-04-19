@@ -342,17 +342,20 @@ InputsInputAutocompleteComponent = Ember.Component.extend(
 
   #----TEXT Decorating
   highlight: (text, toHighlight)->
-    textUpper = text.toUpperCase()
-    toHighlightUpper = toHighlight.toUpperCase()
-    index = textUpper.indexOf(toHighlightUpper)
-    res = text
-    if index >= 0
-      res = text.substring(0,index) +
-            "<span class='highlight'>" +
-            text.substring(index,index+toHighlight.length) +
-            "</span>" +
-            text.substring(index + toHighlight.length)
-    res
+    if(text)
+      textUpper = text.toUpperCase()
+      toHighlightUpper = toHighlight.toUpperCase()
+      index = textUpper.indexOf(toHighlightUpper)
+      res = text
+      if index >= 0
+        res = text.substring(0,index) +
+              "<span class='highlight'>" +
+              text.substring(index,index+toHighlight.length) +
+              "</span>" +
+              text.substring(index + toHighlight.length)
+      res
+    else
+      '' 
 
   #Actions available to the templates
   actions: {

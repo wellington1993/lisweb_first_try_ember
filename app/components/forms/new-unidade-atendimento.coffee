@@ -7,6 +7,7 @@ FormsNewUnidadeAtendimentoComponent = FormsGenericFormComponent.extend(RequestsU
   isEdit: false
 
   nomeValido: false
+  grupoParametroNFSeValido: false
 
   didReceiveAttrs: () ->
     @_super()
@@ -82,6 +83,20 @@ FormsNewUnidadeAtendimentoComponent = FormsGenericFormComponent.extend(RequestsU
     actValidarNome: (params, callback) ->
       callback()
       @set("nomeValido", params["valido"])
+
+    actValidarGrupoParametroNFSe: (params) ->
+
+      if !@ || !@$()
+        return false
+
+      record = params["record"]
+      valido = if record == null then false else true
+
+      @set("grupoParametroNFSe.nome", record)
+      @set("grupoParametroNFSeValido", valido)
+
+      if @get("isEdit") && !@get("hasDirtyAttributes")
+        @set("hasDirtyAttributes", true)
 
 
 )
