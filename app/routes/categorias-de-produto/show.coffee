@@ -14,7 +14,7 @@ CategoriasDeProdutoShowRoute = AbstractRoutesPrivateRouteRoute.extend(
           return data
 
         (err) ->
-          self.transitionTo("categorias-de-produto")
+          self.transitionTo("categorias-de-produto/index")
 
        )
 
@@ -25,10 +25,10 @@ CategoriasDeProdutoShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("categorias-de-produto.show").get("model").rollbackAttributes()
+      @controllerFor("categorias-de-produto/show").get("model").rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("categorias-de-produto")
+      @transitionTo("categorias-de-produto/index")
 
 )
 

@@ -1,6 +1,7 @@
 import Ember from 'ember'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-CadastrarPessoaRoute = Ember.Route.extend(
+PessoasNewRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: (params, transition) ->
 
@@ -20,15 +21,15 @@ CadastrarPessoaRoute = Ember.Route.extend(
   actions:
 
     willTransition: ->
-      model = @controllerFor("cadastrar-pessoa").get("model")["pessoa"]
+      model = @controllerFor("pessoas/new").get("model")["pessoa"]
 
       if model.get("isNew")
         @get("store").unloadRecord(model)
 
     actRedirecionar: ->
-      @transitionTo("pessoas")
+      @transitionTo("pessoas/index")
 
 
 )
 
-export default CadastrarPessoaRoute
+export default PessoasNewRoute

@@ -12,7 +12,7 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
         return data
       (err) ->
 
-        self.transitionTo("pessoas")
+        self.transitionTo("pessoas/index")
 
     )
     tiposPessoa = @get("store").findAll("tipo-pessoa", reload: true)
@@ -29,10 +29,10 @@ PessoasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("pessoas.show").get("model")["pessoa"].rollbackAttributes()
+      @controllerFor("pessoas/show").get("model")["pessoa"].rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("pessoas")
+      @transitionTo("pessoas/index")
 
 )
 

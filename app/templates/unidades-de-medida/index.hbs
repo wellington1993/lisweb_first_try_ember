@@ -1,18 +1,18 @@
-<div class="container geral-grid animated fadeInUp">
+<div class="container animated fadeInUp">
+
   {{#if model.length}}
 
   <div class="container">
 
     <div class="col-lg-12 table-responsive">
-
       <div class="row">
 
         <div class="col-lg-6">
-          <h3>Categorias de produto</h3>
+          <h3>Unidades de medida</h3>
         </div>
 
         <div class="col-lg-6">
-        {{#link-to "cadastrar-categoria-de-produto"class="btn btn-default btn-md pull-right"}}
+        {{#link-to "unidades-de-medida/new"class="btn btn-default btn-md pull-right"}}
           <i class="fa fa-file"></i>&nbsp;Novo registro
         {{/link-to}}
         </div>
@@ -23,15 +23,17 @@
           <tr>
             <th>Nome</th>
             <th>Descrição</th>
+            <th>Sigla</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {{#each model as |categoriaProduto index|}}
+          {{#each model as |unidadeMedida index|}}
           <tr>
-            <td>{{categoriaProduto.nome}}</td>
-            <td>{{categoriaProduto.descricao}}</td>
-            <td>{{#link-to "categorias-de-produto.show" categoriaProduto.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{unidadeMedida.nome}}</td>
+            <td>{{unidadeMedida.descricao}}</td>
+            <td>{{unidadeMedida.sigla}}</td>
+            <td>{{#link-to "unidades-de-medida/show" unidadeMedida.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -55,12 +57,12 @@
           <div class="col-md-12">
               <div class="error-template">
                   <h1>
-                      Não há categorias de produto a serem listadas</h1>
+                      Não há unidades de medida a serem listadas</h1>
                   <div class="text-center">
                       Nenhum registro foi encontrado.
                   </div>
                   <div class="error-actions">
-                    {{#link-to "cadastrar-categoria-de-produto" class="btn btn-primary btn-lg"}} Cadastrar nova categoria de  produto {{/link-to}}
+                    {{#link-to "unidades-de-medida/new" class="btn btn-primary btn-lg"}} Cadastrar nova unidade de medida {{/link-to}}
                     {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                   </div>
               </div>
@@ -69,4 +71,5 @@
   </div>
 
   {{/if}}
+
 </div>

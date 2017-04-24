@@ -14,7 +14,7 @@ TiposDePessoaShowRoute = AbstractRoutesPrivateRouteRoute.extend(
           return data
 
         (err) ->
-          self.transitionTo("tipos-de-pessoa")
+          self.transitionTo("tipos-de-pessoa/index")
 
        )
 
@@ -25,10 +25,10 @@ TiposDePessoaShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("tipos-de-pessoa.show").get("model").rollbackAttributes()
+      @controllerFor("tipos-de-pessoa/show").get("model").rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("tipos-de-pessoa")
+      @transitionTo("tipos-de-pessoa/index")
 
 )
 

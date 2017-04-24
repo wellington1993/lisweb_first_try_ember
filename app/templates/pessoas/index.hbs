@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-lg-6">
-        {{#link-to "cadastrar-pessoa"class="btn btn-default btn-md pull-right"}}
+        {{#link-to "pessoas/new"class="btn btn-default btn-md pull-right"}}
           <i class="fa fa-file"></i>&nbsp;Novo registro
         {{/link-to}}
         </div>
@@ -34,7 +34,7 @@
             <td>{{pessoa.nome}}</td>
             <td>{{pessoa.tipoPessoa.nome}}</td>
             <td>{{boolean-to-sim-nao pessoa.sincronizado}}</td>
-            <td>{{#link-to "pessoas.show" pessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{#link-to "pessoas/show" pessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -63,7 +63,7 @@
                         Nenhum registro foi encontrado.
                     </div>
                     <div class="error-actions">
-                      {{#link-to "cadastrar-pessoa" class="btn btn-primary btn-lg"}} Cadastrar pessoa {{/link-to}}
+                      {{#link-to "pessoas/new" class="btn btn-primary btn-lg"}} Cadastrar pessoa {{/link-to}}
                       {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                     </div>
                 </div>
