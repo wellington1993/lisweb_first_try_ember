@@ -10,7 +10,7 @@ ChavesNfseShowRoute = AbstractRoutesPrivateRouteRoute.extend(
         (data) ->
           return data
         (err) ->
-          self.transitionTo("chaves-nfse")
+          self.transitionTo("chaves-nfse/index")
        )
      return chaveNfse
 
@@ -18,10 +18,10 @@ ChavesNfseShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("chaves-nfse.show").get("model").rollbackAttributes()
+      @controllerFor("chaves-nfse/show").get("model").rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("chaves-nfse")
+      @transitionTo("chaves-nfse/index")
 )
 
 export default ChavesNfseShowRoute

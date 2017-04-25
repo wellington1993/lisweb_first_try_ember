@@ -1,7 +1,7 @@
 import Ember from 'ember'
-import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-UnidadesAtendimentoRoute = AbstractRoutesPrivateRouteRoute.extend(
+UnidadesAtendimentoIndexRoute = AbstractRoutesPrivateRouteRoute.extend(
   model: (params, transition) ->
     params = @paramsToUseQueryAsFindAll(transition.queryParams)
     return @get("store").query("unidade-atendimento", params)
@@ -11,4 +11,4 @@ UnidadesAtendimentoRoute = AbstractRoutesPrivateRouteRoute.extend(
     @setupControllerWithPagination(controller, model)
 )
 
-export default UnidadesAtendimentoRoute
+export default UnidadesAtendimentoIndexRoute

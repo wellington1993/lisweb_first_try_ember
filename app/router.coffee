@@ -38,6 +38,22 @@ Router.map( ->
   @route("unidades-de-medida/show", path: "/unidades-de-medida/:unidade_medida_id")
   @route("unidades-de-medida/index", path: "/unidades-de-medida")
 
+  #Rotas para parametros nfse/chaves nfse.
+  @route("chaves-nfse/new")
+  @route("chaves-nfse/show", path: "/chaves-nfse/:chave_nfse_id")
+  @route("chaves-nfse/index", path: "/chaves-nfse")
+
+  #Rotas para unidades atendimento.
+  @route("unidades-atendimento/new")
+  @route("unidades-atendimento/show", path: "/unidades-atendimento/:unidade_atendimento_id")
+  @route("unidades-atendimento/index", path: "/unidades-atendimento")
+
+  #Rotas para grupos parametros nfse
+  @route("grupos-parametros-nfse/new")
+  @route("grupos-parametros-nfse/show", path: "/grupos-parametros-nfse/:grupo_parametro_id")
+  @route("grupos-parametros-nfse/index", path: "/grupos-parametros-nfse")
+
+
   @route("laboratorios")
   @route("login")
 

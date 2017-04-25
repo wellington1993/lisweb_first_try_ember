@@ -1,7 +1,7 @@
 import Ember from 'ember'
-import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-ChavesNfseRoute = AbstractRoutesPrivateRouteRoute.extend(
+ChavesNfseIndexRoute = AbstractRoutesPrivateRouteRoute.extend(
   model: (params, transition) ->
     params = @paramsToUseQueryAsFindAll(transition.queryParams)
     return @get("store").query("chave-nfse", params)
@@ -11,4 +11,4 @@ ChavesNfseRoute = AbstractRoutesPrivateRouteRoute.extend(
     @setupControllerWithPagination(controller, model)
 )
 
-export default ChavesNfseRoute
+export default ChavesNfseIndexRoute

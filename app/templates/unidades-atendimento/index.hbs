@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-lg-6">
-          {{#link-to "cadastrar-unidade-atendimento" class="btn btn-default btn-md pull-right"}}
+          {{#link-to "unidades-atendimento/new" class="btn btn-default btn-md pull-right"}}
             <i class="fa fa-file"></i>&nbsp;Novo registro
           {{/link-to}}
         </div>
@@ -26,7 +26,7 @@
           {{#each model as |unidade index|}}
           <tr>
             <td>{{unidade.nome}}</td>
-            <td>{{#link-to "unidades-atendimento.show" unidade.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{#link-to "unidades-atendimento/show" unidade.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -55,7 +55,7 @@
                       Nenhum registro foi encontrado.
                   </div>
                   <div class="error-actions">
-                    {{#link-to "cadastrar-unidade-atendimento" class="btn btn-primary btn-lg"}} Cadastrar nova Unidade de atendimento {{/link-to}}
+                    {{#link-to "unidades-atendimento/new" class="btn btn-primary btn-lg"}} Cadastrar nova Unidade de atendimento {{/link-to}}
                     {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                   </div>
               </div>
