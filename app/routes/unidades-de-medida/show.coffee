@@ -14,7 +14,7 @@ UnidadesDeMedidaShowRoute = AbstractRoutesPrivateRouteRoute.extend(
           return data
 
         (err) ->
-          self.transitionTo("unidades-de-medida")
+          self.transitionTo("unidades-de-medida/index")
 
        )
 
@@ -25,10 +25,10 @@ UnidadesDeMedidaShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("unidades-de-medida.show").get("model").rollbackAttributes()
+      @controllerFor("unidades-de-medida/show").get("model").rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("unidades-de-medida")
+      @transitionTo("unidades-de-medida/index")
 
 
 )

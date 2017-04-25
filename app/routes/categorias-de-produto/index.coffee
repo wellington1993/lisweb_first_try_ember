@@ -1,13 +1,11 @@
 import Ember from 'ember'
-import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-UnidadesDeMedidaRoute = AbstractRoutesPrivateRouteRoute.extend(
+CategoriasDeProdutoIndexRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: (params, transition) ->
-
     params = @paramsToUseQueryAsFindAll(transition.queryParams)
-
-    return @get("store").query("unidade-medida", params)
+    return @get("store").query("categoria-produto", params)
 
   setupController: (controller, model) ->
     @_super(controller, model)
@@ -16,4 +14,4 @@ UnidadesDeMedidaRoute = AbstractRoutesPrivateRouteRoute.extend(
 
 )
 
-export default UnidadesDeMedidaRoute
+export default CategoriasDeProdutoIndexRoute

@@ -8,38 +8,36 @@
       <div class="row">
 
         <div class="col-lg-6">
-          <h3>Pessoas</h3>
+          <h3>Tipos de produto</h3>
         </div>
 
         <div class="col-lg-6">
-        {{#link-to "cadastrar-pessoa"class="btn btn-default btn-md pull-right"}}
+        {{#link-to "tipos-de-produto/new"class="btn btn-default btn-md pull-right"}}
           <i class="fa fa-file"></i>&nbsp;Novo registro
         {{/link-to}}
         </div>
-
       </div>
 
       <table class="table table-hover">
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Tipo</th>
-            <th>Sincronizado LIS</th>
+            <th>Descrição</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {{#each model as |pessoa index|}}
+          {{#each model as |tipoProduto index|}}
           <tr>
-            <td>{{pessoa.nome}}</td>
-            <td>{{pessoa.tipoPessoa.nome}}</td>
-            <td>{{boolean-to-sim-nao pessoa.sincronizado}}</td>
-            <td>{{#link-to "pessoas.show" pessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{tipoProduto.nome}}</td>
+            <td>{{tipoProduto.descricao}}</td>
+            <td>{{#link-to "tipos-de-produto/show" tipoProduto.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
       </table>
     </div>
+
   </div>
 
   <div class="pagination-center text-center">
@@ -52,25 +50,23 @@
   </div>
 
   {{else}}
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="error-template">
                     <h1>
-                        Não há pessoas a serem listadas</h1>
+                        Não há tipos de produto a serem listadas</h1>
                     <div class="text-center">
                         Nenhum registro foi encontrado.
                     </div>
                     <div class="error-actions">
-                      {{#link-to "cadastrar-pessoa" class="btn btn-primary btn-lg"}} Cadastrar pessoa {{/link-to}}
+                      {{#link-to "tipos-de-produto/new" class="btn btn-primary btn-lg"}} Cadastrar novo tipo de produto {{/link-to}}
                       {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
   {{/if}}
 
 </div>

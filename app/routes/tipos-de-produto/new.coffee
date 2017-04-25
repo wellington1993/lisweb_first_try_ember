@@ -1,6 +1,7 @@
 import Ember from 'ember'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-CadastrarTipoDeProdutoRoute = Ember.Route.extend(
+TiposDeProdutoNewRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: ->
 
@@ -16,7 +17,7 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
 
       store = @get("store")
 
-      model = @controllerFor("cadastrar-tipo-de-produto").get("model")["tipoProduto"]
+      model = @controllerFor("tipos-de-produto/new").get("model")["tipoProduto"]
 
 
       if model.get("isNew")
@@ -36,8 +37,8 @@ CadastrarTipoDeProdutoRoute = Ember.Route.extend(
         store.unloadRecord(model)
 
     actRedirecionarAposCadastro: ->
-      @transitionTo("tipos-de-produto")
+      @transitionTo("tipos-de-produto/index")
 
 )
 
-export default CadastrarTipoDeProdutoRoute
+export default TiposDeProdutoNewRoute

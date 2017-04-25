@@ -14,7 +14,7 @@ MarcasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
           return data
 
         (err) ->
-          self.transitionTo("marcas")
+          self.transitionTo("marcas/index")
 
        )
 
@@ -25,10 +25,10 @@ MarcasShowRoute = AbstractRoutesPrivateRouteRoute.extend(
     #Se os atributos foram alterados e não salvos ao sair da rota as alterações
     #devem ser desfeitas.
     willTransition: ->
-      @controllerFor("marcas.show").get("model").rollbackAttributes()
+      @controllerFor("marcas/show").get("model").rollbackAttributes()
 
     actRedirecionar: ->
-      @transitionTo("marcas")
+      @transitionTo("marcas/index")
 
 )
 

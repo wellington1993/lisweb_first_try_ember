@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-lg-6">
-        {{#link-to "cadastrar-tipo-de-pessoa"class="btn btn-default btn-md pull-right"}}
+        {{#link-to "tipos-de-pessoa/new"class="btn btn-default btn-md pull-right"}}
           <i class="fa fa-file"></i>&nbsp;Novo registro
         {{/link-to}}
         </div>
@@ -31,7 +31,7 @@
           <tr>
             <td>{{tipoPessoa.nome}}</td>
             <td>{{tipo-tipo-pessoa tipoPessoa.tipo}}</td>
-            <td>{{#link-to "tipos-de-pessoa.show" tipoPessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>{{#link-to "tipos-de-pessoa/show" tipoPessoa.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
           </tr>
           {{/each}}
         </tbody>
@@ -60,7 +60,7 @@
                         Nenhum registro foi encontrado.
                     </div>
                     <div class="error-actions">
-                      {{#link-to "cadastrar-tipo-de-pessoa" class="btn btn-primary btn-lg"}} Cadastrar novo tipo de pessoa {{/link-to}}
+                      {{#link-to "tipos-de-pessoa/new" class="btn btn-primary btn-lg"}} Cadastrar novo tipo de pessoa {{/link-to}}
                       {{#link-to "index" class="btn btn-default btn-lg"}} Voltar {{/link-to}}
                     </div>
                 </div>

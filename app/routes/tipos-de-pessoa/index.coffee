@@ -1,18 +1,19 @@
 import Ember from 'ember'
-import AbstractRoutesPrivateRouteRoute from './abstract-routes/private-route'
+import AbstractRoutesPrivateRouteRoute from '../abstract-routes/private-route'
 
-MarcasRoute = AbstractRoutesPrivateRouteRoute.extend(
+TiposDePessoaIndexRoute = AbstractRoutesPrivateRouteRoute.extend(
 
   model: (params, transition) ->
 
     params = @paramsToUseQueryAsFindAll(transition.queryParams)
 
-    return @get("store").query("marca", params)
+    return @get("store").query("tipo-pessoa", params)
 
   setupController: (controller, model) ->
     @_super(controller, model)
     @setupControllerWithPagination(controller, model)
 
+
 )
 
-export default MarcasRoute
+export default TiposDePessoaIndexRoute
