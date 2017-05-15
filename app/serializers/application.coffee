@@ -41,10 +41,19 @@ ApplicationSerializer = DS.RESTSerializer.extend(
 
     relationshipKey = null
 
-    if method == "serialize"
-      relationshipKey = key.underscore() + "_id"
+    if relationship == "belongsTo"
+
+      if method == "serialize"
+        relationshipKey = key.underscore() + "_id"
+      else
+        relationshipKey = key.camelize() + "Id"
+
     else
-      relationshipKey = key.camelize() + "Id"
+
+      if method == "serialize"
+        relationshipKey = key.underscore() + "_ids"
+      else
+        relationshipKey = key.camelize() + "Ids"
 
     return relationshipKey
 
