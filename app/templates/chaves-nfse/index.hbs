@@ -21,6 +21,7 @@
             <th>Chave</th>
             <th>Valor</th>
             <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +29,14 @@
           <tr>
             <td>{{chave.chave}}</td>
             <td>{{chave.valor}}</td>
-            <td>{{#link-to "chaves-nfse/show" chave.id class="btn btn-default"}}Visualizar{{/link-to}}</td>
+            <td>
+              <a href="" {{action "actExcluirChave" chave}} class="btn btn-primary btn-danger">Excluir</A>
+            </td>
+            <td>
+              {{#link-to "chaves-nfse/show" chave.id class="btn btn-default"}}
+                Visualizar
+              {{/link-to}}
+            </td>
           </tr>
           {{/each}}
         </tbody>
