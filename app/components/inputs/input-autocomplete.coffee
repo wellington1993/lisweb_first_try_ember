@@ -355,7 +355,7 @@ InputsInputAutocompleteComponent = Ember.Component.extend(
               text.substring(index + toHighlight.length)
       res
     else
-      '' 
+      ''
 
   #Actions available to the templates
   actions: {

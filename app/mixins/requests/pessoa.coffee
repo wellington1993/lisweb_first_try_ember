@@ -12,7 +12,7 @@ RequestsPessoaMixin = Ember.Mixin.create(
       return @get("store").createRecord("pessoa", options["attrs"]).save()
 
   atualizarPessoa: (context, options, callback = ->) ->
-    
+
     if options.hasOwnProperty("pessoa")
       return options["pessoa"].save()
     else

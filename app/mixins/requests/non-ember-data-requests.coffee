@@ -26,7 +26,7 @@ RequestsNonEmberDataRequestsMixin = Ember.Mixin.create(
     if !params["skipAdapterHeaders"]
       ajaxParams["headers"] = application.get("headers")
 
-    #Se possui callback customizado: 
+    #Se possui callback customizado:
     if params.hasOwnProperty("applicationCallback")
 
       ajaxParams["success"] = (data, status, response) ->
