@@ -1,5 +1,7 @@
 # lisweb-cli
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hotsoft-desenv2/lisweb_cli.svg?token=c7e805c86be66a80d4d780df213cf0ce245198fe2eeb311b5f351bf63bbdc1f8&ts=1579896018167)](https://greenkeeper.io/)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
